@@ -18,10 +18,10 @@ This is the project page of 《Mask-guided Spectral-wise Transformer for Efficie
 
 # Citation
 ```
-@article{cai2021mask,
-  title={Mask-guided spectral-wise transformer for efficient hyperspectral image reconstruction},
-  author={Cai, Yuanhao and Lin, Jing and Hu, Xiaowan and Wang, Haoqian and Yuan, Xin and Zhang, Yulun and Timofte, Radu and Van Gool, Luc},
-  journal={arXiv preprint arXiv:2111.07910},
-  year={2021}
+@inproceedings{mst,
+	title={Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction},
+	author={Yuanhao Cai and Jing Lin and Xiaowan Hu and Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
+	booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+	year={2022}
 }
 ```
