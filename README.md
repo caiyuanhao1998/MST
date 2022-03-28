@@ -1,5 +1,5 @@
 # MST
-This is the project page of 《Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction》, which is accepted by CVPR 2022.
+This is the project page of 《Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction》, which is accepted by CVPR 2022
 [[paper]](https://arxiv.org/abs/2111.07910)
 
 Code and models are coming soon.
