@@ -4,6 +4,9 @@ This is the project page of 《Mask-guided Spectral-wise Transformer for Efficie
 
 Code and models are coming soon.
 
+## News
+Our further work [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) won the 1st place in [NTIRE 2022 Spectral Reconstruction Challenge](https://codalab.lisn.upsaclay.fr/competitions/721#learn_the_details).
+
 ![Illustration of MST](/figure/MST.png)
 
 ![Pipeline of MST](/figure/pipeline.png)
