@@ -9,7 +9,7 @@
 Code and models are coming soon.
 
 #### News
-- **2022.04.02 :** Further work [MST++](https://github.com/caiyuanhao1998/MST-plus-plus/) won the **champion** of NTIRE 2022 Spectral Reconstruction Challenge. :trophy: 
+- **2022.04.02 :** Further work [MST++](https://github.com/caiyuanhao1998/MST-plus-plus/) has won the NTIRE 2022 Spectral Reconstruction Challenge. :trophy: 
 - **2022.03.02 :** Our paper has been accepted by CVPR 2022, code and models are coming soon. :rocket: 
 
 |            *Scene 2*             |             *Scene 3*             |             *Scene 4*             |             *Scene 7*             |
