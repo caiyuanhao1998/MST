@@ -10,7 +10,7 @@
 
 
 #### News
-- **2022.06.14 :** Code and models have been released. This repo also supports 8 other learning-based methods to serve as a baseline for Spectral Compressive Imaging. The model zoo will be enlarged.
+- **2022.06.14 :** Code and models have been released. This repo supports 9 learning-based methods to serve as a baseline for Spectral Compressive Imaging. The model zoo will be enlarged.
 - **2022.04.02 :** Further work [MST++](https://github.com/caiyuanhao1998/MST-plus-plus/) has won the NTIRE 2022 Spectral Reconstruction Challenge. :trophy: 
 - **2022.03.02 :** Our paper has been accepted by CVPR 2022, code and models are coming soon. :rocket: 
 
