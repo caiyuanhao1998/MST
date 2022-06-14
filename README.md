@@ -83,9 +83,9 @@ Note: access code for `Baidu Disk` is `mst1`.
 
 - Python packages:
 
-  ```shell
-  pip install -r requirements.txt
-  ```
+```shell
+pip install -r requirements.txt
+```
 
 ## 2. Prepare Dataset:
 
