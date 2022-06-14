@@ -132,7 +132,7 @@ Download cave_1024_28 ([One Drive](https://bupteducn-my.sharepoint.com/:f:/g/per
                 |--scene5.mat
 ```
 
-Following the setting of TSA-Net and DGSMP, we use the CAVE dataset (cave_1024_28) as the simulation training set. Both the CAVE (CAVE_512_28) and KAIST (KAIST_CVPR2021) datasets are used as the real training set. 
+Following TSA-Net and DGSMP, we use the CAVE dataset (cave_1024_28) as the simulation training set. Both the CAVE (CAVE_512_28) and KAIST (KAIST_CVPR2021) datasets are used as the real training set. 
 
 ## 3. Simulation Experiement:
 
