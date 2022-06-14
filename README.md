@@ -44,7 +44,7 @@ We are going to enlarge our model zoo in the future.
 * [x] [GAP-Net](https://arxiv.org/abs/2012.08364) (Arxiv 2020)
 * [x] [TSA-Net](https://link.springer.com/chapter/10.1007/978-3-030-58592-1_12) (ECCV 2020)
 * [x] [ADMM-Net](https://openaccess.thecvf.com/content_ICCV_2019/html/Ma_Deep_Tensor_ADMM-Net_for_Snapshot_Compressive_Imaging_ICCV_2019_paper.html) (ICCV 2019)
-* [x] [Lambda-Net](https://ieeexplore.ieee.org/document/9010044) (ICCV 2019)
+* [x] [λ-Net](https://ieeexplore.ieee.org/document/9010044) (ICCV 2019)
 
 
 </details>
