@@ -51,7 +51,7 @@ We are going to enlarge our model zoo in the future.
 
 ![comparison_fig](/figure/compare_fig.png)
 
-### Results on NTIRE 2022 HSI Dataset - Validation
+### Quantitative Comparison on Simulation Dataset
 |  Method   | Params (M) | FLOPS (G) |    PSNR    |    SSIM    |  Model Zoo   |  Simulation  Result  |  Real  Result  |
 | :-------: | :--------: | :-------: | :--------: | :--------: | :----------: | :------------------: | :------------: |
 |   [λ-Net](https://ieeexplore.ieee.org/document/9010044)   |    28.53    |  0.841   |   0.3814   |   0.0588   | [Google Drive](https://drive.google.com/file/d/1DqeTNNYaIKodCQWrhclVO3bXw1r4OAxJ/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1VebfZFZCNxeT44IE5GtLsg)| -/- |
@@ -65,6 +65,8 @@ We are going to enlarge our model zoo in the future.
 |   [MST-S](https://arxiv.org/abs/2111.07910)   |    3.62    |  101.59   |   0.1817   |   0.0270   | [Google Drive](https://drive.google.com/file/d/1amYEpxlBnT1pmk7JmKWYT_bi7WAJH-ad/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1CZYtmNj2tE30KmWM8em7gg) | -/- |
 |   [MST-M](https://arxiv.org/abs/2111.07910)   |    2.45    |   32.07   |   0.1772   |   0.0256   | [Google Drive](https://drive.google.com/file/d/17dMffhghFf7nZIqR_f8fNY7Kqh_Xm4Vw/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1X1ICPhJuX91RpEkAQykYGQ) | -/- |
 |   [MST-L](https://arxiv.org/abs/2111.07910)   |    2.45    |   32.07   |   0.1772   |   0.0256   | [Google Drive](https://drive.google.com/file/d/17dMffhghFf7nZIqR_f8fNY7Kqh_Xm4Vw/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1X1ICPhJuX91RpEkAQykYGQ) | -/- |
+
+The performance are reported on 10 scenes of the KAIST dataset. The test size of FLOPS is 256 x 256.
 
 Note: access code for `Baidu Disk` is `mst1`.
 
