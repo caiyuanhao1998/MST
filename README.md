@@ -89,7 +89,7 @@ Note: access code for `Baidu Disk` is `mst1`.
 
 ## 2. Prepare Dataset:
 
-Download cave_1024_28 ([One Drive](https://bupteducn-my.sharepoint.com/:f:/g/personal/mengziyi_bupt_edu_cn/EmNAsycFKNNNgHfV9Kib4osB7OD4OSu-Gu6Qnyy5PweG0A?e=5NrM6S)), CAVE_512_28 ([Baidu Disk](https://pan.baidu.com/s/1ue26weBAbn61a7hyT9CDkg), code: `ixoe`), KAIST_CVPR2021 ([Baidu Disk](https://pan.baidu.com/s/1LfPqGe0R_tuQjCXC_fALZA), code: `5mmn`), TSA_simu_data ([One Drive](https://1drv.ms/u/s!Au_cHqZBKiu2gYFDwE-7z1fzeWCRDA?e=ofvwrD)), TSA_real_data ([One Drive](https://1drv.ms/u/s!Au_cHqZBKiu2gYFTpCwLdTi_eSw6ww?e=uiEToT)), and then put them into the corresponding folders of 'datasets/' and recollect them as the following form:
+Download cave_1024_28 ([One Drive](https://bupteducn-my.sharepoint.com/:f:/g/personal/mengziyi_bupt_edu_cn/EmNAsycFKNNNgHfV9Kib4osB7OD4OSu-Gu6Qnyy5PweG0A?e=5NrM6S)), CAVE_512_28 ([Baidu Disk](https://pan.baidu.com/s/1ue26weBAbn61a7hyT9CDkg), code: `ixoe`), KAIST_CVPR2021 ([Baidu Disk](https://pan.baidu.com/s/1LfPqGe0R_tuQjCXC_fALZA), code: `5mmn`), TSA_simu_data ([One Drive](https://1drv.ms/u/s!Au_cHqZBKiu2gYFDwE-7z1fzeWCRDA?e=ofvwrD)), TSA_real_data ([One Drive](https://1drv.ms/u/s!Au_cHqZBKiu2gYFTpCwLdTi_eSw6ww?e=uiEToT)), and then put them into the corresponding folders of `datasets/` and recollect them as the following form:
 
 ```shell
 |--MST
@@ -132,7 +132,7 @@ Download cave_1024_28 ([One Drive](https://bupteducn-my.sharepoint.com/:f:/g/per
                 |--scene5.mat
 ```
 
-Following the setting of TSA-Net and DGSMP, we use the CAVE dataset (cave_1024_28) as the simulation training set. And we use both the CAVE (CAVE_512_28) and KAIST (KAIST_CVPR2021) datasets as the real training set. 
+Following the setting of TSA-Net and DGSMP, we use the CAVE dataset (cave_1024_28) as the simulation training set. Both the CAVE (CAVE_512_28) and KAIST (KAIST_CVPR2021) datasets are used as the real training set. 
 
 ## 3. Simulation Experiement:
 
@@ -175,13 +175,13 @@ python train.py --template mst_plus_plus --outf ./exp/mst_plus_plus/ --method ms
 python train.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_net
 ```
 
-The training log, trained model, and reconstrcuted HSI will be available in "MST/simulation/test_code/exp/" . 
+The training log, trained model, and reconstrcuted HSI will be available in `MST/simulation/test_code/exp/` . 
 
 (2)  Testing :	
 
-a. Download the pretrained model zoo from ([Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw), code: `mst1`) and place them to `MST/simulation/test_code/model_zoo/`.
+Download the pretrained model zoo from ([Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw), code: `mst1`) and place them to `MST/simulation/test_code/model_zoo/`.
 
-b. Run the following command to test the model on the simulation dataset.
+Run the following command to test the model on the simulation dataset.
 
 ```python
 cd MST/simulation/test_code/
@@ -220,14 +220,27 @@ python test.py --template mst_plus_plus --outf ./exp/mst_plus_plus/ --method mst
 python test.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_net --pretrained_model_path ./model_zoo/lambda_net/lambda_net.pth
 ```
 
-- The reconstrcuted HSI will be available in "MST/simulation/test_code/exp/" .  
+- The reconstrcuted HSIs will be output in `MST/simulation/test_code/exp/` .  
 
-- Put "MST/simulation/test_code/exp/" to "MST/simulation/test_code/Quality_Metrics/results" and run "cal_quality_assessment.m" to calculate the PSNR and SSIM of the reconstructed HSIs.
+- Place the reconstructed results into `MST/simulation/test_code/Quality_Metrics/results` and  
+'''
+Run cal_quality_assessment.m
+'''
+to calculate the PSNR and SSIM of the reconstructed HSIs.
 
 (3)  Visualization :	
 
-- Run "MST/visualization/show_simulation.m" to generate the RGB images of the reconstructed HSI.
-- Run "MST/visualization/show_line.m" to draw the spetra density lines.
+- Generate the RGB images of the reconstructed HSIs.
+'''
+ cd MST/visualization/
+ Run show_simulation.m 
+'''
+
+- Draw the spetra density lines.
+'''
+cd MST/visualization/
+Run show_line.m
+'''
 
 ## 4. Real Experiement:
 
