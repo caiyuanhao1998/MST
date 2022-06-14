@@ -72,7 +72,7 @@ The performance are reported on 10 scenes of the KAIST dataset. The test size of
 
 Note: access code for `Baidu Disk` is `mst1`.
 
-## 1. Create Envirement:
+#### 1. Create Environment:
 
 ------
 
@@ -86,15 +86,18 @@ Note: access code for `Baidu Disk` is `mst1`.
   pip install -r requirements.txt
   ```
 
-## 2. Prepare Dataset:
+#### 2. Prepare Dataset:
 
-Download simulation and real dataset from https://github.com/mengziyi64/TSA-Net and https://github.com/TaoHuang95/DGSMP, and then put them into the corresponding folders of 'datasets/' and recollect them as the following form:
+Download cave_1024_28 ([One Drive](https://bupteducn-my.sharepoint.com/:f:/g/personal/mengziyi_bupt_edu_cn/EmNAsycFKNNNgHfV9Kib4osB7OD4OSu-Gu6Qnyy5PweG0A?e=5NrM6S)), CAVE_512_28 ([Baidu Disk](https://pan.baidu.com/s/1ue26weBAbn61a7hyT9CDkg), code: `ixoe`), KAIST_CVPR2021 ([Baidu Disk](https://pan.baidu.com/s/1LfPqGe0R_tuQjCXC_fALZA), code: `5mmn`), TSA_simu_data ([One Drive](https://1drv.ms/u/s!Au_cHqZBKiu2gYFDwE-7z1fzeWCRDA?e=ofvwrD)), TSA_real_data ([One Drive](https://1drv.ms/u/s!Au_cHqZBKiu2gYFTpCwLdTi_eSw6ww?e=uiEToT)), and then put them into the corresponding folders of 'datasets/' and recollect them as the following form:
 
 ```shell
-|--MST-plus-plus
-    |--test_challenge_code
-    |--test_develop_code
-    |--train_code  
+|--MST
+    |--real
+    	|-- test_code
+    	|-- train_code
+    |--simulation
+    	|-- test_code
+    	|-- train_code
     |--datasets
         |--cave_1024_28
             |--scene1.mat
@@ -126,9 +129,10 @@ Download simulation and real dataset from https://github.com/mengziyi64/TSA-Net 
                 ： 
                 |--scene5.mat
 ```
+
 Following the setting of TSA-Net and DGSMP, we use the CAVE dataset (cave_1024_28) as the simulation training set. And we use both the CAVE (CAVE_512_28) and KAIST (KAIST_CVPR2021) datasets as the real training set. 
 
-## 3. Simulation Experiement:
+#### 3. Simulation Experiement:
 
 (1)  Training:	
 
@@ -172,6 +176,10 @@ python train.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_n
 The training log, trained model, and reconstrcuted HSI will be available in "MST/simulation/test_code/exp/" . 
 
 (2)  Testing :	
+
+a. Download the pretrained model zoo from ([Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw), code: `mst1`) and place them to `MST/simulation/test_code/model_zoo/`.
+
+b. Run the following command to test the model on the simulation dataset.
 
 ```python
 cd MST/simulation/test_code/
@@ -219,7 +227,7 @@ python test.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_ne
 - Run "MST/visualization/show_simulation.m" to generate the RGB images of the reconstructed HSI.
 - Run "MST/visualization/show_line.m" to draw the spetra density lines.
 
-## 4. Real Experiement:
+#### 4. Real Experiement:
 
 (1)  Training:	
 
