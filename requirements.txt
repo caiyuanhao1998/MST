@@ -1,0 +1,6 @@
+opencv-python==4.4.0.46
+einops
+torchvision==0.7.0
+torch==1.6.0
+scipy
+
