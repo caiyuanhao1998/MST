@@ -179,7 +179,7 @@ The training log, trained model, and reconstrcuted HSI will be available in `MST
 
 (2)  Testing :	
 
-Download the pretrained model zoo from ([Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw), code: `mst1`) and place them to `MST/simulation/test_code/model_zoo/`.
+Download the pretrained model zoo from ([Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw), code: `mst1`) and place them to `MST/simulation/test_code/model_zoo/`
 
 Run the following command to test the model on the simulation dataset.
 
@@ -220,24 +220,28 @@ python test.py --template mst_plus_plus --outf ./exp/mst_plus_plus/ --method mst
 python test.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_net --pretrained_model_path ./model_zoo/lambda_net/lambda_net.pth
 ```
 
-- The reconstrcuted HSIs will be output in `MST/simulation/test_code/exp/` .  
+- The reconstrcuted HSIs will be output into `MST/simulation/test_code/exp/`  
 
 - Place the reconstructed results into `MST/simulation/test_code/Quality_Metrics/results` and  
-'''
+
+'''shell
 Run cal_quality_assessment.m
 '''
+
 to calculate the PSNR and SSIM of the reconstructed HSIs.
 
 (3)  Visualization :	
 
-- Generate the RGB images of the reconstructed HSIs.
-'''
+- Generate the RGB images of the reconstructed HSIs
+
+'''shell
  cd MST/visualization/
  Run show_simulation.m 
 '''
 
-- Draw the spetra density lines.
-'''
+- Draw the spetra density lines
+
+'''shell
 cd MST/visualization/
 Run show_line.m
 '''
