@@ -45,6 +45,8 @@ We are going to enlarge our model zoo in the future.
 * [x] [TSA-Net](https://link.springer.com/chapter/10.1007/978-3-030-58592-1_12) (ECCV 2020)
 * [x] [ADMM-Net](https://openaccess.thecvf.com/content_ICCV_2019/html/Ma_Deep_Tensor_ADMM-Net_for_Snapshot_Compressive_Imaging_ICCV_2019_paper.html) (ICCV 2019)
 * [x] [λ-Net](https://ieeexplore.ieee.org/document/9010044) (ICCV 2019)
+* [ ] [DAUHST](https://arxiv.org/abs/2205.10102) (Arxiv 2022)
+* [ ] [CST](https://arxiv.org/abs/2203.04845) (Arxiv 2022)
 
 
 </details>
@@ -52,20 +54,19 @@ We are going to enlarge our model zoo in the future.
 ![comparison_fig](/figure/compare_fig.png)
 
 ### Quantitative Comparison on Simulation Dataset
-|                            Method                            | Params (M) | FLOPS (G) | PSNR  | SSIM  |                          Model Zoo                           | Simulation  Result | Real  Result |
-| :----------------------------------------------------------: | :--------: | :-------: | :---: | :---: | :----------------------------------------------------------: | :----------------: | :----------: |
-|  [Lambda-Net](https://ieeexplore.ieee.org/document/9010044)  |   62.64    |  117.98   | 28.53 | 0.841 | [Google Drive](https://drive.google.com/drive/folders/11DwTFdgtG7sRnBwvkxxfN9rcOICsEdpC?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1xXkL2p4_mCLeTGa68wEbNQ?pwd=mst1) |        -/-         |              |
-| [ADMM-Net](https://openaccess.thecvf.com/content_ICCV_2019/html/Ma_Deep_Tensor_ADMM-Net_for_Snapshot_Compressive_Imaging_ICCV_2019_paper.html) |    4.27    |   78.58   | 33.58 | 0.918 | [Google Drive](https://drive.google.com/drive/folders/1I9JqdyikulUVjXcdciHaJxfAceqfaF2G?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1ddkA9TazTq0rZReFYgGHMg?pwd=mst1) |        -/-         |              |
-| [TSA-Net](https://link.springer.com/chapter/10.1007/978-3-030-58592-1_12) |   44.25    |  110.06   | 31.46 | 0.894 | [Google Drive](https://drive.google.com/drive/folders/1f29eS8WqXu31310nD-7mRR81XfLBYKBd?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1riGZ83AXXkcjHiGVNrNeYg?pwd=mst1) |        -/-         |              |
-|         [GAP-Net](https://arxiv.org/abs/2012.08364)          |    4.27    |   78.58   | 33.26 | 0.917 | [Google Drive](https://drive.google.com/drive/folders/1AF3P42DZtBzKpWvjTVKYoLmGHsL2f_SL?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1hraGGd_HEsfCkSGv5QyOaw?pwd=mst1) |        -/-         |              |
-|          [DGSMP](https://arxiv.org/abs/2103.07152)           |    3.76    |  646.65   | 32.63 | 0.917 | [Google Drive](https://drive.google.com/drive/folders/1j1k8mYKWh8FVe77Cz8hj69nI2lK2D5QC?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1v-uqYJZ5mQxOupLc6E_C1g?pwd=mst1) |        -/-         |              |
-| [BIRNAT](https://ieeexplore.ieee.org/abstract/document/9741335/) |    4.40    |  2122.66  | 37.58 | 0.960 | [Google Drive](https://drive.google.com/drive/folders/1bwhy0csM6GSNY0Qe9RS7_U3Bm9JJjHoc?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1HDMQu3jWvQ9X1yQA5dprGg?pwd=mst1) |        -/-         |              |
-|          [HDNet](https://arxiv.org/abs/2203.02149)           |    2.37    |  154.76   | 34.97 | 0.943 | [Google Drive](https://drive.google.com/drive/folders/1F41BlUQulzPCf5yNo-q6V6Mdtr7bPV6-?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1mCoGHT22cw7ElVSaXgU5Lw?pwd=mst1) |        -/-         |              |
-|          [MST++](https://arxiv.org/abs/2111.07910)           |    1.33    |   19.42   | 35.99 | 0.951 | [Google Drive](https://drive.google.com/drive/folders/1rbV8LYD5k1RVR4usMORoXxY2szlFsr_9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1QUx_MpYCBSU4Zas5gpao2g?pwd=mst1) |        -/-         |              |
-|          [MST-S](https://arxiv.org/abs/2111.07910)           |    0.93    |   12.96   | 34.26 | 0.935 | [Google Drive](https://drive.google.com/drive/folders/176f_PammL0ZrIg3lVaQwd6Vr6Ui8FANs?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1ZQ08_Ec3a_-8YYAa5ms5PQ?pwd=mst1) |        -/-         |              |
-|          [MST-M](https://arxiv.org/abs/2111.07910)           |    1.50    |   18.07   | 34.94 | 0.943 | [Google Drive](https://drive.google.com/drive/folders/176f_PammL0ZrIg3lVaQwd6Vr6Ui8FANs?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1ZQ08_Ec3a_-8YYAa5ms5PQ?pwd=mst1) |        -/-         |              |
-|          [MST-L](https://arxiv.org/abs/2111.07910)           |    2.03    |   28.15   | 35.18 | 0.948 | [Google Drive](https://drive.google.com/drive/folders/176f_PammL0ZrIg3lVaQwd6Vr6Ui8FANs?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1ZQ08_Ec3a_-8YYAa5ms5PQ?pwd=mst1) |        -/-         |              |
-
+|  Method   | Params (M) | FLOPS (G) |    PSNR    |    SSIM    |  Model Zoo   |  Simulation  Result  |  Real  Result  |
+| :-------: | :--------: | :-------: | :--------: | :--------: | :----------: | :------------------: | :------------: |
+|   [λ-Net](https://ieeexplore.ieee.org/document/9010044)   |    28.53    |  0.841   |   0.3814   |   0.0588   | [Google Drive](https://drive.google.com/file/d/1DqeTNNYaIKodCQWrhclVO3bXw1r4OAxJ/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1VebfZFZCNxeT44IE5GtLsg)| -/- |
+|   [ADMM-Net](https://openaccess.thecvf.com/content_ICCV_2019/html/Ma_Deep_Tensor_ADMM-Net_for_Snapshot_Compressive_Imaging_ICCV_2019_paper.html)   |   31.70    |  163.81   |   0.3476   |   0.0550   | [Google Drive](https://drive.google.com/file/d/1RZXtCj7q_80xUT59UmdoFPP3g1YDND02/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1gf0jtZfTNgMG7u-Jm3WQDw) | -/- |
+|   [TSA-Net](https://link.springer.com/chapter/10.1007/978-3-030-58592-1_12)    |    2.42    |  158.32   |   0.3277   |   0.0437   | [Google Drive](https://drive.google.com/file/d/1b2DyuxEr8u2_3mnM-dOWjz_YH8XK8ir3/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1R1xpN2dzm31eMR5Fw-SL1A) | -/- |
+|   [GAP-Net](https://arxiv.org/abs/2012.08364)    |    4.04    |  270.61   |   0.2500   |   0.0367   | [Google Drive](https://drive.google.com/file/d/1M16NrkHcGdzh9fu0NAdRXIMfCK3xQyy0/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/12U8F9YAh9HzykPbCuOJWBA) | -/- |
+|   [DGSMP](https://arxiv.org/abs/2103.07152)   |    2.66    |  173.81   |   0.2048   |   0.0317   | [Google Drive](https://drive.google.com/file/d/1HYWUplVkCgHznuInVeghYisdJuNqSr4z/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1G51Q4Fp9YdW17dvadAJGPQ) | -/- |
+|   [BIRNAT](https://ieeexplore.ieee.org/abstract/document/9741335/)   |    5.21    |   31.04   |   0.2032   |   0.0303   | [Google Drive](https://drive.google.com/file/d/1dOczPBwz6ZCcBCuRG7L7aJdfT4nCb1nx/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/16QMyRxnXjgx6wCg8kZr4Ww) | -/- |
+|   [HDNet](https://arxiv.org/abs/2203.02149)   |    3.75    |   42.95   |   0.1890   |   0.0274   | [Google Drive](https://drive.google.com/file/d/1Vndgr3csKZp624NtYWiSp8FTikDy8O6Q/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1W63FiCaP1VDfwcKBIWB55w) | -/- |
+|   [MST++](https://arxiv.org/abs/2111.07910) |   15.11    |   93.77   |   0.1833   |   0.0274   | [Google Drive](https://drive.google.com/file/d/1tDwe9X46bfaRrdTnQi4q2ZPnwssA5B2A/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1Y9uggzjOGXcuPj92QnRRnw) | -/- |
+|   [MST-S](https://arxiv.org/abs/2111.07910)   |    3.62    |  101.59   |   0.1817   |   0.0270   | [Google Drive](https://drive.google.com/file/d/1amYEpxlBnT1pmk7JmKWYT_bi7WAJH-ad/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1CZYtmNj2tE30KmWM8em7gg) | -/- |
+|   [MST-M](https://arxiv.org/abs/2111.07910)   |    2.45    |   32.07   |   0.1772   |   0.0256   | [Google Drive](https://drive.google.com/file/d/17dMffhghFf7nZIqR_f8fNY7Kqh_Xm4Vw/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1X1ICPhJuX91RpEkAQykYGQ) | -/- |
+|   [MST-L](https://arxiv.org/abs/2111.07910)   |    2.45    |   32.07   |   0.1772   |   0.0256   | [Google Drive](https://drive.google.com/file/d/17dMffhghFf7nZIqR_f8fNY7Kqh_Xm4Vw/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1X1ICPhJuX91RpEkAQykYGQ) | -/- |
 
 The performance are reported on 10 scenes of the KAIST dataset. The test size of FLOPS is 256 x 256.
 
