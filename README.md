@@ -328,11 +328,16 @@ python test.py --template mst_plus_plus --outf ./exp/mst_plus_plus/ --method mst
 python test.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_net --pretrained_model_path ./model_zoo/lambda_net/lambda_net.pth
 ```
 
-- The reconstrcuted HSI will be available in "MST/real/test_code/exp/" .  
+- The reconstrcuted HSI will be output into `MST/real/test_code/exp/`  
 
 (3)  Visualization :	
 
-- Run "MST/visualization/show_real.m" to generate the RGB images of the reconstructed HSI.
+- Generate the RGB images of the reconstructed HSI
+
+```shell
+cd MST/visualization/
+Run show_real.m
+```
 
 ## Citation
 If this repo helps you, please consider citing our works:
