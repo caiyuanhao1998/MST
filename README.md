@@ -224,9 +224,9 @@ python test.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_ne
 
 - Place the reconstructed results into `MST/simulation/test_code/Quality_Metrics/results` and  
 
-'''shell
+```shell
 Run cal_quality_assessment.m
-'''
+```
 
 to calculate the PSNR and SSIM of the reconstructed HSIs.
 
@@ -234,17 +234,17 @@ to calculate the PSNR and SSIM of the reconstructed HSIs.
 
 - Generate the RGB images of the reconstructed HSIs
 
-'''shell
+```shell
  cd MST/visualization/
  Run show_simulation.m 
-'''
+```
 
 - Draw the spetra density lines
 
-'''shell
+```shell
 cd MST/visualization/
 Run show_line.m
-'''
+```
 
 ## 4. Real Experiement:
 
