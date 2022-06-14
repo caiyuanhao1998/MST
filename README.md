@@ -77,8 +77,6 @@ Note: access code for `Baidu Disk` is `mst1`.
 
 ## 1. Create Environment:
 
-------
-
 - Python 3 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux))
 
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
