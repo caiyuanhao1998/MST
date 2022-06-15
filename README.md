@@ -73,7 +73,7 @@ We are going to enlarge our model zoo in the future.
 
 The performance are reported on 10 scenes of the KAIST dataset. The test size of FLOPS is 256 x 256.
 
-Note: access code for `Baidu Disk` is `mst1`.
+Note: access code for `Baidu Disk` is `mst1`
 
 ## 1. Create Environment:
 
