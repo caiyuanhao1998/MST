@@ -176,7 +176,7 @@ python train.py --template mst_plus_plus --outf ./exp/mst_plus_plus/ --method ms
 python train.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_net
 ```
 
-The training log, trained model, and reconstrcuted HSI will be available in `MST/simulation/test_code/exp/` . 
+The training log, trained model, and reconstrcuted HSI will be available in `MST/simulation/train_code/exp/` . 
 
 (2)  Testing :	
 
@@ -288,7 +288,7 @@ python train.py --template mst_plus_plus --outf ./exp/mst_plus_plus/ --method ms
 python train.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_net
 ```
 
-The training log, trained model, and reconstrcuted HSI will be available in `MST/real/test_code/exp/` . 
+The training log, trained model, and reconstrcuted HSI will be available in `MST/real/train_code/exp/` . 
 
 (2)  Testing :	
 
