@@ -344,6 +344,7 @@ If this repo helps you, please consider citing our works:
 
 
 ```
+# MST
 @inproceedings{mst,
 	title={Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction},
 	author={Yuanhao Cai and Jing Lin and Xiaowan Hu and Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
@@ -351,6 +352,7 @@ If this repo helps you, please consider citing our works:
 	year={2022}
 }
 
+# MST++
 @inproceedings{mst_pp,
   title={MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction},
   author={Yuanhao Cai and Jing Lin and Zudi Lin and Haoqian Wang and Yulun Zhang and Hanspeter Pfister and Radu Timofte and Luc Van Gool},
@@ -358,6 +360,7 @@ If this repo helps you, please consider citing our works:
   year={2022}
 }
 
+# HDNet
 @inproceedings{hdnet,
 	title={HDNet: High-resolution Dual-domain Learning for Spectral Compressive Imaging},
 	author={Xiaowan Hu and Yuanhao Cai and Jing Lin and  Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
