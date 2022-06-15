@@ -343,7 +343,8 @@ Run show_real.m
 If this repo helps you, please consider citing our works:
 
 
-```
+```shell
+
 # MST
 @inproceedings{mst,
 	title={Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction},
@@ -367,4 +368,5 @@ If this repo helps you, please consider citing our works:
 	booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
 	year={2022}
 }
+
 ```
