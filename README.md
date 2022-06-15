@@ -239,7 +239,7 @@ to calculate the PSNR and SSIM of the reconstructed HSIs.
  Run show_simulation.m 
 ```
 
-- Draw the spetra density lines
+- Draw the spetral density lines
 
 ```shell
 cd MST/visualization/
@@ -287,7 +287,7 @@ python train.py --template mst_plus_plus --outf ./exp/mst_plus_plus/ --method ms
 python train.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_net
 ```
 
-The training log, trained model, and reconstrcuted HSI will be available in "MST/real/test_code/exp/" . 
+The training log, trained model, and reconstrcuted HSI will be available in `MST/real/test_code/exp/` . 
 
 (2)  Testing :	
 
