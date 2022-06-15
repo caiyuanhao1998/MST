@@ -2,11 +2,11 @@
 clear; clc;
 method_name = {'desci','gapnet', 'gaptv', 'HSSP', 'lamnet', 'TSA', 'twist','truth','dgsmp'};
 for i=1:9
-    load(['simulation_results\',method_name{i},'.mat']);
+    load(['simulation_results\results\kaist_10_',method_name{i},'.mat']);
 end
 res = permute(res,[1,3,4,2]);
 
-load(['simulation_results\','mst','.mat']);
+load(['simulation_results\results\kaist_10_','mst','.mat']);
 pred_block_mst = pred;
 
 lam28 = [453.5 457.5 462.0 466.0 471.5 476.5 481.5 487.0 492.5 498.0 504.0 510.0...
