@@ -29,7 +29,6 @@ set(plot1(7),'DisplayName',' TwIST, corr: '+string(roundn(Corr(6),-4)),'Color',[
 set(plot1(8),'DisplayName',' GAP-Net, corr: '+string(roundn(Corr(7),-4)),'Color',[0.66 0.01 0.62]);
 set(plot1(9),'DisplayName',' DGSMP, corr: '+string(roundn(Corr(8),-4)),'Color',[1 1 0]);
 set(plot1(10),'DisplayName',' MST-L, corr: '+string(roundn(Corr(9),-4)),'Color',[0 0.5 0.5]);
-set(plot1(11),'DisplayName',' DAUHST-9stg, corr: '+string(roundn(Corr(10),-4)),'Color',[0 1 0]);
 
 
 
