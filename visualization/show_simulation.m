@@ -1,7 +1,7 @@
 %% plot color pics
 clear; clc;
-load('simulation_results\mst_l\Test_result.mat');
-save_file = 'simulation_rgb_results\mst\';
+load('simulation_results\results\kaist_10_mst.mat');
+save_file = 'simulation_results\rgb_results\mst\';
 mkdir(save_file);
 
 close all;
@@ -22,5 +22,7 @@ for i = 1:10
     frame = frame+1;
 end
 close all;
+
+
 
 
