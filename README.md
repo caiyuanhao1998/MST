@@ -10,7 +10,7 @@
 
 
 #### News
-- **2022.06.14 :** Code and models have been released. This repo supports 12 learning-based methods to serve as a baseline for Spectral Compressive Imaging. The model zoo will be enlarged. 🔥
+- **2022.06.14 :** Code and models have been released. This repo supports 11 learning-based methods to serve as a baseline for Spectral Compressive Imaging. The model zoo will be enlarged. 🔥
 - **2022.05.20 :** Our work [DAUHST](https://arxiv.org/abs/2205.10102) is on arxiv. Code and models are coming soon. :dizzy:
 - **2022.04.02 :** Further work [MST++](https://github.com/caiyuanhao1998/MST-plus-plus/) has won the NTIRE 2022 Spectral Reconstruction Challenge. :trophy: 
 - **2022.03.09 :** Our work [CST](https://arxiv.org/abs/2203.04845) is on arxiv. Code and models are coming soon. :dizzy:
@@ -30,7 +30,7 @@
 
 
 ## Comparison with State-of-the-art Methods
-This repo is a baseline and toolbox containing 12 learning-based algorithms for spectral compressive imaging.
+This repo is a baseline and toolbox containing 11 learning-based algorithms for spectral compressive imaging.
 
 We are going to enlarge our model zoo in the future.
 
@@ -47,7 +47,6 @@ We are going to enlarge our model zoo in the future.
 * [x] [TSA-Net](https://link.springer.com/chapter/10.1007/978-3-030-58592-1_12) (ECCV 2020)
 * [x] [ADMM-Net](https://openaccess.thecvf.com/content_ICCV_2019/html/Ma_Deep_Tensor_ADMM-Net_for_Snapshot_Compressive_Imaging_ICCV_2019_paper.html) (ICCV 2019)
 * [x] [λ-Net](https://ieeexplore.ieee.org/document/9010044) (ICCV 2019)
-* [ ] [SRN](http://128.84.4.34/abs/2108.07739) (Arxiv 2021)
 * [ ] [DAUHST](https://arxiv.org/abs/2205.10102) (Arxiv 2022)
 * [ ] [CST](https://arxiv.org/abs/2203.04845) (Arxiv 2022)
 
