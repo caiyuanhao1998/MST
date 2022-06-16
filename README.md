@@ -232,6 +232,7 @@ Run cal_quality_assessment.m
 to calculate the PSNR and SSIM of the reconstructed HSIs.
 
 (3)  Visualization :	
+- Put the reconstruted HSI in `MST/visualization/simulation_results/results` and rename it as "method.mat", e.g., mst_s.mat.
 
 - Generate the RGB images of the reconstructed HSIs
 
@@ -332,6 +333,8 @@ python test.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_ne
 - The reconstrcuted HSI will be output into `MST/real/test_code/exp/`  
 
 (3)  Visualization :	
+
+- Put the reconstruted HSI in `MST/visualization/real_results/results` and rename it as "method.mat", e.g., mst_plus_plus.mat.
 
 - Generate the RGB images of the reconstructed HSI
 
