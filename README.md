@@ -8,6 +8,7 @@
 
 *The first two authors contribute equally to this work*
 
+![ntire](/figure/ntire.png)
 
 #### News
 - **2022.06.14 :** Code and models have been released. This repo supports 11 learning-based methods to serve as a baseline and toolbox for Spectral Compressive Imaging. The model zoo will be enlarged. 🔥
