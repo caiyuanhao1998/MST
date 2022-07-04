@@ -11,11 +11,12 @@
 ![ntire](/figure/ntire.png)
 
 #### News
-- **2022.06.14 :** Code and models have been released. This repo supports 11 learning-based methods to serve as a baseline and toolbox for Spectral Compressive Imaging. The model zoo will be enlarged. 🔥
+- **2022.07.04 :** Our paper [CST](https://arxiv.org/abs/2203.04845) has been accepted by ECCV 2022, code and models are coming soon. :rocket:
+- **2022.06.14 :** Code and models of [MST](https://arxiv.org/abs/2111.07910) and [MST++](https://arxiv.org/abs/2111.07910) have been released. This repo supports 11 learning-based methods to serve as a baseline and toolbox for Spectral Compressive Imaging. The model zoo will be enlarged. 🔥
 - **2022.05.20 :** Our work [DAUHST](https://arxiv.org/abs/2205.10102) is on arxiv. Code and models are coming soon. :dizzy:
 - **2022.04.02 :** Further work [MST++](https://github.com/caiyuanhao1998/MST-plus-plus/) has won the NTIRE 2022 Spectral Reconstruction Challenge. :trophy: 
 - **2022.03.09 :** Our work [CST](https://arxiv.org/abs/2203.04845) is on arxiv. Code and models are coming soon. :dizzy:
-- **2022.03.02 :** Our paper has been accepted by CVPR 2022, code and models are coming soon. :rocket: 
+- **2022.03.02 :** Our paper MST has been accepted by CVPR 2022, code and models are coming soon. :rocket: 
 
 |            *Scene 2*             |             *Scene 3*             |             *Scene 4*             |             *Scene 7*             |
 | :------------------------------: | :-------------------------------: | :-------------------------------: | :-------------------------------: |
@@ -48,8 +49,9 @@ We are going to enlarge our model zoo in the future.
 * [x] [TSA-Net](https://link.springer.com/chapter/10.1007/978-3-030-58592-1_12) (ECCV 2020)
 * [x] [ADMM-Net](https://openaccess.thecvf.com/content_ICCV_2019/html/Ma_Deep_Tensor_ADMM-Net_for_Snapshot_Compressive_Imaging_ICCV_2019_paper.html) (ICCV 2019)
 * [x] [λ-Net](https://ieeexplore.ieee.org/document/9010044) (ICCV 2019)
+* [ ] [CST](https://arxiv.org/abs/2203.04845) (ECCV 2022)
 * [ ] [DAUHST](https://arxiv.org/abs/2205.10102) (Arxiv 2022)
-* [ ] [CST](https://arxiv.org/abs/2203.04845) (Arxiv 2022)
+
 
 
 </details>
