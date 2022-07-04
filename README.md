@@ -356,17 +356,25 @@ If this repo helps you, please consider citing our works:
 @inproceedings{mst,
 	title={Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction},
 	author={Yuanhao Cai and Jing Lin and Xiaowan Hu and Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
-	booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+	booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
 	year={2022}
 }
 
 
 # MST++
 @inproceedings{mst_pp,
-  title={MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction},
-  author={Yuanhao Cai and Jing Lin and Zudi Lin and Haoqian Wang and Yulun Zhang and Hanspeter Pfister and Radu Timofte and Luc Van Gool},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
-  year={2022}
+	title={MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction},
+	author={Yuanhao Cai and Jing Lin and Zudi Lin and Haoqian Wang and Yulun Zhang and Hanspeter Pfister and Radu Timofte and Luc Van Gool},
+	booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops},
+	year={2022}
+}
+
+# CST
+@inproceedings{cst,
+	title={Coarse-to-Fine Sparse Transformer for Hyperspectral Image Reconstruction},
+	author={Lin, Jing and Cai, Yuanhao and Hu, Xiaowan and Wang, Haoqian and Yuan, Xin and Zhang, Yulun and Timofte, Radu and Van Gool, Luc},
+	booktitle={European Conference on Computer Vision},
+	year={2022}
 }
 
 
@@ -374,7 +382,7 @@ If this repo helps you, please consider citing our works:
 @inproceedings{hdnet,
 	title={HDNet: High-resolution Dual-domain Learning for Spectral Compressive Imaging},
 	author={Xiaowan Hu and Yuanhao Cai and Jing Lin and  Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
-	booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+	booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
 	year={2022}
 }
 
