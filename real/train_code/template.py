@@ -38,6 +38,12 @@ def set_template(args):
         args.input_setting = 'Y'
         args.input_mask = None
         args.scheduler = 'CosineAnnealingLR'
+    
+    if args.template.find('cst') >= 0:
+        args.input_setting = 'Y'
+        args.input_mask = None
+        args.scheduler = 'CosineAnnealingLR'
+        args.max_epoch = 500
 
     if args.template.find('dnu') >= 0:
         args.input_setting = 'Y'

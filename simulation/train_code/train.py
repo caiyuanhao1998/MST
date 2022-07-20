@@ -8,6 +8,7 @@ import numpy as np
 from torch.autograd import Variable
 import datetime
 from option import opt
+import torch.nn.functional as F
 
 os.environ["CUDA_DEVICE_ORDER"] = 'PCI_BUS_ID'
 os.environ["CUDA_VISIBLE_DEVICES"] = opt.gpu_id
@@ -57,8 +58,17 @@ def train(epoch, logger):
         gt = Variable(gt_batch).cuda().float()
         input_meas = init_meas(gt, mask3d_batch_train, opt.input_setting)
         optimizer.zero_grad()
-        model_out = model(input_meas, input_mask_train)
-        loss = torch.sqrt(mse(model_out, gt))
+
+        if opt.method in ['cst_s', 'cst_m', 'cst_l']:
+            model_out, diff_pred = model(input_meas, input_mask_train)
+            loss = torch.sqrt(mse(model_out, gt))
+            diff_gt = torch.mean(torch.abs(model_out.detach() - gt),dim=1, keepdim=True)  # [b,1,h,w]
+            loss_sparsity = F.mse_loss(diff_gt, diff_pred)
+            loss = loss + 2 * loss_sparsity
+        else:
+            model_out = model(input_meas, input_mask_train)
+            loss = torch.sqrt(mse(model_out, gt))
+
         if opt.method=='hdnet':
             fdl_loss = FDL_loss(model_out, gt)
             loss = loss + 0.7 * fdl_loss
@@ -77,7 +87,11 @@ def test(epoch, logger):
     model.eval()
     begin = time.time()
     with torch.no_grad():
-        model_out = model(input_meas, input_mask_test)
+        if opt.method in ['cst_s', 'cst_m', 'cst_l']:
+            model_out, _ = model(input_meas, input_mask_test)
+        else:
+            model_out = model(input_meas, input_mask_test)
+
     end = time.time()
     for k in range(test_gt.shape[0]):
         psnr_val = torch_psnr(model_out[k, :, :, :], test_gt[k, :, :, :])

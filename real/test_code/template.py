@@ -4,6 +4,10 @@ def set_template(args):
         args.input_setting = 'Y'
         args.input_mask = None
 
+    if args.template.find('cst') >= 0:
+        args.input_setting = 'Y'
+        args.input_mask = None
+
     if args.template.find('gap_net') >= 0 or args.template.find('admm_net') >= 0:
         args.input_setting = 'Y'
         args.input_mask = 'Phi_PhiPhiT'

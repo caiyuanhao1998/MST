@@ -277,11 +277,10 @@ class MST_Plus_Plus(nn.Module):
         self.body = nn.Sequential(*modules_body)
         self.conv_out = nn.Conv2d(n_feat, out_channels, kernel_size=3, padding=(3 - 1) // 2,bias=False)
 
-    def initial_x(self, y, input_mask=None):
+    def initial_x(self, y):
         """
         :param y: [b,1,256,310]
-        :param Phi: [b,28,256,310]
-        :return: z: [b,28,256,310]
+        :return: x: [b,28,256,310]
         """
         nC, step = 28, 2
         bs, row, col = y.shape
@@ -291,7 +290,7 @@ class MST_Plus_Plus(nn.Module):
         x = self.fution(x)
         return x
 
-    def forward(self, y):
+    def forward(self, y, input_mask=None):
         """
         x: [b,c,h,w]
         return out:[b,c,h,w]

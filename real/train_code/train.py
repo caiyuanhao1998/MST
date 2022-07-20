@@ -3,26 +3,12 @@ from utils import *
 from dataset import dataset
 import torch.utils.data as tud
 import torch
+import torch.nn.functional as F
 import time
 import datetime
 from torch.autograd import Variable
 import os
 from option import opt
-
-# def prepare_data_KAIST(path, file_num):
-#     HR_HSI = np.zeros((((2704,3376,28,file_num))))
-#     file_list = os.listdir(path)
-#     # for idx in range(1):
-#     for idx in range(file_num):
-#         print(f'loading KAIST {idx}')
-#         ####  read HrHSI
-#         HR_code = file_list[idx]
-#         path1 = os.path.join(path) + HR_code
-#         data = sio.loadmat(path1)
-#         HR_HSI[:,:,:,idx] = data['HSI']
-#         HR_HSI[HR_HSI < 0] = 0
-#         HR_HSI[HR_HSI > 1] = 1
-#     return HR_HSI
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = opt.gpu_id
@@ -77,9 +63,17 @@ if __name__ == "__main__":
             input, label, Phi, Phi_s = input.cuda(), label.cuda(), Phi.cuda(), Phi_s.cuda()
 
             input_mask = init_mask(Mask, Phi, Phi_s, opt.input_mask)
-            out = model(input, input_mask)
-
-            loss = criterion(out, label)
+            
+            if opt.method in ['cst_s', 'cst_m', 'cst_l']:
+                out, diff_pred = model(input, input_mask)
+                loss = criterion(out, label)
+                diff_gt = torch.mean(torch.abs(out.detach() - label),dim=1, keepdim=True)  # [b,1,h,w]
+                loss_sparsity = F.mse_loss(diff_gt, diff_pred)
+                loss = loss + 2 * loss_sparsity
+            else:
+                out = model(input, input_mask)
+                loss = criterion(out, label)
+            
             if opt.method == 'hdnet':
                 fdl_loss = FDL_loss(out, label)
                 loss = loss + 0.7 * fdl_loss

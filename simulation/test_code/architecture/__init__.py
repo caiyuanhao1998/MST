@@ -8,6 +8,7 @@ from .DGSMP import HSI_CS
 from .BIRNAT import BIRNAT
 from .MST_Plus_Plus import MST_Plus_Plus
 from .Lambda_Net import Lambda_Net
+from .CST import CST
 
 def model_generator(method, pretrained_model_path=None):
     if method == 'mst_s':
@@ -39,6 +40,14 @@ def model_generator(method, pretrained_model_path=None):
         model = MST_Plus_Plus(in_channels=28, out_channels=28, n_feat=28, stage=3).cuda()
     elif method == 'lambda_net':
         model = Lambda_Net(out_ch=28).cuda()
+    elif method == 'cst_s':
+        model = CST(num_blocks=[1, 1, 2], sparse=True).cuda()
+    elif method == 'cst_m':
+        model = CST(num_blocks=[2, 2, 2], sparse=True).cuda()
+    elif method == 'cst_l':
+        model = CST(num_blocks=[2, 4, 6], sparse=True).cuda()
+    elif method == 'cst_l_plus':
+        model = CST(num_blocks=[2, 4, 6], sparse=False).cuda()
     else:
         print(f'Method {method} is not defined !!!!')
     if pretrained_model_path is not None:

@@ -49,7 +49,7 @@ We are going to enlarge our model zoo in the future.
 * [x] [TSA-Net](https://link.springer.com/chapter/10.1007/978-3-030-58592-1_12) (ECCV 2020)
 * [x] [ADMM-Net](https://openaccess.thecvf.com/content_ICCV_2019/html/Ma_Deep_Tensor_ADMM-Net_for_Snapshot_Compressive_Imaging_ICCV_2019_paper.html) (ICCV 2019)
 * [x] [λ-Net](https://ieeexplore.ieee.org/document/9010044) (ICCV 2019)
-* [ ] [CST](https://arxiv.org/abs/2203.04845) (ECCV 2022)
+* [x] [CST](https://arxiv.org/abs/2203.04845) (ECCV 2022)
 * [ ] [DAUHST](https://arxiv.org/abs/2205.10102) (Arxiv 2022)
 
 
@@ -73,6 +73,10 @@ We are going to enlarge our model zoo in the future.
 |          [MST-M](https://arxiv.org/abs/2111.07910)           |    1.50    |   18.07   | 34.94 | 0.943 | [Google Drive](https://drive.google.com/drive/folders/176f_PammL0ZrIg3lVaQwd6Vr6Ui8FANs?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1ZQ08_Ec3a_-8YYAa5ms5PQ?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1hnEuwYO9luwLmPeT98cUaik_zCPK6z30?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1OUuozfd3zLqzBjHnf6evCQ?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1FSwDZKAC03B8XhyAkaL9t1MWFz6q985y?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1H1pT1oKfK_o4EDXkts8VMQ?pwd=mst1) |
 |          [MST-L](https://arxiv.org/abs/2111.07910)           |    2.03    |   28.15   | 35.18 | 0.948 | [Google Drive](https://drive.google.com/drive/folders/176f_PammL0ZrIg3lVaQwd6Vr6Ui8FANs?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1ZQ08_Ec3a_-8YYAa5ms5PQ?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/18ZF5wC1LRmqOh6VDeXD4eB8mP0Dvv6jb?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1imed0w1CWqx7IOlSpVh7qw?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1FSwDZKAC03B8XhyAkaL9t1MWFz6q985y?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1H1pT1oKfK_o4EDXkts8VMQ?pwd=mst1) |
 |          [MST++](https://arxiv.org/abs/2111.07910)           |    1.33    |   19.42   | 35.99 | 0.951 | [Google Drive](https://drive.google.com/drive/folders/1rbV8LYD5k1RVR4usMORoXxY2szlFsr_9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1QUx_MpYCBSU4Zas5gpao2g?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/14sz-y99fEAJDQAN1itE5K-BlMHC1Tt3z?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1s3btC7QQrasW1NqFzOm8fQ?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/14CgUhfUp4BFalyigL4RDnTYyGiN5ojRK?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1fYsAvAjXTLLWpzlt_S2ppQ?pwd=mst1) |
+|          [CST-S](https://arxiv.org/abs/2203.04845)           |    1.20    |   11.67   | 34.71 | 0.940 | [Google Drive](https://drive.google.com/drive/folders/1-SZDH0PuUyjLlvKfON-LL02dkr2LBuL9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1Xq_YV6yO0zN6AULwU9ZPyg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1AdcUGiiPTfdt366NcBV8Texuu1Qw7_DI?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1Vl6xufpmLWXSmhaVCsKkzQ?pwd=mst1) |                                                              |
+|          [CST-M](https://arxiv.org/abs/2203.04845)           |    1.36    |   16.91   | 35.31 | 0.947 | [Google Drive](https://drive.google.com/drive/folders/1-SZDH0PuUyjLlvKfON-LL02dkr2LBuL9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1Xq_YV6yO0zN6AULwU9ZPyg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1FpMTtKSIN-t_natQIX2gKcu8MfPQLCG1?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1u3IjojML3H7AwSMe0CxV_Q?pwd=mst1) |                                                              |
+|          [CST-L](https://arxiv.org/abs/2203.04845)           |    3.00    |   27.81   | 35.85 | 0.954 | [Google Drive](https://drive.google.com/drive/folders/1-SZDH0PuUyjLlvKfON-LL02dkr2LBuL9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1Xq_YV6yO0zN6AULwU9ZPyg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1MRFeMoi4JzhFrf_346USCFq98kdds9HY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1UXwTyr-xZtDR68wzmeaCEA?pwd=mst1) |                                                              |
+|        [CST-L-Plus](https://arxiv.org/abs/2203.04845)        |    3.00    |   40.10   | 36.12 | 0.957 | [Google Drive](https://drive.google.com/drive/folders/1-SZDH0PuUyjLlvKfON-LL02dkr2LBuL9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1Xq_YV6yO0zN6AULwU9ZPyg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1sGHrkbYKjN3XqsduQL2mesXqO1XMeqGI?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1PsoJwVfZ7qYi6mnq_q_gDA?pwd=mst1) |                                                              |
 
 The performance are reported on 10 scenes of the KAIST dataset. The test size of FLOPS is 256 x 256.
 
@@ -153,6 +157,18 @@ python train.py --template mst_m --outf ./exp/mst_m/ --method mst_m
 # MST_L
 python train.py --template mst_l --outf ./exp/mst_l/ --method mst_l 
 
+# CST_S
+python train.py --template cst_s --outf ./exp/cst_s/ --method cst_s 
+
+# CST_M
+python train.py --template cst_m --outf ./exp/cst_m/ --method cst_m  
+
+# CST_L
+python train.py --template cst_l --outf ./exp/cst_l/ --method cst_l
+
+# CST_L_Plus
+python train.py --template cst_l_plus --outf ./exp/cst_l_plus/ --method cst_l_plus
+
 # GAP-Net
 python train.py --template gap_net --outf ./exp/gap_net/ --method gap_net 
 
@@ -197,6 +213,18 @@ python test.py --template mst_m --outf ./exp/mst_m/ --method mst_m --pretrained_
 
 # MST_L
 python test.py --template mst_l --outf ./exp/mst_l/ --method mst_l --pretrained_model_path ./model_zoo/mst/mst_l.pth
+
+# CST_S
+python test.py --template cst_s --outf ./exp/cst_s/ --method cst_s --pretrained_model_path ./model_zoo/cst/cst_s.pth
+
+# CST_M
+python test.py --template cst_m --outf ./exp/cst_m/ --method cst_m --pretrained_model_path ./model_zoo/cst/cst_m.pth
+
+# CST_L
+python test.py --template cst_l --outf ./exp/cst_l/ --method cst_l --pretrained_model_path ./model_zoo/cst/cst_l.pth
+
+# CST_L_Plus
+python test.py --template cst_l_plus --outf ./exp/cst_l_plus/ --method cst_l_plus --pretrained_model_path ./model_zoo/cst/cst_l_plus.pth
 
 # GAP_Net
 python test.py --template gap_net --outf ./exp/gap_net/ --method gap_net --pretrained_model_path ./model_zoo/gap_net/gap_net.pth
@@ -266,6 +294,18 @@ python train.py --template mst_m --outf ./exp/mst_m/ --method mst_m
 # MST_L
 python train.py --template mst_l --outf ./exp/mst_l/ --method mst_l 
 
+# CST_S
+python train.py --template cst_s --outf ./exp/cst_s/ --method cst_s 
+
+# CST_M
+python train.py --template cst_m --outf ./exp/cst_m/ --method cst_m  
+
+# CST_L
+python train.py --template cst_l --outf ./exp/cst_l/ --method cst_l
+
+# CST_L_Plus
+python train.py --template cst_l_plus --outf ./exp/cst_l_plus/ --method cst_l_plus
+
 # GAP-Net
 python train.py --template gap_net --outf ./exp/gap_net/ --method gap_net 
 
@@ -306,6 +346,18 @@ python test.py --template mst_m --outf ./exp/mst_m/ --method mst_m --pretrained_
 
 # MST_L
 python test.py --template mst_l --outf ./exp/mst_l/ --method mst_l --pretrained_model_path ./model_zoo/mst/mst_l.pth
+
+# CST_S
+python test.py --template cst_s --outf ./exp/cst_s/ --method cst_s --pretrained_model_path ./model_zoo/cst/cst_s.pth
+
+# CST_M
+python test.py --template cst_m --outf ./exp/cst_m/ --method cst_m --pretrained_model_path ./model_zoo/cst/cst_m.pth
+
+# CST_L
+python test.py --template cst_l --outf ./exp/cst_l/ --method cst_l --pretrained_model_path ./model_zoo/cst/cst_l.pth
+
+# CST_L_Plus
+python test.py --template cst_l_plus --outf ./exp/cst_l_plus/ --method cst_l_plus --pretrained_model_path ./model_zoo/cst/cst_l_plus.pth
 
 # GAP_Net
 python test.py --template gap_net --outf ./exp/gap_net/ --method gap_net --pretrained_model_path ./model_zoo/gap_net/gap_net.pth

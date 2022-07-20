@@ -27,6 +27,10 @@ def set_template(args):
     if args.template.find('mst_plus_plus') >= 0:
         args.input_setting = 'H'
         args.input_mask = 'Mask'
+    
+    if args.template.find('cst') >= 0:
+        args.input_setting = 'H'
+        args.input_mask = 'Mask'
 
     if args.template.find('lambda_net') >= 0:
         args.input_setting = 'Y'

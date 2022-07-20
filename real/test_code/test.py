@@ -18,6 +18,7 @@ parser.add_argument("--testset_num", default=5, type=int, help='total number of 
 parser.add_argument("--seed", default=1, type=int, help='Random_seed')
 parser.add_argument("--batch_size", default=1, type=int, help='batch_size')
 parser.add_argument("--isTrain", default=False, type=bool, help='train or test')
+parser.add_argument("--pretrained_model_path", default=None, type=str)
 opt = parser.parse_args()
 print(opt)
 
@@ -49,11 +50,8 @@ def load_mask(path,size=660):
 
 HR_HSI = prepare_data(opt.data_path, 5)
 mask_3d_shift, mask_3d_shift_s = load_mask('./Data/mask.mat')
-# dataset = dataset(opt, HR_HSI)
-# loader_train = tud.DataLoader(dataset, batch_size=opt.batch_size)
 
 pretrained_model_path = "/data/lj/exp/hsi/nips2022/dgsmp_real_exp/exp8/hdnet_p384_b1_cosine/2022_05_13_23_05_15/model_150.pth"
-save_path = pretrained_model_path.replace(pretrained_model_path.split('/')[-1], 'result/')
 model = torch.load(pretrained_model_path)
 model = model.eval()
 model = dataparallel(model, 1)
@@ -73,8 +71,6 @@ for j in range(5):
         out = model(input, mask_3d_shift, mask_3d_shift_s)
         result = out
         result = result.clamp(min=0., max=1.)
-        # result[result < 0.] = 0.
-        # result[result > 1.] = 1.
     k = k + 1
     if not os.path.exists(save_path):  # Create the model directory if it doesn't exist
         os.makedirs(save_path)

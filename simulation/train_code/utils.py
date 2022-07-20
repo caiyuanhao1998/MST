@@ -91,7 +91,7 @@ def time2file_name(time):
     time_filename = year + '_' + month + '_' + day + '_' + hour + '_' + minute + '_' + second
     return time_filename
 
-def shuffle_crop(train_data, batch_size, crop_size=256, argument=False):
+def shuffle_crop(train_data, batch_size, crop_size=256, argument=True):
     index = np.random.choice(range(len(train_data)), batch_size)
     processed_data = np.zeros((batch_size, crop_size, crop_size, 28), dtype=np.float32)
     for i in range(batch_size):
