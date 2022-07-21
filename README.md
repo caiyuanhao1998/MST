@@ -422,6 +422,13 @@ If this repo helps you, please consider citing our works:
   year={2022}
 }
 
+# CST
+@inproceedings{cst,
+  title={Coarse-to-Fine Sparse Transformer for Hyperspectral Image Reconstruction},
+  author={Yuanhao Cai and Jing Lin and Xiaowan Hu and Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
+  booktitle={European Conference on Computer Vision (ECCV)},
+  year={2022}
+}
 
 # HDNet
 @inproceedings{hdnet,
@@ -431,12 +438,4 @@ If this repo helps you, please consider citing our works:
   year={2022}
 }
 
-
-# CST
-@inproceedings{cst,
-  title={Coarse-to-Fine Sparse Transformer for Hyperspectral Image Reconstruction},
-  author={Yuanhao Cai and Jing Lin and Xiaowan Hu and Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
-  booktitle={European Conference on Computer Vision (ECCV)},
-  year={2022}
-}
 ```
