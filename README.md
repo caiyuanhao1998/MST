@@ -153,7 +153,7 @@ Following TSA-Net and DGSMP, we use the CAVE dataset (cave_1024_28) as the simul
 
 ## 4. Simulation Experiement:
 
-(1)  Training:	
+### 4.1  Training
 
 ```shell
 cd MST/simulation/train_code/
@@ -206,7 +206,8 @@ python train.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_n
 
 The training log, trained model, and reconstrcuted HSI will be available in `MST/simulation/train_code/exp/` . 
 
-(2)  Testing :	
+
+### 4.2  Testing	
 
 Download the pretrained model zoo from ([Google Drive](https://drive.google.com/drive/folders/1zgB7jHqTzY1bjCSzdX4lKQEGyK3bpWIx?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1CH4uq_NZPpo5ra2tFzAdfQ?pwd=mst1), code: `mst1`) and place them to `MST/simulation/test_code/model_zoo/`
 
@@ -271,7 +272,8 @@ Run cal_quality_assessment.m
 
 to calculate the PSNR and SSIM of the reconstructed HSIs.
 
-(3)  Visualization :	
+
+### 4.3  Visualization	
 - Put the reconstruted HSI in `MST/visualization/simulation_results/results` and rename it as method.mat, e.g., mst_s.mat.
 
 - Generate the RGB images of the reconstructed HSIs
@@ -290,7 +292,7 @@ Run show_line.m
 
 ## 5. Real Experiement:
 
-(1)  Training:	
+### 5.1  Training
 
 ```shell
 cd MST/real/train_code/
@@ -343,7 +345,8 @@ python train.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_n
 
 The training log, trained model, and reconstrcuted HSI will be available in `MST/real/train_code/exp/` . 
 
-(2)  Testing :	
+
+### 5.2 Testing	
 
 ```python
 cd MST/real/test_code/
@@ -396,7 +399,8 @@ python test.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_ne
 
 - The reconstrcuted HSI will be output into `MST/real/test_code/exp/`  
 
-(3)  Visualization :	
+
+### 5.1  Visualization	
 
 - Put the reconstruted HSI in `MST/visualization/real_results/results` and rename it as method.mat, e.g., mst_plus_plus.mat.
 
@@ -446,6 +450,15 @@ If this repo helps you, please consider citing our works:
   title={HDNet: High-resolution Dual-domain Learning for Spectral Compressive Imaging},
   author={Xiaowan Hu and Yuanhao Cai and Jing Lin and  Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
   booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2022}
+}
+
+
+# DAUHST
+@article{dauhst,
+  title={Degradation-Aware Unfolding Half-Shuffle Transformer for Spectral Compressive Imaging},
+  author={Cai, Yuanhao and Lin, Jing and Wang, Haoqian and Yuan, Xin and Ding, Henghui and Zhang, Yulun and Timofte, Radu and Van Gool, Luc},
+  journal={arXiv preprint arXiv:2205.10102},
   year={2022}
 }
 ```
