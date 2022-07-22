@@ -1,9 +1,7 @@
 # A Toolbox for Spectral Compressive Imaging
 [![winner](https://img.shields.io/badge/MST++-Winner_of_NTIRE_2022_Spectral_Reconstruction_Challenge-179bd3)](https://github.com/caiyuanhao1998/MST-plus-plus/)
-[![arXiv](https://img.shields.io/badge/arxiv-MST-179bd3)](https://arxiv.org/abs/2111.07910)
-[![zhihu](https://img.shields.io/badge/知乎-MST-179bd3)](https://zhuanlan.zhihu.com/p/501101943)
-[![zhihu](https://img.shields.io/badge/知乎-CST-179bd3)](https://zhuanlan.zhihu.com/p/544979161)
-[![arXiv](https://img.shields.io/badge/arxiv-DAUHST-179bd3)](https://arxiv.org/abs/2205.10102)
+[![zhihu](https://img.shields.io/badge/知乎中文解读-MST-179bd3)](https://zhuanlan.zhihu.com/p/501101943)
+[![zhihu](https://img.shields.io/badge/知乎中文解读-CST-179bd3)](https://zhuanlan.zhihu.com/p/544979161)
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=caiyuanhao1998/MST)
 
 #### Authors
