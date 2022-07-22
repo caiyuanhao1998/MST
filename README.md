@@ -36,7 +36,7 @@
 ![Illustration of MST](/figure/MST.png)
 
 ### CST
-![Illustration of CST](/figure/CST.png)
+![Illustration of CST](/figure/cst.png)
 
 
 ## Comparison with State-of-the-art Methods
