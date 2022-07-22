@@ -6,17 +6,18 @@
 [![arXiv](https://img.shields.io/badge/arxiv-DAUHST-179bd3)](https://arxiv.org/abs/2205.10102)
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=caiyuanhao1998/MST)
 
-###  Our Works
+####  Our Works
 - [Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction (CVPR 2022)](https://arxiv.org/abs/2111.07910)
 - [Coarse-to-Fine Sparse Transformer for Hyperspectral Image Reconstruction (ECCV 2022)](https://arxiv.org/abs/2203.04845)
 - [MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction (CVPRW 2022)](https://arxiv.org/abs/2111.07910)
 - [HDNet: High-resolution Dual-domain Learning for Spectral Compressive Imaging (CVPR 2022)](https://arxiv.org/abs/2203.02149)
 
-### Authors
+#### Authors
 [Yuanhao Cai](https://caiyuanhao1998.github.io), [Jing Lin](https://scholar.google.com/citations?hl=zh-CN&user=SvaU2GMAAAAJ), Xiaowan Hu, [Haoqian Wang](https://scholar.google.com.hk/citations?user=eldgnIYAAAAJ&hl=zh-CN), [Xin Yuan](https://xygroup6.github.io/xygroup/), [Yulun Zhang](yulunzhang.com), [Radu Timofte](https://people.ee.ethz.ch/~timofter/), and [Luc Van Gool](https://ee.ethz.ch/the-department/faculty/professors/person-detail.OTAyMzM=.TGlzdC80MTEsMTA1ODA0MjU5.html)
 
 *The first two authors contribute equally to this work*
 
+#### Awards
 ![ntire](/figure/ntire.png)
 
 #### News
