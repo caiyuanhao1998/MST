@@ -1,5 +1,4 @@
-# A Toolbox for Spectral Compressive Imaging Reconstruction including 
-# Our MST (CVPR 2022), CST (ECCV 2022), MST++ (CVPRW 2022), HDNet (CVPR 2022), and DAUHST (Arxiv 2022)
+# A Toolbox for Spectral Compressive Imaging Reconstruction
 [![winner](https://img.shields.io/badge/MST++-Winner_of_NTIRE_2022_Spectral_Reconstruction_Challenge-179bd3)](https://github.com/caiyuanhao1998/MST-plus-plus/)
 [![arXiv](https://img.shields.io/badge/arxiv-MST-179bd3)](https://arxiv.org/abs/2111.07910)
 [![zhihu](https://img.shields.io/badge/知乎-MST-179bd3)](https://zhuanlan.zhihu.com/p/501101943)
