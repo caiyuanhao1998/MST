@@ -58,7 +58,7 @@ This repo is a baseline and toolbox containing 11 learning-based algorithms for 
 
 </details>
 
-We are going to enlarge our model zoo in the future.
+
 
 |             MST vs. SOTA            |             CST vs. MST             |
 | :---------------------------------: | :---------------------------------: |
@@ -66,6 +66,7 @@ We are going to enlarge our model zoo in the future.
 |             MST++ vs. SOTA          |           DAUHST vs. SOTA           |
 | <img src="./figure/mst_pp.png"  height=340> | <img src="./figure/dauhst.png" height=340> |
 
+We are going to enlarge our model zoo in the future.
 
 ### Quantitative Comparison on Simulation Dataset
 
