@@ -1,7 +1,9 @@
 # Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction (CVPR 2022)
 [![winner](https://img.shields.io/badge/MST++-Winner_of_NTIRE_2022_Challenge_on_Spectral_Reconstruction_from_RGB-179bd3)](https://github.com/caiyuanhao1998/MST-plus-plus/)
-[![arXiv](https://img.shields.io/badge/arxiv-paper-179bd3)](https://arxiv.org/abs/2111.07910)
-[![zhihu](https://img.shields.io/badge/zhihu-知乎中文解读-179bd3)](https://zhuanlan.zhihu.com/p/501101943)
+[![arXiv](https://img.shields.io/badge/arxiv-MST-179bd3)](https://arxiv.org/abs/2111.07910)
+[![zhihu](https://img.shields.io/badge/知乎-MST-179bd3)](https://zhuanlan.zhihu.com/p/501101943)
+[![arXiv](https://img.shields.io/badge/arxiv-CST-179bd3)](https://arxiv.org/abs/2203.04845)
+[![arXiv](https://img.shields.io/badge/arxiv-DAUHST-179bd3)](https://arxiv.org/abs/2205.10102)
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=caiyuanhao1998/MST)
 
 [Yuanhao Cai](https://caiyuanhao1998.github.io), [Jing Lin](https://scholar.google.com/citations?hl=zh-CN&user=SvaU2GMAAAAJ), Xiaowan Hu, [Haoqian Wang](https://scholar.google.com.hk/citations?user=eldgnIYAAAAJ&hl=zh-CN), [Xin Yuan](https://xygroup6.github.io/xygroup/), [Yulun Zhang](yulunzhang.com), [Radu Timofte](https://people.ee.ethz.ch/~timofter/), and [Luc Van Gool](https://ee.ethz.ch/the-department/faculty/professors/person-detail.OTAyMzM=.TGlzdC80MTEsMTA1ODA0MjU5.html)
@@ -29,7 +31,12 @@
 <hr />
 
 ## Diagram of Our Method
+
+### MST
 ![Illustration of MST](/figure/MST.png)
+
+### CST
+![Illustration of CST](/figure/CST.png)
 
 
 ## Comparison with State-of-the-art Methods
@@ -42,6 +49,7 @@ We are going to enlarge our model zoo in the future.
 <summary><b>Supported algorithms:</b></summary>
 
 * [x] [MST](https://arxiv.org/abs/2111.07910) (CVPR 2022)
+* [x] [CST](https://arxiv.org/abs/2203.04845) (ECCV 2022)
 * [x] [MST++](https://arxiv.org/abs/2111.07910) (CVPRW 2022)
 * [x] [HDNet](https://arxiv.org/abs/2203.02149) (CVPR 2022)
 * [x] [BIRNAT](https://ieeexplore.ieee.org/abstract/document/9741335/) (TPAMI 2022)
@@ -50,14 +58,20 @@ We are going to enlarge our model zoo in the future.
 * [x] [TSA-Net](https://link.springer.com/chapter/10.1007/978-3-030-58592-1_12) (ECCV 2020)
 * [x] [ADMM-Net](https://openaccess.thecvf.com/content_ICCV_2019/html/Ma_Deep_Tensor_ADMM-Net_for_Snapshot_Compressive_Imaging_ICCV_2019_paper.html) (ICCV 2019)
 * [x] [λ-Net](https://ieeexplore.ieee.org/document/9010044) (ICCV 2019)
-* [x] [CST](https://arxiv.org/abs/2203.04845) (ECCV 2022)
 * [ ] [DAUHST](https://arxiv.org/abs/2205.10102) (Arxiv 2022)
 
 
 
 </details>
 
+
+### MST vs. SOTA
+
 ![comparison_fig](/figure/compare_fig.png)
+
+### CST vs. MST
+
+![comparison_cst_mst](/figure/cst_mst.png)
 
 ### Quantitative Comparison on Simulation Dataset
 
@@ -414,20 +428,20 @@ If this repo helps you, please consider citing our works:
 }
 
 
-# MST++
-@inproceedings{mst_pp,
-  title={MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction},
-  author={Yuanhao Cai and Jing Lin and Zudi Lin and Haoqian Wang and Yulun Zhang and Hanspeter Pfister and Radu Timofte and Luc Van Gool},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
-  year={2022}
-}
-
-
 # CST
 @inproceedings{cst,
   title={Coarse-to-Fine Sparse Transformer for Hyperspectral Image Reconstruction},
   author={Yuanhao Cai and Jing Lin and Xiaowan Hu and Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
   booktitle={European Conference on Computer Vision (ECCV)},
+  year={2022}
+}
+
+
+# MST++
+@inproceedings{mst_pp,
+  title={MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction},
+  author={Yuanhao Cai and Jing Lin and Zudi Lin and Haoqian Wang and Yulun Zhang and Hanspeter Pfister and Radu Timofte and Luc Van Gool},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
   year={2022}
 }
 
