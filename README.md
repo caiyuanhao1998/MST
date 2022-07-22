@@ -65,13 +65,11 @@ We are going to enlarge our model zoo in the future.
 </details>
 
 
-### MST vs. SOTA
+|             MST vs. SOTA            |             CST vs. MST             |
+| :---------------------------------: | :---------------------------------: |
+| <img src="./figure/compare_fig.png"  height=200> | <img src="./figure/cst_mst.png" height=200> |
 
-![comparison_fig](/figure/compare_fig.png)
 
-### CST vs. MST
-
-![comparison_cst_mst](/figure/cst_mst.png)
 
 ### Quantitative Comparison on Simulation Dataset
 
