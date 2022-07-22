@@ -34,25 +34,12 @@
 | :------------------------------: | :-------------------------------: | :-------------------------------: | :-------------------------------: |
 | <img src="./figure/frame2channel12.gif"  height=170 width=170> | <img src="./figure/frame3channel21.gif" width=170 height=170> | <img src="./figure/frame4channel28.gif" width=170 height=170> |  <img src="./figure/frame7channel4.gif" width=170 height=170> |
 
-<hr />
 
-> **Abstract:** *Hyperspectral image (HSI) reconstruction aims to recover the 3D spatial-spectral signal from a 2D measurement in the coded aperture snapshot spectral imaging  (CASSI) system. The HSI  representations are highly similar and correlated across the spectral dimension. Modeling the inter-spectra interactions is beneficial for HSI reconstruction. However, existing CNN-based methods show limitations in capturing spectral-wise similarity and long-range dependencies. Besides, the HSI information is modulated by a coded aperture (physical mask) in CASSI. Nonetheless, current algorithms have not fully explored the guidance effect of the mask for HSI restoration. In this paper, we propose a novel framework, Mask-guided Spectral-wise Transformer (MST), for HSI reconstruction. Specifically, we present a Spectral-wise Multi-head Self-Attention (S-MSA) that treats each spectral feature as a token and calculates self-attention along the spectral dimension. In addition, we customize a Mask-guided Mechanism (MM) that directs S-MSA to pay attention to spatial regions with high-fidelity spectral representations. Extensive experiments show that our MST significantly outperforms state-of-the-art (SOTA) methods on simulation and real HSI datasets while requiring dramatically cheaper computational and memory costs.* 
-<hr />
 
-## Diagram of Our Method
-
-### MST
-![Illustration of MST](/figure/MST.png)
-
-### CST
-![Illustration of CST](/figure/cst.png)
 
 
 ## Comparison with State-of-the-art Methods
 This repo is a baseline and toolbox containing 11 learning-based algorithms for spectral compressive imaging.
-
-We are going to enlarge our model zoo in the future.
-
 
 <details open>
 <summary><b>Supported algorithms:</b></summary>
@@ -69,9 +56,9 @@ We are going to enlarge our model zoo in the future.
 * [x] [λ-Net](https://ieeexplore.ieee.org/document/9010044) (ICCV 2019)
 * [ ] [DAUHST](https://arxiv.org/abs/2205.10102) (Arxiv 2022)
 
-
-
 </details>
+
+We are going to enlarge our model zoo in the future。
 
 
 |             MST vs. SOTA            |             CST vs. MST             |
