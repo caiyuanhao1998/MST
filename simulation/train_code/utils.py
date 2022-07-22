@@ -92,22 +92,45 @@ def time2file_name(time):
     return time_filename
 
 def shuffle_crop(train_data, batch_size, crop_size=256, argument=True):
-    index = np.random.choice(range(len(train_data)), batch_size)
-    processed_data = np.zeros((batch_size, crop_size, crop_size, 28), dtype=np.float32)
-    for i in range(batch_size):
-        h, w, _ = train_data[index[i]].shape
-        x_index = np.random.randint(0, h - crop_size)
-        y_index = np.random.randint(0, w - crop_size)
-        processed_data[i, :, :, :] = train_data[index[i]][x_index:x_index + crop_size, y_index:y_index + crop_size, :]
-    gt_batch = torch.from_numpy(np.transpose(processed_data, (0, 3, 1, 2)))
-    gt_batch_arg = []
     if argument:
-        for i in range(gt_batch.shape[0]):
-            gt_batch_arg.append(bacic_argument(gt_batch[i]))
-        return torch.stack(gt_batch_arg, dim=0)
-    return gt_batch
+        gt_batch = []
+        # The first half data use the original data.
+        index = np.random.choice(range(len(train_data)), batch_size//2)
+        processed_data = np.zeros((batch_size//2, crop_size, crop_size, 28), dtype=np.float32)
+        for i in range(batch_size//2):
+            img = train_data[index[i]]
+            h, w, _ = img.shape
+            x_index = np.random.randint(0, h - crop_size)
+            y_index = np.random.randint(0, w - crop_size)
+            processed_data[i, :, :, :] = img[x_index:x_index + crop_size, y_index:y_index + crop_size, :]
+        processed_data = torch.from_numpy(np.transpose(processed_data, (0, 3, 1, 2))).cuda().float()
+        for i in range(processed_data.shape[0]):
+            gt_batch.append(arguement_1(processed_data[i]))
 
-def bacic_argument(x):
+        # The other half data use splicing.
+        processed_data = np.zeros((4, 128, 128, 28), dtype=np.float32)
+        for i in range(batch_size - batch_size // 2):
+            sample_list = np.random.randint(0, len(train_data), 4)
+            for j in range(4):
+                x_index = np.random.randint(0, h-crop_size//2)
+                y_index = np.random.randint(0, w-crop_size//2)
+                processed_data[j] = train_data[sample_list[j]][x_index:x_index+crop_size//2,y_index:y_index+crop_size//2,:]
+            gt_batch_2 = torch.from_numpy(np.transpose(processed_data, (0, 3, 1, 2))).cuda()  # [4,28,128,128]
+            gt_batch.append(arguement_2(gt_batch_2))
+        gt_batch = torch.stack(gt_batch, dim=0)
+        return gt_batch
+    else:
+        index = np.random.choice(range(len(train_data)), batch_size)
+        processed_data = np.zeros((batch_size, crop_size, crop_size, 28), dtype=np.float32)
+        for i in range(batch_size):
+            h, w, _ = train_data[index[i]].shape
+            x_index = np.random.randint(0, h - crop_size)
+            y_index = np.random.randint(0, w - crop_size)
+            processed_data[i, :, :, :] = train_data[index[i]][x_index:x_index + crop_size, y_index:y_index + crop_size, :]
+        gt_batch = torch.from_numpy(np.transpose(processed_data, (0, 3, 1, 2)))
+        return gt_batch
+
+def arguement_1(x):
     """
     :param x: c,h,w
     :return: c,h,w
@@ -125,6 +148,18 @@ def bacic_argument(x):
     for j in range(hFlip):
         x = torch.flip(x, dims=(1,))
     return x
+
+def arguement_2(generate_gt):
+    c, h, w = generate_gt.shape[1],256,256
+    divid_point_h = 128
+    divid_point_w = 128
+    output_img = torch.zeros(c,h,w).cuda()
+    output_img[:, :divid_point_h, :divid_point_w] = generate_gt[0]
+    output_img[:, :divid_point_h, divid_point_w:] = generate_gt[1]
+    output_img[:, divid_point_h:, :divid_point_w] = generate_gt[2]
+    output_img[:, divid_point_h:, divid_point_w:] = generate_gt[3]
+    return output_img
+
 
 def gen_meas_torch(data_batch, mask3d_batch, Y2H=True, mul_mask=False):
     nC = data_batch.shape[1]
