@@ -38,7 +38,7 @@ This repo is a baseline and toolbox containing 11 learning-based algorithms for 
 We are going to enlarge our model zoo in the future.
 
 
-<details close>
+<details open>
 <summary><b>Supported algorithms:</b></summary>
 
 * [x] [MST](https://arxiv.org/abs/2111.07910) (CVPR 2022)
