@@ -1,5 +1,5 @@
 # Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction (CVPR 2022)
-[![winner](https://img.shields.io/badge/MST++-Winner_of_NTIRE_2022_Challenge_on_Spectral_Reconstruction_from_RGB-179bd3)](https://github.com/caiyuanhao1998/MST-plus-plus/)
+[![winner](https://img.shields.io/badge/MST++-Winner_of_NTIRE_2022_Spectral_Reconstruction_Challenge-179bd3)](https://github.com/caiyuanhao1998/MST-plus-plus/)
 [![arXiv](https://img.shields.io/badge/arxiv-MST-179bd3)](https://arxiv.org/abs/2111.07910)
 [![zhihu](https://img.shields.io/badge/知乎-MST-179bd3)](https://zhuanlan.zhihu.com/p/501101943)
 [![arXiv](https://img.shields.io/badge/arxiv-CST-179bd3)](https://arxiv.org/abs/2203.04845)
