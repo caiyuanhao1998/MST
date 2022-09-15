@@ -10,7 +10,7 @@
 #### Papers
 - [Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction (CVPR 2022)](https://arxiv.org/abs/2111.07910)
 - [Coarse-to-Fine Sparse Transformer for Hyperspectral Image Reconstruction (ECCV 2022)](https://arxiv.org/abs/2203.04845)
-- - [Degradation-Aware Unfolding Half-Shuffle Transformer for Spectral Compressive Imaging (NeurIPS 2022)](https://arxiv.org/abs/2205.10102)
+- [Degradation-Aware Unfolding Half-Shuffle Transformer for Spectral Compressive Imaging (NeurIPS 2022)](https://arxiv.org/abs/2205.10102)
 - [MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction (CVPRW 2022)](https://arxiv.org/abs/2111.07910)
 - [HDNet: High-resolution Dual-domain Learning for Spectral Compressive Imaging (CVPR 2022)](https://arxiv.org/abs/2203.02149)
 
