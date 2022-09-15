@@ -21,7 +21,7 @@
 
 
 #### News
-- **2022.09.15 :** Our work [DAUHST](https://arxiv.org/abs/2205.10102) has been accepted by NeurIPS 2022, code and models are coming soon. :rocket:
+- **2022.09.15 :** Our [DAUHST](https://arxiv.org/abs/2205.10102) has been accepted by NeurIPS 2022, code and models are coming soon. :rocket:
 - **2022.07.20 :** Code, models, and recontructed HSI results of [CST](https://arxiv.org/abs/2203.04845) have been released. 🔥
 - **2022.07.04 :** Our paper [CST](https://arxiv.org/abs/2203.04845) has been accepted by ECCV 2022, code and models are coming soon. :rocket:
 - **2022.06.14 :** Code and models of [MST](https://arxiv.org/abs/2111.07910) and [MST++](https://arxiv.org/abs/2111.07910) have been released. This repo supports 11 learning-based methods to serve as toolbox for Spectral Compressive Imaging. The model zoo will be enlarged. 🔥
