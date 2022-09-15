@@ -10,9 +10,10 @@
 #### Papers
 - [Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction (CVPR 2022)](https://arxiv.org/abs/2111.07910)
 - [Coarse-to-Fine Sparse Transformer for Hyperspectral Image Reconstruction (ECCV 2022)](https://arxiv.org/abs/2203.04845)
+- - [Degradation-Aware Unfolding Half-Shuffle Transformer for Spectral Compressive Imaging (NeurIPS 2022)](https://arxiv.org/abs/2205.10102)
 - [MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction (CVPRW 2022)](https://arxiv.org/abs/2111.07910)
 - [HDNet: High-resolution Dual-domain Learning for Spectral Compressive Imaging (CVPR 2022)](https://arxiv.org/abs/2203.02149)
-- [Degradation-Aware Unfolding Half-Shuffle Transformer for Spectral Compressive Imaging (Arxiv 2022)](https://arxiv.org/abs/2205.10102)
+
 
 
 #### Awards
@@ -45,6 +46,7 @@ This repo is a baseline and toolbox containing 11 learning-based algorithms for 
 
 * [x] [MST](https://arxiv.org/abs/2111.07910) (CVPR 2022)
 * [x] [CST](https://arxiv.org/abs/2203.04845) (ECCV 2022)
+* [ ] [DAUHST](https://arxiv.org/abs/2205.10102) (NeurIPS 2022)
 * [x] [MST++](https://arxiv.org/abs/2111.07910) (CVPRW 2022)
 * [x] [HDNet](https://arxiv.org/abs/2203.02149) (CVPR 2022)
 * [x] [BIRNAT](https://ieeexplore.ieee.org/abstract/document/9741335/) (TPAMI 2022)
@@ -53,7 +55,7 @@ This repo is a baseline and toolbox containing 11 learning-based algorithms for 
 * [x] [TSA-Net](https://link.springer.com/chapter/10.1007/978-3-030-58592-1_12) (ECCV 2020)
 * [x] [ADMM-Net](https://openaccess.thecvf.com/content_ICCV_2019/html/Ma_Deep_Tensor_ADMM-Net_for_Snapshot_Compressive_Imaging_ICCV_2019_paper.html) (ICCV 2019)
 * [x] [λ-Net](https://ieeexplore.ieee.org/document/9010044) (ICCV 2019)
-* [ ] [DAUHST](https://arxiv.org/abs/2205.10102) (Arxiv 2022)
+
 
 </details>
 
@@ -449,6 +451,7 @@ If this repo helps you, please consider citing our works:
   journal={arXiv preprint arXiv:2205.10102},
   year={2022}
 }
+
 
 # MST++
 @inproceedings{mst_pp,
