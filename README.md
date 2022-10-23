@@ -273,6 +273,13 @@ Run cal_quality_assessment.m
 
 to calculate the PSNR and SSIM of the reconstructed HSIs.
 
+###### Evaluating the Params and FLOPS of models
+We have provided a function `my_summary()` in `simulation/test_code/utils.py`, please use this function to evaluate the parameters and computational complexity of the models, especially the Transformers as 
+
+```shell
+from utils import my_summary
+my_summary(MST(), 256, 256, 28, 1)
+```
 
 ### 4.3　Visualization	
 - Put the reconstruted HSI in `MST/visualization/simulation_results/results` and rename it as method.mat, e.g., mst_s.mat.
