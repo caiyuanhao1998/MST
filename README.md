@@ -273,7 +273,7 @@ Run cal_quality_assessment.m
 
 to calculate the PSNR and SSIM of the reconstructed HSIs.
 
-###### Evaluating the Params and FLOPS of models
+- #### Evaluating the Params and FLOPS of models
 We have provided a function `my_summary()` in `simulation/test_code/utils.py`, please use this function to evaluate the parameters and computational complexity of the models, especially the Transformers as 
 
 ```shell
