@@ -4,7 +4,8 @@ def set_template(args):
         args.input_setting = 'H'
         args.input_mask = 'Phi'
 
-    if args.template.find('gap_net') >= 0 or args.template.find('admm_net') >= 0 or args.template.find('dnu')>= 0:
+    if args.template.find('gap_net') >= 0 or args.template.find('admm_net') >= 0 or args.template.find('dnu')>= 0 \
+            or args.template.find('dauhst')>= 0:
         args.input_setting = 'Y'
         args.input_mask = 'Phi_PhiPhiT'
 

@@ -8,12 +8,9 @@ def set_template(args):
         args.input_setting = 'Y'
         args.input_mask = None
 
-    if args.template.find('gap_net') >= 0 or args.template.find('admm_net') >= 0:
+    if args.template.find('gap_net') >= 0 or args.template.find('admm_net') >= 0 or args.template.find('dauhst') >= 0:
         args.input_setting = 'Y'
         args.input_mask = 'Phi_PhiPhiT'
-        args.milestones = range(30,args.max_epoch,30)
-        args.gamma = 0.9
-        args.learning_rate = 1e-3
 
     if args.template.find('tsa_net') >= 0:
         args.input_setting = 'HM'

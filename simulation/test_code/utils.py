@@ -5,6 +5,7 @@ import torch
 import logging
 from fvcore.nn import FlopCountAnalysis
 
+
 def generate_masks(mask_path, batch_size):
     mask = sio.loadmat(mask_path + '/mask.mat')
     mask = mask['mask']

@@ -30,9 +30,9 @@
 - **2022.03.09 :** Our work [CST](https://arxiv.org/abs/2203.04845) is on arxiv. :dizzy:
 - **2022.03.02 :** Our paper MST has been accepted by CVPR 2022, code and models are coming soon. :rocket: 
 
-|            *Scene 2*             |             *Scene 3*             |             *Scene 4*             |             *Scene 7*             |
-| :------------------------------: | :-------------------------------: | :-------------------------------: | :-------------------------------: |
-| <img src="./figure/frame2channel12.gif"  height=170 width=170> | <img src="./figure/frame3channel21.gif" width=170 height=170> | <img src="./figure/frame4channel28.gif" width=170 height=170> |  <img src="./figure/frame7channel4.gif" width=170 height=170> |
+|                          *Scene 2*                           |                          *Scene 3*                           |                          *Scene 4*                           |                          *Scene 7*                           |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| <img src="./figure/frame2channel12.gif"  height=170 width=170> | <img src="./figure/frame3channel21.gif" width=170 height=170> | <img src="./figure/frame4channel28.gif" width=170 height=170> | <img src="./figure/frame7channel4.gif" width=170 height=170> |
 
 
 
@@ -46,7 +46,7 @@ This repo is a baseline and toolbox containing 11 learning-based algorithms for 
 
 * [x] [MST](https://arxiv.org/abs/2111.07910) (CVPR 2022)
 * [x] [CST](https://arxiv.org/abs/2203.04845) (ECCV 2022)
-* [ ] [DAUHST](https://arxiv.org/abs/2205.10102) (NeurIPS 2022)
+* [x] [DAUHST](https://arxiv.org/abs/2205.10102) (NeurIPS 2022)
 * [x] [MST++](https://arxiv.org/abs/2111.07910) (CVPRW 2022)
 * [x] [HDNet](https://arxiv.org/abs/2203.02149) (CVPR 2022)
 * [x] [BIRNAT](https://ieeexplore.ieee.org/abstract/document/9741335/) (TPAMI 2022)
@@ -61,11 +61,11 @@ This repo is a baseline and toolbox containing 11 learning-based algorithms for 
 
 We are going to enlarge our model zoo in the future.
 
-|             MST vs. SOTA            |             CST vs. MST             |
-| :---------------------------------: | :---------------------------------: |
+|                   MST vs. SOTA                   |                 CST vs. MST                 |
+| :----------------------------------------------: | :-----------------------------------------: |
 | <img src="./figure/compare_fig.png"  height=320> | <img src="./figure/cst_mst.png" height=320> |
-|             MST++ vs. SOTA          |           DAUHST vs. SOTA           |
-| <img src="./figure/mst_pp.png"  height=320> | <img src="./figure/dauhst.png" height=320> |
+|                  MST++ vs. SOTA                  |               DAUHST vs. SOTA               |
+|   <img src="./figure/mst_pp.png"  height=320>    | <img src="./figure/dauhst.png" height=320>  |
 
 
 
@@ -88,6 +88,10 @@ We are going to enlarge our model zoo in the future.
 |          [CST-M](https://arxiv.org/abs/2203.04845)           |    1.36    |   16.91   | 35.31 | 0.947 | [Google Drive](https://drive.google.com/drive/folders/1-SZDH0PuUyjLlvKfON-LL02dkr2LBuL9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1Xq_YV6yO0zN6AULwU9ZPyg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1FpMTtKSIN-t_natQIX2gKcu8MfPQLCG1?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1u3IjojML3H7AwSMe0CxV_Q?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/11RNDmA3VrPWdbj4H-mInGfZa60W86YEc?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1m3abRwjuaneFf1cCE85yMw?pwd=mst1) |
 |          [CST-L](https://arxiv.org/abs/2203.04845)           |    3.00    |   27.81   | 35.85 | 0.954 | [Google Drive](https://drive.google.com/drive/folders/1-SZDH0PuUyjLlvKfON-LL02dkr2LBuL9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1Xq_YV6yO0zN6AULwU9ZPyg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1MRFeMoi4JzhFrf_346USCFq98kdds9HY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1UXwTyr-xZtDR68wzmeaCEA?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/11RNDmA3VrPWdbj4H-mInGfZa60W86YEc?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1m3abRwjuaneFf1cCE85yMw?pwd=mst1) |
 |        [CST-L-Plus](https://arxiv.org/abs/2203.04845)        |    3.00    |   40.10   | 36.12 | 0.957 | [Google Drive](https://drive.google.com/drive/folders/1-SZDH0PuUyjLlvKfON-LL02dkr2LBuL9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1Xq_YV6yO0zN6AULwU9ZPyg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1sGHrkbYKjN3XqsduQL2mesXqO1XMeqGI?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1PsoJwVfZ7qYi6mnq_q_gDA?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/11RNDmA3VrPWdbj4H-mInGfZa60W86YEc?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1m3abRwjuaneFf1cCE85yMw?pwd=mst1) |
+|       [DAUHST-2stg](https://arxiv.org/abs/2203.04845)        |    1.40    |   18.44   | 36.34 | 0.952 | [Google Drive](https://drive.google.com/drive/folders/1zhYRhFP8ee4YHk3-M0Nrl6KE_-n0gDLr?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1O2bxz-wEMF0mnrnOXHpC3A?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1qOrnp1crkk1z5ha56UoyOqDMFGfWlLC7?usp=sharing) /[Baidu Disk]( https://pan.baidu.com/s/1_RxqZQpCcYH50nxhSWeb0w?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1SgQhXXPYn6mYGSRMz5Ntsnab26XdjOc9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1m3abRwjuaneFf1cCE85yMw?pwd=mst1) |
+|       [DAUHST-3stg](https://arxiv.org/abs/2203.04845)        |    2.08    |   27.17   | 37.21 | 0.959 | [Google Drive](https://drive.google.com/drive/folders/1zhYRhFP8ee4YHk3-M0Nrl6KE_-n0gDLr?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1O2bxz-wEMF0mnrnOXHpC3A?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1uwXh5JrD4rnh_xYBpF4K4wI4lcTD1j4p?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1iYtxPuf1rkFWut5UdEYqtg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1SgQhXXPYn6mYGSRMz5Ntsnab26XdjOc9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1m3abRwjuaneFf1cCE85yMw?pwd=mst1) |
+|       [DAUHST-5stg](https://arxiv.org/abs/2203.04845)        |    3.44    |   44.61   | 37.75 | 0.962 | [Google Drive](https://drive.google.com/drive/folders/1zhYRhFP8ee4YHk3-M0Nrl6KE_-n0gDLr?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1O2bxz-wEMF0mnrnOXHpC3A?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1snTVZSUsbtzjJ5lxbPbaKhpTJX28Byuh?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1k1q0Y8QPgMZhThBEfzGKzQ?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1SgQhXXPYn6mYGSRMz5Ntsnab26XdjOc9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1m3abRwjuaneFf1cCE85yMw?pwd=mst1) |
+|       [DAUHST-9stg](https://arxiv.org/abs/2203.04845)        |    6.15    |   79.50   | 38.36 | 0.967 | [Google Drive](https://drive.google.com/drive/folders/1zhYRhFP8ee4YHk3-M0Nrl6KE_-n0gDLr?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1O2bxz-wEMF0mnrnOXHpC3A?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1rzZG1L-s2rYmR-wHXg9KnnGPbOIT5GaP?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/10vGcOirPk2L8sQg6uJoJkg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1SgQhXXPYn6mYGSRMz5Ntsnab26XdjOc9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1m3abRwjuaneFf1cCE85yMw?pwd=mst1) |
 
 The performance are reported on 10 scenes of the KAIST dataset. The test size of FLOPS is 256 x 256.
 
@@ -203,6 +207,18 @@ python train.py --template mst_plus_plus --outf ./exp/mst_plus_plus/ --method ms
 
 # λ-Net
 python train.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_net
+
+# DAUHST-2stg
+python train.py --template dauhst_2stg --outf ./exp/dauhst_2stg/ --method dauhst_2stg
+
+# DAUHST-3stg
+python train.py --template dauhst_3stg --outf ./exp/dauhst_3stg/ --method dauhst_3stg
+
+# DAUHST-5stg
+python train.py --template dauhst_5stg --outf ./exp/dauhst_5stg/ --method dauhst_5stg
+
+# DAUHST-9stg
+python train.py --template dauhst_9stg --outf ./exp/dauhst_9stg/ --method dauhst_9stg
 ```
 
 The training log, trained model, and reconstrcuted HSI will be available in `MST/simulation/train_code/exp/` . 
@@ -261,6 +277,18 @@ python test.py --template mst_plus_plus --outf ./exp/mst_plus_plus/ --method mst
 
 # λ-Net
 python test.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_net --pretrained_model_path ./model_zoo/lambda_net/lambda_net.pth
+
+# DAUHST-2stg
+python test.py --template dauhst_2stg --outf ./exp/dauhst_2stg/ --method dauhst_2stg --pretrained_model_path ./model_zoo/dauhst_2stg/dauhst_2stg.pth
+
+# DAUHST-3stg
+python test.py --template dauhst_3stg --outf ./exp/dauhst_3stg/ --method dauhst_3stg --pretrained_model_path ./model_zoo/dauhst_3stg/dauhst_3stg.pth
+
+# DAUHST-5stg
+python test.py --template dauhst_5stg --outf ./exp/dauhst_5stg/ --method dauhst_5stg --pretrained_model_path ./model_zoo/dauhst_5stg/dauhst_5stg.pth
+
+# DAUHST-9stg
+python test.py --template dauhst_9stg --outf ./exp/dauhst_9stg/ --method dauhst_9stg --pretrained_model_path ./model_zoo/dauhst_9stg/dauhst_9stg.pth
 ```
 
 - The reconstrcuted HSIs will be output into `MST/simulation/test_code/exp/`  
@@ -274,7 +302,8 @@ Run cal_quality_assessment.m
 to calculate the PSNR and SSIM of the reconstructed HSIs.
 
 - #### Evaluating the Params and FLOPS of models
-We have provided a function `my_summary()` in `simulation/test_code/utils.py`, please use this function to evaluate the parameters and computational complexity of the models, especially the Transformers as 
+
+  We have provided a function `my_summary()` in `simulation/test_code/utils.py`, please use this function to evaluate the parameters and computational complexity of the models, especially the Transformers as 
 
 ```shell
 from utils import my_summary
@@ -282,6 +311,7 @@ my_summary(MST(), 256, 256, 28, 1)
 ```
 
 ### 4.3　Visualization	
+
 - Put the reconstruted HSI in `MST/visualization/simulation_results/results` and rename it as method.mat, e.g., mst_s.mat.
 
 - Generate the RGB images of the reconstructed HSIs
@@ -349,6 +379,18 @@ python train.py --template mst_plus_plus --outf ./exp/mst_plus_plus/ --method ms
 
 # λ-Net
 python train.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_net
+
+# DAUHST-2stg
+python train.py --template dauhst_2stg --outf ./exp/dauhst_2stg/ --method dauhst_2stg
+
+# DAUHST-3stg
+python train.py --template dauhst_3stg --outf ./exp/dauhst_3stg/ --method dauhst_3stg
+
+# DAUHST-5stg
+python train.py --template dauhst_5stg --outf ./exp/dauhst_5stg/ --method dauhst_5stg
+
+# DAUHST-9stg
+python train.py --template dauhst_9stg --outf ./exp/dauhst_9stg/ --method dauhst_9stg
 ```
 
 The training log, trained model, and reconstrcuted HSI will be available in `MST/real/train_code/exp/` . 
@@ -403,6 +445,18 @@ python test.py --template mst_plus_plus --outf ./exp/mst_plus_plus/ --method mst
 
 # λ-Net
 python test.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_net --pretrained_model_path ./model_zoo/lambda_net/lambda_net.pth
+
+# DAUHST_2stg
+python test.py --template dauhst --outf ./exp/dauhst_2stg/ --method dauhst_2stg --pretrained_model_path ./model_zoo/dauhst/dauhst_2stg.pth
+
+# DAUHST_3stg
+python test.py --template dauhst --outf ./exp/dauhst_3stg/ --method dauhst_3stg --pretrained_model_path ./model_zoo/dauhst/dauhst_3stg.pth
+
+# DAUHST_5stg
+python test.py --template dauhst --outf ./exp/dauhst_5stg/ --method dauhst_5stg --pretrained_model_path ./model_zoo/dauhst/dauhst_5stg.pth
+
+# DAUHST_9stg
+python test.py --template dauhst --outf ./exp/dauhst_9stg/ --method dauhst_9stg --pretrained_model_path ./model_zoo/dauhst/dauhst_9stg.pth
 ```
 
 - The reconstrcuted HSI will be output into `MST/real/test_code/exp/`  

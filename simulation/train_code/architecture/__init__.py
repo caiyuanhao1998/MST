@@ -9,6 +9,7 @@ from .BIRNAT import BIRNAT
 from .MST_Plus_Plus import MST_Plus_Plus
 from .Lambda_Net import Lambda_Net
 from .CST import CST
+from .DAUHST import DAUHST
 
 def model_generator(method, pretrained_model_path=None):
     if method == 'mst_s':
@@ -48,6 +49,9 @@ def model_generator(method, pretrained_model_path=None):
         model = CST(num_blocks=[2, 4, 6], sparse=True).cuda()
     elif method == 'cst_l_plus':
         model = CST(num_blocks=[2, 4, 6], sparse=False).cuda()
+    elif 'dauhst' in method:
+        num_iterations = int(method.split('_')[1][0])
+        model = DAUHST(num_iterations=num_iterations).cuda()
     else:
         print(f'Method {method} is not defined !!!!')
     if pretrained_model_path is not None:

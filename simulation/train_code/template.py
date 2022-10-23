@@ -11,6 +11,12 @@ def set_template(args):
         args.gamma = 0.9
         args.learning_rate = 1e-3
 
+    if args.template.find('dauhst') >= 0:
+        args.input_setting = 'Y'
+        args.input_mask = 'Phi_PhiPhiT'
+        args.scheduler = 'CosineAnnealingLR'
+        args.max_epoch = 300
+
     if args.template.find('tsa_net') >= 0:
         args.input_setting = 'HM'
         args.input_mask = None
