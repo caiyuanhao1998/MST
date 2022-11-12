@@ -396,7 +396,7 @@ python train.py --template dauhst_5stg --outf ./exp/dauhst_5stg/ --method dauhst
 python train.py --template dauhst_9stg --outf ./exp/dauhst_9stg/ --method dauhst_9stg
 ```
 
-The training log, trained model, and reconstrcuted HSI will be available in `MST/real/train_code/exp/` . 
+The training log, trained model, and reconstrcuted HSI will be available in `MST/real/train_code/exp/`
 
 
 ### 5.2　Testing	
