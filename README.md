@@ -22,6 +22,7 @@
 
 
 #### News
+- **2023.02.26 :** We release the RGB images of [five real scenes](https://drive.google.com/drive/folders/1VTMgEbfX9MVpGo98XVVFKaANtQfgApAg?usp=sharing) and [ten simulation scenes](https://drive.google.com/drive/folders/1EkJsOxYKgyehZdOgKUeY75dU19GHZgE-?usp=sharing). Please feel free to check and use them. 🌟
 - **2022.11.02 :** We have provided more visual results of state-of-the-art methods and the function to evaluate the parameters and computational complexity of models. Please feel free to check and use them. :high_brightness:
 - **2022.10.23 :** Code, models, and recontructed HSI results of [DAUHST](https://arxiv.org/abs/2205.10102) have been released. 🔥
 - **2022.09.15 :** Our [DAUHST](https://arxiv.org/abs/2205.10102) has been accepted by NeurIPS 2022, code and models are coming soon. :rocket:
@@ -98,6 +99,8 @@ We are going to enlarge our model zoo in the future.
 
 The performance are reported on 10 scenes of the KAIST dataset. The test size of FLOPS is 256 x 256.
 
+We also provide the RGB images of [five real scenes](https://drive.google.com/drive/folders/1VTMgEbfX9MVpGo98XVVFKaANtQfgApAg?usp=sharing) and [ten simulation scenes](https://drive.google.com/drive/folders/1EkJsOxYKgyehZdOgKUeY75dU19GHZgE-?usp=sharing) for your convenience to draw a figure.
+
 Note: access code for `Baidu Disk` is `mst1`
 
 ## 2. Create Environment:
@@ -113,7 +116,6 @@ pip install -r requirements.txt
 ```
 
 ## 3. Prepare Dataset:
-
 Download cave_1024_28 ([Baidu Disk](https://pan.baidu.com/s/1X_uXxgyO-mslnCTn4ioyNQ), code: `fo0q` | [One Drive](https://bupteducn-my.sharepoint.com/:f:/g/personal/mengziyi_bupt_edu_cn/EmNAsycFKNNNgHfV9Kib4osB7OD4OSu-Gu6Qnyy5PweG0A?e=5NrM6S)), CAVE_512_28 ([Baidu Disk](https://pan.baidu.com/s/1ue26weBAbn61a7hyT9CDkg), code: `ixoe` | [One Drive](https://mailstsinghuaeducn-my.sharepoint.com/:f:/g/personal/lin-j21_mails_tsinghua_edu_cn/EjhS1U_F7I1PjjjtjKNtUF8BJdsqZ6BSMag_grUfzsTABA?e=sOpwm4)), KAIST_CVPR2021 ([Baidu Disk](https://pan.baidu.com/s/1LfPqGe0R_tuQjCXC_fALZA), code: `5mmn` | [One Drive](https://mailstsinghuaeducn-my.sharepoint.com/:f:/g/personal/lin-j21_mails_tsinghua_edu_cn/EkA4B4GU8AdDu0ZkKXdewPwBd64adYGsMPB8PNCuYnpGlA?e=VFb3xP)), TSA_simu_data ([Baidu Disk](https://pan.baidu.com/s/1LI9tMaSprtxT8PiAG1oETA), code: `efu8` | [One Drive](https://1drv.ms/u/s!Au_cHqZBKiu2gYFDwE-7z1fzeWCRDA?e=ofvwrD)), TSA_real_data ([Baidu Disk](https://pan.baidu.com/s/1RoOb1CKsUPFu0r01tRi5Bg), code: `eaqe` | [One Drive](https://1drv.ms/u/s!Au_cHqZBKiu2gYFTpCwLdTi_eSw6ww?e=uiEToT)), and then put them into the corresponding folders of `datasets/` and recollect them as the following form:
 
 ```shell
