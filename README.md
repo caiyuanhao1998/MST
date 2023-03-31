@@ -511,13 +511,6 @@ If this repo helps you, please consider citing our works:
   year={2022}
 }
 
-@article{dauhst,
-  title={Degradation-Aware Unfolding Half-Shuffle Transformer for Spectral Compressive Imaging},
-  author={Cai, Yuanhao and Lin, Jing and Wang, Haoqian and Yuan, Xin and Ding, Henghui and Zhang, Yulun and Timofte, Radu and Van Gool, Luc},
-  journal={arXiv preprint arXiv:2205.10102},
-  year={2022}
-}
-
 
 # MST++
 @inproceedings{mst_pp,
