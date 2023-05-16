@@ -506,7 +506,7 @@ If this repo helps you, please consider citing our works:
 # DAUHST
 @inproceedings{dauhst,
   title={Degradation-Aware Unfolding Half-Shuffle Transformer for Spectral Compressive Imaging},
-  author={Cai, Yuanhao and Lin, Jing and Wang, Haoqian and Yuan, Xin and Ding, Henghui and Zhang, Yulun and Timofte, Radu and Van Gool, Luc},
+  author={Yuanhao Cai and Jing Lin and Haoqian Wang and Xin Yuan and Henghui Ding and Yulun Zhang and Radu Timofte and Luc Van Gool},
   booktitle={NeurIPS}, 
   year={2022}
 }
