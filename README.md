@@ -3,7 +3,6 @@
 [![zhihu](https://img.shields.io/badge/知乎解读-MST-179bd3)](https://zhuanlan.zhihu.com/p/501101943)
 [![zhihu](https://img.shields.io/badge/知乎解读-CST-179bd3)](https://zhuanlan.zhihu.com/p/544979161)
 [![zhihu](https://img.shields.io/badge/知乎解读-DAUHST-179bd3)](https://zhuanlan.zhihu.com/p/576280023)
-![visitors](https://visitor-badge.glitch.me/badge?page_id=caiyuanhao1998/MST)
 
 #### Authors
 Yuanhao Cai*, Jing Lin*, Xiaowan Hu, Haoqian Wang, Xin Yuan, Yulun Zhang, Radu Timofte, and Luc Van Gool
