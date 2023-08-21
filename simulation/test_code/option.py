@@ -6,7 +6,7 @@ parser.add_argument('--template', default='mst',
                     help='You can set various templates in option.py')
 
 # Hardware specifications
-parser.add_argument("--gpu_id", type=str, default='3')
+parser.add_argument("--gpu_id", type=str, default='0')
 
 # Data specifications
 parser.add_argument('--data_root', type=str, default='../../datasets/', help='dataset directory')
