@@ -52,7 +52,7 @@ This repo is a baseline and toolbox containing 11 learning-based algorithms for 
 * [x] [MST](https://arxiv.org/abs/2111.07910) (CVPR 2022)
 * [x] [CST](https://arxiv.org/abs/2203.04845) (ECCV 2022)
 * [x] [DAUHST](https://arxiv.org/abs/2205.10102) (NeurIPS 2022)
-* [ ] [BiSCI](https://arxiv.org/abs/2205.10102) (NeurIPS 2023)
+* [ ] [BiSCI](https://arxiv.org/abs/2305.10299) (NeurIPS 2023)
 * [x] [MST++](https://arxiv.org/abs/2111.07910) (CVPRW 2022)
 * [x] [HDNet](https://arxiv.org/abs/2203.02149) (CVPR 2022)
 * [x] [BIRNAT](https://ieeexplore.ieee.org/abstract/document/9741335/) (TPAMI 2022)
