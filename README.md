@@ -8,6 +8,7 @@
 Yuanhao Cai*, Jing Lin*, Xiaowan Hu, Haoqian Wang, Xin Yuan, Yulun Zhang, Radu Timofte, and Luc Van Gool
 
 #### Papers
+- [Binarized Spectral Compressive Imaging (NeurIPS 2023)](https://arxiv.org/abs/2305.10299)
 - [Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction (CVPR 2022)](https://arxiv.org/abs/2111.07910)
 - [Coarse-to-Fine Sparse Transformer for Hyperspectral Image Reconstruction (ECCV 2022)](https://arxiv.org/abs/2203.04845)
 - [Degradation-Aware Unfolding Half-Shuffle Transformer for Spectral Compressive Imaging (NeurIPS 2022)](https://arxiv.org/abs/2205.10102)
@@ -21,11 +22,12 @@ Yuanhao Cai*, Jing Lin*, Xiaowan Hu, Haoqian Wang, Xin Yuan, Yulun Zhang, Radu T
 
 
 #### News
+- **2023.09.21 :** Our new work [BiSCI](https://arxiv.org/pdf/2305.10299.pdf) has been accepted by NeurIPS 2023. Code will be released at this repo and [BiSCI](https://github.com/caiyuanhao1998/BiSCI)
 - **2023.02.26 :** We release the RGB images of [five real scenes](https://drive.google.com/drive/folders/1VTMgEbfX9MVpGo98XVVFKaANtQfgApAg?usp=sharing) and [ten simulation scenes](https://drive.google.com/drive/folders/1EkJsOxYKgyehZdOgKUeY75dU19GHZgE-?usp=sharing). Please feel free to check and use them. 🌟
 - **2022.11.02 :** We have provided more visual results of state-of-the-art methods and the function to evaluate the parameters and computational complexity of models. Please feel free to check and use them. :high_brightness:
-- **2022.10.23 :** Code, models, and recontructed HSI results of [DAUHST](https://arxiv.org/abs/2205.10102) have been released. 🔥
+- **2022.10.23 :** Code, models, and reconstructed HSI results of [DAUHST](https://arxiv.org/abs/2205.10102) have been released. 🔥
 - **2022.09.15 :** Our [DAUHST](https://arxiv.org/abs/2205.10102) has been accepted by NeurIPS 2022, code and models are coming soon. :rocket:
-- **2022.07.20 :** Code, models, and recontructed HSI results of [CST](https://arxiv.org/abs/2203.04845) have been released. 🔥
+- **2022.07.20 :** Code, models, and reconstructed HSI results of [CST](https://arxiv.org/abs/2203.04845) have been released. 🔥
 - **2022.07.04 :** Our paper [CST](https://arxiv.org/abs/2203.04845) has been accepted by ECCV 2022, code and models are coming soon. :rocket:
 - **2022.06.14 :** Code and models of [MST](https://arxiv.org/abs/2111.07910) and [MST++](https://arxiv.org/abs/2111.07910) have been released. This repo supports 11 learning-based methods to serve as toolbox for Spectral Compressive Imaging. The model zoo will be enlarged. 🔥
 - **2022.05.20 :** Our work [DAUHST](https://arxiv.org/abs/2205.10102) is on arxiv. :dizzy:
@@ -50,6 +52,7 @@ This repo is a baseline and toolbox containing 11 learning-based algorithms for 
 * [x] [MST](https://arxiv.org/abs/2111.07910) (CVPR 2022)
 * [x] [CST](https://arxiv.org/abs/2203.04845) (ECCV 2022)
 * [x] [DAUHST](https://arxiv.org/abs/2205.10102) (NeurIPS 2022)
+* [ ] [BiSCI](https://arxiv.org/abs/2205.10102) (NeurIPS 2023)
 * [x] [MST++](https://arxiv.org/abs/2111.07910) (CVPRW 2022)
 * [x] [HDNet](https://arxiv.org/abs/2203.02149) (CVPR 2022)
 * [x] [BIRNAT](https://ieeexplore.ieee.org/abstract/document/9741335/) (TPAMI 2022)
@@ -528,6 +531,14 @@ If this repo helps you, please consider citing our works:
   author={Yuanhao Cai and Jing Lin and Haoqian Wang and Xin Yuan and Henghui Ding and Yulun Zhang and Radu Timofte and Luc Van Gool},
   booktitle={NeurIPS}, 
   year={2022}
+}
+
+# BiSCI
+@inproceedings{bisci,
+  title={Binarized Spectral Compressive Imaging},
+  author={Yuanhao Cai and Yuxin Zheng and Jing Lin and Haoqian Wang and Xin Yuan and Yulun Zhang},
+  booktitle={NeurIPS},
+  year={2023}
 }
 
 
