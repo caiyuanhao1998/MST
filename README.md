@@ -544,7 +544,7 @@ If this repo helps you, please consider citing our works:
 # BiSCI
 @inproceedings{bisci,
   title={Binarized Spectral Compressive Imaging},
-  author={Yuanhao Cai and Yuxin Zheng and Jing Lin and Haoqian Wang and Xin Yuan and Yulun Zhang},
+  author={Yuanhao Cai and Yuxin Zheng and Jing Lin and Xin Yuan and Yulun Zhang and Haoqian Wang},
   booktitle={NeurIPS},
   year={2023}
 }
