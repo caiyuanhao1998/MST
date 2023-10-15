@@ -418,6 +418,8 @@ The training log, trained model, and reconstrcuted HSI will be available in `MST
 
 ### 5.2　Testing	
 
+#### The testing scripts in real dataset should be updated >>>
+
 ```python
 cd MST/real/test_code/
 
@@ -481,6 +483,7 @@ python test.py --template dauhst --outf ./exp/dauhst_9stg/ --method dauhst_9stg 
 
 - The reconstrcuted HSI will be output into `MST/real/test_code/exp/`  
 
+#### The testing scripts in real dataset should be updated <<<
 
 ### 5.3　Visualization	
 
