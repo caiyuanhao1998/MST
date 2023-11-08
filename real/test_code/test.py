@@ -5,6 +5,7 @@ from utils import dataparallel
 import scipy.io as sio
 import numpy as np
 from torch.autograd import Variable
+from option import opt
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
