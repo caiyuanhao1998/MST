@@ -1,7 +1,7 @@
 %% plot color pics
 clear; clc;
-load('simulation_results\results\mst_s.mat');
-save_file = 'simulation_results\rgb_results\mst_s\';
+load('simulation_results/results/mst_s.mat');
+save_file = 'simulation_results/rgb_results/mst_s/';
 mkdir(save_file);
 
 close all;

@@ -2,14 +2,14 @@
 clear; clc;
 close all
 
-load('real_results\results\mst.mat');
+load('real_results/results/mst.mat');
 x_result_1 = flip(flip(squeeze(pred(1, :, :, :)),1),2);
 x_result_2 = flip(flip(squeeze(pred(2, :, :, :)),1),2);
 x_result_3 = flip(flip(squeeze(pred(3, :, :, :)),1),2);
 x_result_4 = flip(flip(squeeze(pred(4, :, :, :)),1),2);
 x_result_5 = flip(flip(squeeze(pred(5, :, :, :)),1),2);
 
-save_file = 'real_results\rgb_results\mst\';
+save_file = 'real_results/rgb_results/mst/';
 mkdir(save_file);
 
 frame = 1;
