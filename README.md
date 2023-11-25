@@ -510,7 +510,7 @@ python test_s.py --outf ./exp/bisrnet/ --method bisrnet --pretrained_model_path 
 
 - The reconstrcuted HSI will be output into `MST/real/test_code/exp/`  
 
-- Note: if you use `train_s.py` to train, please us `test_s.py` to test.
+- Note: if you use `train_s.py` to train, please use `test_s.py` to test.
 
 ### 5.3　Visualization	
 
