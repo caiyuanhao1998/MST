@@ -81,6 +81,8 @@ We are going to enlarge our model zoo in the future.
 | <img src="./figure/compare_fig.png"  height=320> | <img src="./figure/cst_mst.png" height=320> |
 |                  MST++ vs. SOTA                  |               DAUHST vs. SOTA               |
 |   <img src="./figure/mst_pp.png"  height=320>    | <img src="./figure/dauhst.png" height=320>  |
+|                  BiSRNet vs. SOTA BNNs               |
+|   <img src="./figure/bisrnet.png"  width=640>  |
 
 
 
@@ -107,7 +109,7 @@ We are going to enlarge our model zoo in the future.
 |       [DAUHST-3stg](https://arxiv.org/abs/2203.04845)        |    2.08    |   27.17   | 37.21 | 0.959 | [Google Drive](https://drive.google.com/drive/folders/1zhYRhFP8ee4YHk3-M0Nrl6KE_-n0gDLr?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1O2bxz-wEMF0mnrnOXHpC3A?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1uwXh5JrD4rnh_xYBpF4K4wI4lcTD1j4p?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1iYtxPuf1rkFWut5UdEYqtg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1SgQhXXPYn6mYGSRMz5Ntsnab26XdjOc9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1S2MKaSKdU2v53_CZnuYkpQ?pwd=mst1) |
 |       [DAUHST-5stg](https://arxiv.org/abs/2203.04845)        |    3.44    |   44.61   | 37.75 | 0.962 | [Google Drive](https://drive.google.com/drive/folders/1zhYRhFP8ee4YHk3-M0Nrl6KE_-n0gDLr?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1O2bxz-wEMF0mnrnOXHpC3A?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1snTVZSUsbtzjJ5lxbPbaKhpTJX28Byuh?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1k1q0Y8QPgMZhThBEfzGKzQ?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1SgQhXXPYn6mYGSRMz5Ntsnab26XdjOc9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1S2MKaSKdU2v53_CZnuYkpQ?pwd=mst1) |
 |       [DAUHST-9stg](https://arxiv.org/abs/2203.04845)        |    6.15    |   79.50   | 38.36 | 0.967 | [Google Drive](https://drive.google.com/drive/folders/1zhYRhFP8ee4YHk3-M0Nrl6KE_-n0gDLr?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1O2bxz-wEMF0mnrnOXHpC3A?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1rzZG1L-s2rYmR-wHXg9KnnGPbOIT5GaP?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/10vGcOirPk2L8sQg6uJoJkg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1SgQhXXPYn6mYGSRMz5Ntsnab26XdjOc9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1S2MKaSKdU2v53_CZnuYkpQ?pwd=mst1) |
-|       [BiSRNet](https://arxiv.org/abs/2305.10299)       |    0.036    |   1.18   | 29.76 | 0.837 | [Google Drive](https://drive.google.com/file/d/1MIsuIHuAaETZIRosjnKh2cvVgVDh9ZHv/view?usp=drive_link) / [Baidu Disk](https://pan.baidu.com/s/1O2bxz-wEMF0mnrnOXHpC3A?pwd=mst1) | [Google Drive](https://drive.google.com/file/d/1QpZV6MzkijtwFI9MJp87bow4XxAok50m/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/10vGcOirPk2L8sQg6uJoJkg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1Hgdq43kbmHm1HG9SdLGryiIakBsBWuZp?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1S2MKaSKdU2v53_CZnuYkpQ?pwd=mst1) |
+|       [BiSRNet](https://arxiv.org/abs/2305.10299)       |    0.036    |   1.18   | 29.76 | 0.837 | [Google Drive](https://drive.google.com/file/d/1MIsuIHuAaETZIRosjnKh2cvVgVDh9ZHv/view?usp=drive_link) / [Baidu Disk](https://pan.baidu.com/s/1wrHExqzl07niPS0fdMCAhg?pwd=mst1) | [Google Drive](https://drive.google.com/file/d/1QpZV6MzkijtwFI9MJp87bow4XxAok50m/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/11ifwb4tUDAVk7oTlFBKfUg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1Hgdq43kbmHm1HG9SdLGryiIakBsBWuZp?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1I8051aIYsQEG8ybfSdPF0g?pwd=mst1) |
 
 The performance are reported on 10 scenes of the KAIST dataset. The test size of FLOPS is 256 x 256.
 
@@ -442,7 +444,7 @@ python train_s.py --outf ./exp/bisrnet/ --method bisrnet
 
 ### 5.2　Testing	
 
-The pretrained model of BiSRNet can be download from ([Google Drive](https://drive.google.com/file/d/1zQ7PFuiaEgIpulBl8TA7S_8Am93nAKPb/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1CH4uq_NZPpo5ra2tFzAdfQ?pwd=mst1), code: `cyh2`) and place them to `MST/real/test_code/model_zoo/`
+The pretrained model of BiSRNet can be download from ([Google Drive](https://drive.google.com/file/d/1zQ7PFuiaEgIpulBl8TA7S_8Am93nAKPb/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1hiPbuUEBnIGQP6Ks9agfWQ?pwd=mst1), code: `mst1`) and place them to `MST/real/test_code/model_zoo/`
 
 ```python
 cd MST/real/test_code/
