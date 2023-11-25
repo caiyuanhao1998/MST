@@ -10,6 +10,7 @@ from .MST_Plus_Plus import MST_Plus_Plus
 from .Lambda_Net import Lambda_Net
 from .CST import CST
 from .DAUHST import DAUHST
+from .BiSRNet import BiSRNet
 
 def model_generator(method, pretrained_model_path=None):
     if method == 'mst_s':
@@ -52,6 +53,8 @@ def model_generator(method, pretrained_model_path=None):
     elif 'dauhst' in method:
         num_iterations = int(method.split('_')[1][0])
         model = DAUHST(num_iterations=num_iterations).cuda()
+    elif method == 'bisrnet':
+        model = BiSRNet(in_channels=28, out_channels=28, n_feat=28, stage=1, num_blocks=[1,1,1]).cuda()
     else:
         print(f'Method {method} is not defined !!!!')
     if pretrained_model_path is not None:

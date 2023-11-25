@@ -29,8 +29,9 @@ Yuanhao Cai*, Jing Lin*, Xiaowan Hu, Haoqian Wang, Xin Yuan, Yulun Zhang, Radu T
 
 
 #### News
+- **2023.11.24 :** Code, models, and results of [BiSRNet](https://arxiv.org/pdf/2305.10299.pdf) (NeurIPS 2023) are released at this repo. We also develop a toolbox [BiSCI](https://github.com/caiyuanhao1998/BiSCI) for binarized SCI reconstruction. Feel free to check and use them. 🌟
 - **2023.11.02 :** MST, MST++, CST, and DAUHST are added to the [Awesome-Transformer-Attention](https://github.com/cmhungsteve/Awesome-Transformer-Attention/blob/main/README_2.md#image-restoration) collection. 💫
-- **2023.09.21 :** Our new work [BiSCI](https://arxiv.org/pdf/2305.10299.pdf) is accepted by NeurIPS 23. Code will be released at this repo and [BiSCI](https://github.com/caiyuanhao1998/BiSCI)
+- **2023.09.21 :** Our new work [BiSRNet](https://arxiv.org/pdf/2305.10299.pdf) is accepted by NeurIPS 23. Code will be released at this repo and [BiSCI](https://github.com/caiyuanhao1998/BiSCI)
 - **2023.02.26 :** We release the RGB images of [five real scenes](https://drive.google.com/drive/folders/1VTMgEbfX9MVpGo98XVVFKaANtQfgApAg?usp=sharing) and [ten simulation scenes](https://drive.google.com/drive/folders/1EkJsOxYKgyehZdOgKUeY75dU19GHZgE-?usp=sharing). Please feel free to check and use them. 🌟
 - **2022.11.02 :** We have provided more visual results of state-of-the-art methods and the function to evaluate the parameters and computational complexity of models. Please feel free to check and use them. :high_brightness:
 - **2022.10.23 :** Code, models, and reconstructed HSI results of [DAUHST](https://arxiv.org/abs/2205.10102) have been released. 🔥
@@ -60,7 +61,7 @@ This repo is a baseline and toolbox containing 11 learning-based algorithms for 
 * [x] [MST](https://arxiv.org/abs/2111.07910) (CVPR 2022)
 * [x] [CST](https://arxiv.org/abs/2203.04845) (ECCV 2022)
 * [x] [DAUHST](https://arxiv.org/abs/2205.10102) (NeurIPS 2022)
-* [ ] [BiSCI](https://arxiv.org/abs/2305.10299) (NeurIPS 2023)
+* [x] [BiSRNet](https://arxiv.org/abs/2305.10299) (NeurIPS 2023)
 * [x] [MST++](https://arxiv.org/abs/2111.07910) (CVPRW 2022)
 * [x] [HDNet](https://arxiv.org/abs/2203.02149) (CVPR 2022)
 * [x] [BIRNAT](https://ieeexplore.ieee.org/abstract/document/9741335/) (TPAMI 2022)
@@ -106,6 +107,7 @@ We are going to enlarge our model zoo in the future.
 |       [DAUHST-3stg](https://arxiv.org/abs/2203.04845)        |    2.08    |   27.17   | 37.21 | 0.959 | [Google Drive](https://drive.google.com/drive/folders/1zhYRhFP8ee4YHk3-M0Nrl6KE_-n0gDLr?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1O2bxz-wEMF0mnrnOXHpC3A?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1uwXh5JrD4rnh_xYBpF4K4wI4lcTD1j4p?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1iYtxPuf1rkFWut5UdEYqtg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1SgQhXXPYn6mYGSRMz5Ntsnab26XdjOc9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1S2MKaSKdU2v53_CZnuYkpQ?pwd=mst1) |
 |       [DAUHST-5stg](https://arxiv.org/abs/2203.04845)        |    3.44    |   44.61   | 37.75 | 0.962 | [Google Drive](https://drive.google.com/drive/folders/1zhYRhFP8ee4YHk3-M0Nrl6KE_-n0gDLr?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1O2bxz-wEMF0mnrnOXHpC3A?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1snTVZSUsbtzjJ5lxbPbaKhpTJX28Byuh?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1k1q0Y8QPgMZhThBEfzGKzQ?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1SgQhXXPYn6mYGSRMz5Ntsnab26XdjOc9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1S2MKaSKdU2v53_CZnuYkpQ?pwd=mst1) |
 |       [DAUHST-9stg](https://arxiv.org/abs/2203.04845)        |    6.15    |   79.50   | 38.36 | 0.967 | [Google Drive](https://drive.google.com/drive/folders/1zhYRhFP8ee4YHk3-M0Nrl6KE_-n0gDLr?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1O2bxz-wEMF0mnrnOXHpC3A?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1rzZG1L-s2rYmR-wHXg9KnnGPbOIT5GaP?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/10vGcOirPk2L8sQg6uJoJkg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1SgQhXXPYn6mYGSRMz5Ntsnab26XdjOc9?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1S2MKaSKdU2v53_CZnuYkpQ?pwd=mst1) |
+|       [BiSRNet](https://arxiv.org/abs/2305.10299)       |    0.036    |   1.18   | 29.76 | 0.837 | [Google Drive](https://drive.google.com/file/d/1MIsuIHuAaETZIRosjnKh2cvVgVDh9ZHv/view?usp=drive_link) / [Baidu Disk](https://pan.baidu.com/s/1O2bxz-wEMF0mnrnOXHpC3A?pwd=mst1) | [Google Drive](https://drive.google.com/file/d/1QpZV6MzkijtwFI9MJp87bow4XxAok50m/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/10vGcOirPk2L8sQg6uJoJkg?pwd=mst1) | [Google Drive](https://drive.google.com/drive/folders/1Hgdq43kbmHm1HG9SdLGryiIakBsBWuZp?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1S2MKaSKdU2v53_CZnuYkpQ?pwd=mst1) |
 
 The performance are reported on 10 scenes of the KAIST dataset. The test size of FLOPS is 256 x 256.
 
@@ -246,6 +248,9 @@ python train.py --template dauhst_5stg --outf ./exp/dauhst_5stg/ --method dauhst
 
 # DAUHST-9stg
 python train.py --template dauhst_9stg --outf ./exp/dauhst_9stg/ --method dauhst_9stg
+
+# BiSRNet
+python train.py --template bisrnet --outf ./exp/bisrnet/ --method bisrnet
 ```
 
 The training log, trained model, and reconstrcuted HSI will be available in `MST/simulation/train_code/exp/` . 
@@ -316,6 +321,9 @@ python test.py --template dauhst_5stg --outf ./exp/dauhst_5stg/ --method dauhst_
 
 # DAUHST-9stg
 python test.py --template dauhst_9stg --outf ./exp/dauhst_9stg/ --method dauhst_9stg --pretrained_model_path ./model_zoo/dauhst_9stg/dauhst_9stg.pth
+
+# BiSRNet
+python test.py --template bisrnet --outf ./exp/bisrnet/ --method bisrnet --pretrained_model_path ./model_zoo/bisrnet/bisrnet.pth
 ```
 
 - The reconstrcuted HSIs will be output into `MST/simulation/test_code/exp/`  
@@ -428,6 +436,8 @@ The training log, trained model, and reconstrcuted HSI will be available in `MST
 
 
 ### 5.2　Testing	
+
+The pretrained model of BiSRNet can be download from ([Google Drive](https://drive.google.com/file/d/1zQ7PFuiaEgIpulBl8TA7S_8Am93nAKPb/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1CH4uq_NZPpo5ra2tFzAdfQ?pwd=mst1), code: `cyh2`) and place them to `MST/real/test_code/model_zoo/`
 
 ```python
 cd MST/real/test_code/

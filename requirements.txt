@@ -3,4 +3,4 @@ einops
 torchvision==0.7.0
 torch==1.6.0
 scipy==1.0.0
-
+fvcore
