@@ -81,8 +81,9 @@ We are going to enlarge our model zoo in the future.
 | <img src="./figure/compare_fig.png"  height=320> | <img src="./figure/cst_mst.png" height=320> |
 |                  MST++ vs. SOTA                  |               DAUHST vs. SOTA               |
 |   <img src="./figure/mst_pp.png"  height=320>    | <img src="./figure/dauhst.png" height=320>  |
-|                  BiSRNet vs. SOTA BNNs               |
-|   <img src="./figure/bisrnet.png"  width=640>  |
+|                  BiSRNet vs. SOTA BNNs           |                                             |
+| <img src="./figure/bisrnet.png"  width=640 colspan="2"> |
+
 
 
 
