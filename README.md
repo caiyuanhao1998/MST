@@ -430,9 +430,14 @@ python train.py --template dauhst_5stg --outf ./exp/dauhst_5stg/ --method dauhst
 
 # DAUHST-9stg
 python train.py --template dauhst_9stg --outf ./exp/dauhst_9stg/ --method dauhst_9stg
+
+# BiSRNet
+python train_s.py --outf ./exp/bisrnet/ --method bisrnet
 ```
 
 The training log, trained model, and reconstrcuted HSI will be available in `MST/real/train_code/exp/`
+
+Note: you can use `train_s.py` for other methods except BiSRNet if you cannot access the mask data or you have limited GPU resources. In this case, you need to replace the `--method` paramter in the above commands and make some modifications.
 
 
 ### 5.2　Testing	
@@ -498,10 +503,14 @@ python test.py --template dauhst --outf ./exp/dauhst_5stg/ --method dauhst_5stg 
 
 # DAUHST_9stg
 python test.py --template dauhst --outf ./exp/dauhst_9stg/ --method dauhst_9stg --pretrained_model_path ./model_zoo/dauhst/dauhst_9stg.pth
+
+# BiSRNet
+python test_s.py --outf ./exp/bisrnet/ --method bisrnet --pretrained_model_path ./model_zoo/bisrnet/bisrnet.pth
 ```
 
-- The reconstrcuted HSI will be output into `MST/real/test_code/exp/`  
+The reconstrcuted HSI will be output into `MST/real/test_code/exp/`  
 
+Note: if you use `train_s.py` to train, please us `test_s.py` to test.
 
 ### 5.3　Visualization	
 
