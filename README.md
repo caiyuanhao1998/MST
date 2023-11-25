@@ -253,7 +253,7 @@ python train.py --template dauhst_9stg --outf ./exp/dauhst_9stg/ --method dauhst
 python train.py --template bisrnet --outf ./exp/bisrnet/ --method bisrnet
 ```
 
-The training log, trained model, and reconstrcuted HSI will be available in `MST/simulation/train_code/exp/`
+- The training log, trained model, and reconstrcuted HSI will be available in `MST/simulation/train_code/exp/`
 
 
 ### 4.2　Testing	
@@ -326,9 +326,9 @@ python test.py --template dauhst_9stg --outf ./exp/dauhst_9stg/ --method dauhst_
 python test.py --template bisrnet --outf ./exp/bisrnet/ --method bisrnet --pretrained_model_path ./model_zoo/bisrnet/bisrnet.pth
 ```
 
-The reconstrcuted HSIs will be output into `MST/simulation/test_code/exp/`  
+- The reconstrcuted HSIs will be output into `MST/simulation/test_code/exp/`  
 
-- Put the reconstructed results into `MST/simulation/test_code/Quality_Metrics/results` and run the following MATLAB command to calculate the PSNR and SSIM of the reconstructed HSIs.
+- Place the reconstructed results into `MST/simulation/test_code/Quality_Metrics/results` and run the following MATLAB command to calculate the PSNR and SSIM of the reconstructed HSIs.
 
 ```shell
 Run cal_quality_assessment.m
@@ -435,9 +435,9 @@ python train.py --template dauhst_9stg --outf ./exp/dauhst_9stg/ --method dauhst
 python train_s.py --outf ./exp/bisrnet/ --method bisrnet
 ```
 
-The training log, trained model, and reconstrcuted HSI will be available in `MST/real/train_code/exp/`
+- The training log, trained model, and reconstrcuted HSI will be available in `MST/real/train_code/exp/`
 
-Note: you can use `train_s.py` for other methods except BiSRNet if you cannot access the mask data or you have limited GPU resources. In this case, you need to replace the `--method` paramter in the above commands and make some modifications.
+- Note: you can use `train_s.py` for other methods except BiSRNet if you cannot access the mask data or you have limited GPU resources. In this case, you need to replace the `--method` paramter in the above commands and make some modifications.
 
 
 ### 5.2　Testing	
@@ -508,9 +508,9 @@ python test.py --template dauhst --outf ./exp/dauhst_9stg/ --method dauhst_9stg 
 python test_s.py --outf ./exp/bisrnet/ --method bisrnet --pretrained_model_path ./model_zoo/bisrnet/bisrnet.pth
 ```
 
-The reconstrcuted HSI will be output into `MST/real/test_code/exp/`  
+- The reconstrcuted HSI will be output into `MST/real/test_code/exp/`  
 
-Note: if you use `train_s.py` to train, please use `test_s.py` to test.
+- Note: if you use `train_s.py` to train, please use `test_s.py` to test.
 
 ### 5.3　Visualization	
 
