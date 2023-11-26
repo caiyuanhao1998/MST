@@ -331,9 +331,7 @@ python test.py --template dauhst_9stg --outf ./exp/dauhst_9stg/ --method dauhst_
 python test.py --template bisrnet --outf ./exp/bisrnet/ --method bisrnet --pretrained_model_path ./model_zoo/bisrnet/bisrnet.pth
 ```
 
-- The reconstrcuted HSIs will be output into `MST/simulation/test_code/exp/`  
-
-- Place the reconstructed results into `MST/simulation/test_code/Quality_Metrics/results` and run the following MATLAB command to calculate the PSNR and SSIM of the reconstructed HSIs.
+- The reconstrcuted HSIs will be output into `MST/simulation/test_code/exp/`. Then place the reconstructed results into `MST/simulation/test_code/Quality_Metrics/results` and run the following MATLAB command to calculate the PSNR and SSIM of the reconstructed HSIs.
 
 ```shell
 Run cal_quality_assessment.m
@@ -343,11 +341,12 @@ Run cal_quality_assessment.m
 
 - #### Evaluating the Params and FLOPS of models
 
-  We have provided a function `my_summary()` in `simulation/test_code/utils.py`, please use this function to evaluate the parameters and computational complexity of the models, especially the Transformers as 
+  We have provided two functions `my_summary()` and `my_summary_bnn()` in `simulation/test_code/utils.py`. Please use them to evaluate the parameters and computational complexity of full-precision and binarized models as
 
 ```shell
-from utils import my_summary
+from utils import my_summary, my_summary_bnn
 my_summary(MST(), 256, 256, 28, 1)
+my_summary_bnn(BiSRNet(), 256, 256, 28, 1)
 ```
 
 ### 4.3　Visualization	
