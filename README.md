@@ -341,7 +341,7 @@ Run cal_quality_assessment.m
 
 - #### Evaluating the Params and FLOPS of models
 
-  We have provided two functions `my_summary()` and `my_summary_bnn()` in `simulation/test_code/utils.py`. Please use them to evaluate the parameters and computational complexity of full-precision and binarized models as
+  We provide two functions `my_summary()` and `my_summary_bnn()` in `simulation/test_code/utils.py`. Use them to evaluate the parameters and FLOPS of full-precision and binarized models
 
 ```shell
 from utils import my_summary, my_summary_bnn
