@@ -100,4 +100,4 @@ if __name__ == "__main__":
         
         print('epcoh = %4d , loss = %.10f , time = %4.2f s' % (epoch + 1, epoch_loss / len(Dataset), elapsed_time))
         
-        torch.save(model, os.path.join(opt.outf, 'model_%03d.pth' % (epoch + 1)))
+        torch.save(model.state_dict(), os.path.join(opt.outf, 'model_%03d.pth' % (epoch + 1)))
