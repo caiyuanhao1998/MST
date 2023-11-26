@@ -62,7 +62,7 @@ for j in range(5):
     if not os.path.isdir(model_dir):  # Create the model directory if it doesn't exist
         os.makedirs(model_dir)
     res = result.cpu().permute(2,3,1,0).squeeze(3).numpy()
-    save_path = model_dir + str(j + 1) + '.mat'
+    save_path = model_dir + '/' + str(j + 1) + '.mat'
     sio.savemat(save_path, {'res':res})
 
 
