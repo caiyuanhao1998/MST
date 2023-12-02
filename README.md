@@ -25,7 +25,7 @@ Yuanhao Cai*, Jing Lin*, Xiaowan Hu, Haoqian Wang, Xin Yuan, Yulun Zhang, Radu T
 
 
 #### Awards
-![ntire](/figure/ntire.png)
+![ntire](./figure/ntire.png)
 
 
 #### News
