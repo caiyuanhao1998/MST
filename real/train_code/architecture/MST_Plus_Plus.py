@@ -268,7 +268,7 @@ class MST(nn.Module):
         return out
 
 class MST_Plus_Plus(nn.Module):
-    def __init__(self, in_channels=28, out_channels=28, n_feat=28, stage=3):
+    def __init__(self, in_channels=3, out_channels=28, n_feat=28, stage=3):
         super(MST_Plus_Plus, self).__init__()
         self.stage = stage
         self.conv_in = nn.Conv2d(in_channels, n_feat, kernel_size=3, padding=(3 - 1) // 2,bias=False)
@@ -277,7 +277,7 @@ class MST_Plus_Plus(nn.Module):
         self.body = nn.Sequential(*modules_body)
         self.conv_out = nn.Conv2d(n_feat, out_channels, kernel_size=3, padding=(3 - 1) // 2,bias=False)
 
-    def initial_x(self, y, input_mask=None):
+    def initial_x(self, y):
         """
         :param y: [b,1,256,310]
         :param Phi: [b,28,256,310]
@@ -291,12 +291,13 @@ class MST_Plus_Plus(nn.Module):
         x = self.fution(x)
         return x
 
-    def forward(self, y):
+    def forward(self, x, input_mask=None):
         """
         x: [b,c,h,w]
         return out:[b,c,h,w]
         """
-        x = self.initial_x(y)
+        x = self.initial_x(x)
+
         b, c, h_inp, w_inp = x.shape
         hb, wb = 8, 8
         pad_h = (hb - h_inp % hb) % hb
@@ -307,6 +308,7 @@ class MST_Plus_Plus(nn.Module):
         h = self.conv_out(h)
         h += x
         return h[:, :, :h_inp, :w_inp]
+
 
 
 

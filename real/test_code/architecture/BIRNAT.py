@@ -351,7 +351,7 @@ class BIRNAT(nn.Module):
         temp = torch.mul(torch.unsqueeze(nor_meas, dim=1).expand([batch_size, 28, H, shift_mask.shape[3]]), shift_mask)
         return nor_meas, temp
 
-    def forward(self, meas, shift_mask=None):
+    def forward(self, meas, shift_mask=None, input_mask_s=None):
         if shift_mask==None:
             shift_mask = torch.zeros(1, 28, 256, 310).cuda()
         H, W = meas.shape[-2:]

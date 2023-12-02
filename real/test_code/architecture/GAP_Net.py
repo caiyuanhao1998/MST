@@ -128,12 +128,12 @@ class GAP_net(nn.Module):
         self.unet8 = Unet(28, 28)
         self.unet9 = Unet(28, 28)
 
-    def forward(self, y, input_mask=None):
+    def forward(self, y, input_mask=None, input_mask_s=None):
         if input_mask==None:
             Phi = torch.rand((1,28,256,310)).cuda()
             Phi_s = torch.rand((1, 256, 310)).cuda()
         else:
-            Phi, Phi_s = input_mask
+            Phi, Phi_s = input_mask, input_mask_s
         x_list = []
         x = At(y, Phi)  # v0=H^T y
         ### 1-3
@@ -186,4 +186,4 @@ class GAP_net(nn.Module):
         x = shift_back_3d(x)
         x = self.unet9(x)
         x = shift_3d(x)
-        return x[:, :, :, 0:256]
+        return x[:, :, :, :384]

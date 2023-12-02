@@ -241,7 +241,7 @@ class MST(nn.Module):
         x = self.fution(x)
         return x
 
-    def forward(self, x, input_mask=None):
+    def forward(self, x, input_mask=None, input_mask_s=None):
         """
         x: [b,h,w]
         return out:[b,c,h,w]

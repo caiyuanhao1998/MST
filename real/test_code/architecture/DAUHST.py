@@ -71,7 +71,7 @@ class HS_MSA(nn.Module):
         else:
             seq_l1 = window_size[0] * window_size[1]
             self.pos_emb1 = nn.Parameter(torch.Tensor(1, 1, heads//2, seq_l1, seq_l1))
-            h,w = 256//self.heads,320//self.heads
+            h,w = 384//self.heads, 384//self.heads
             seq_l2 = h*w//seq_l1
             self.pos_emb2 = nn.Parameter(torch.Tensor(1, 1, heads//2, seq_l2, seq_l2))
             trunc_normal_(self.pos_emb1)
@@ -129,7 +129,13 @@ class HS_MSA(nn.Module):
             q2, k2, v2 = map(lambda t: rearrange(t, 'b n mm (h d) -> b n h mm d', h=self.heads//2), (q2, k2, v2))
             q2 *= self.scale
             sim2 = einsum('b n h i d, b n h j d -> b n h i j', q2, k2)
-            sim2 = sim2 + self.pos_emb2
+
+            pos_emb2_interp = []
+            for i in range(sim2.shape[0]):
+                pos_emb2_interp.append(torch.nn.functional.interpolate(self.pos_emb2[i], size=sim2.shape[-2:], mode='bilinear',
+                                                       align_corners=False))
+            pos_emb2_interp = torch.stack(pos_emb2_interp, dim=0)
+            sim2 = sim2 + pos_emb2_interp
             attn2 = sim2.softmax(dim=-1)
             out2 = einsum('b n h i j, b n h j d -> b n h i d', attn2, v2)
             out2 = rearrange(out2, 'b n h mm d -> b n mm (h d)')
@@ -322,46 +328,37 @@ class DAUHST(nn.Module):
     def __init__(self, num_iterations=1):
         super(DAUHST, self).__init__()
         self.para_estimator = HyPaNet(in_nc=28, out_nc=num_iterations*2)
-        self.fution = nn.Conv2d(56, 28, 1, padding=0, bias=True)
+        self.fution = nn.Conv2d(28, 28, 1, padding=0, bias=True)
         self.num_iterations = num_iterations
         self.denoisers = nn.ModuleList([])
         for _ in range(num_iterations):
             self.denoisers.append(
-                HST(in_dim=29, out_dim=28, dim=28, num_blocks=[1,1,1]),
+                HST(in_dim=28, out_dim=28, dim=28, num_blocks=[1,1,1]),
             )
-    def initial(self, y, Phi):
+
+    def initial_x(self, y):
         """
-        :param y: [b,256,310]
+        :param y: [b,1,256,310]
         :param Phi: [b,28,256,310]
-        :return: temp: [b,28,256,310]; alpha: [b, num_iterations]; beta: [b, num_iterations]
+        :return: z: [b,28,256,310]
         """
         nC, step = 28, 2
-        y = y / nC * 2
-        bs,row,col = y.shape
-        y_shift = torch.zeros(bs, nC, row, col).cuda().float()
+        bs, row, col = y.shape
+        x = torch.zeros(bs, nC, row, row).cuda().float()
         for i in range(nC):
-            y_shift[:, i, :, step * i:step * i + col - (nC - 1) * step] = y[:, :, step * i:step * i + col - (nC - 1) * step]
-        z = self.fution(torch.cat([y_shift, Phi], dim=1))
-        alpha, beta = self.para_estimator(self.fution(torch.cat([y_shift, Phi], dim=1)))
-        return z, alpha, beta
+            x[:, i, :, :] = y[:, :, step * i:step * i + col - (nC - 1) * step]
+        x = self.fution(x)
+        return x
 
-    def forward(self, y, input_mask=None):
+    def forward(self, x, input_mask=None, input_mask_s=None):
         """
         :param y: [b,256,310]
         :param Phi: [b,28,256,310]
         :param Phi_PhiT: [b,256,310]
         :return: z_crop: [b,28,256,256]
         """
-        Phi, Phi_s = input_mask
-        z, alphas, betas = self.initial(y, Phi)
+        x = self.initial_x(x)
         for i in range(self.num_iterations):
-            alpha, beta = alphas[:,i,:,:], betas[:,i:i+1,:,:]
-            Phi_z = A(z, Phi)
-            x = z + At(torch.div(y-Phi_z,alpha+Phi_s), Phi)
-            x = shift_back_3d(x)
-            beta_repeat = beta.repeat(1,1,x.shape[2], x.shape[3])
-            z = self.denoisers[i](torch.cat([x, beta_repeat],dim=1))
-            if i<self.num_iterations-1:
-                z = shift_3d(z)
-        return z[:, :, :, 0:256]
+            x = self.denoisers[i](x)
+        return x[:, :, :, 0:384]
 

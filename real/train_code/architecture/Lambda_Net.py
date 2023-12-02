@@ -176,5 +176,5 @@ class Lambda_Net(nn.Module):
         out = self.conv_last5(out3)+res0
         out = out[:, :, :h_inp, :w_inp]
 
-        return shift_back_3d(out)[:, :, :, :256]
+        return shift_back_3d(out)[:, :, :, :384]
 

@@ -24,7 +24,7 @@ class dataset(tud.Dataset):
 
     def __getitem__(self, index):
         if self.isTrain == True:
-            # index1 = 0
+            # index1 = 0; d=0
             index1   = random.randint(0, 29)
             d = random.randint(0, 1)
             if d == 0:

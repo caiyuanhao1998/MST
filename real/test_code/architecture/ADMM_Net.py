@@ -116,7 +116,7 @@ class ADMM_net(nn.Module):
         self.gamma8 = torch.nn.Parameter(torch.Tensor([0]))
         self.gamma9 = torch.nn.Parameter(torch.Tensor([0]))
 
-    def forward(self, y, input_mask=None):
+    def forward(self, y, input_mask=None, input_mask_s=None):
         if input_mask == None:
             Phi = torch.rand((1, 28, 256, 310)).cuda()
             Phi_s = torch.rand((1, 256, 310)).cuda()
@@ -198,4 +198,4 @@ class ADMM_net(nn.Module):
         x1 = shift_back_3d(x1)
         theta = self.unet9(x1)
         theta = shift_3d(theta)
-        return theta[:, :, :, 0:256]
+        return theta[:, :, :, :384]

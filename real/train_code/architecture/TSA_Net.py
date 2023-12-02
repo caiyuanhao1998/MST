@@ -202,6 +202,7 @@ class Feature_Spatial(nn.Module):
             image = image.permute(0, 1, 3, 2)
         feat = self.conv1(image)
         feat = self.conv2(feat)
+        # import pdb; pdb.set_trace()
         feat = self.fully(feat)
         return feat
 
@@ -249,16 +250,35 @@ class TSA_Net(nn.Module):
 
         self.tconv_up4 = Decoder_Triblock(1024, 512)
         self.tconv_up3 = Decoder_Triblock(512, 256)
-        self.transform3 = TSA_Transform((64, 64), 256, 256, 8, (64, 80), [0, 0])
+        self.transform3 = TSA_Transform((96, 96), 256, 256, 8, (64, 80), [0, 0])
         self.tconv_up2 = Decoder_Triblock(256, 128)
-        self.transform2 = TSA_Transform((128, 128), 128, 128, 8, (64, 40), [1, 0])
+        self.transform2 = TSA_Transform((192, 192), 128, 128, 8, (64, 40), [1, 0])
         self.tconv_up1 = Decoder_Triblock(128, 64)
-        self.transform1 = TSA_Transform((256, 256), 64, 28, 8, (48, 30), [1, 1], True)
+        self.transform1 = TSA_Transform((384, 384), 64, 28, 8, (48, 30), [1, 1], True)
 
         self.conv_last = nn.Conv2d(out_ch, out_ch, 1)
         self.afn_last = nn.Sigmoid()
+        self.fution = nn.Conv2d(28, 28, 3, 1, 1, bias=False)
+
+    def initial_x(self, y):
+        """
+        :param y: [b,1,256,310]
+        :param Phi: [b,28,256,310]
+        :return: z: [b,28,256,310]
+        """
+        nC, step = 28, 2
+        bs, row, col = y.shape
+        x = torch.zeros(bs, nC, row, row).cuda().float()
+        for i in range(nC):
+            x[:, i, :, :] = y[:, :, step * i:step * i + col - (nC - 1) * step]
+        x = self.fution(x)
+        return x
 
     def forward(self, x, input_mask=None):
+
+        x = self.initial_x(x)
+        # print(x.shape)
+
         enc1, enc1_pre = self.tconv_down1(x)
         enc2, enc2_pre = self.tconv_down2(enc1)
         enc3, enc3_pre = self.tconv_down3(enc2)

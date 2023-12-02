@@ -546,7 +546,7 @@ class CST(nn.Module):
         x = self.fution(x)
         return x
 
-    def forward(self, x, input_mask=None):
+    def forward(self, x, input_mask=None, input_mask_s=None):
         """
         x: [b,h,w]
         return out:[b,c,h,w]
@@ -583,6 +583,8 @@ class CST(nn.Module):
 
         # Output projection
         out = self.out_proj(fea) + x
+        if self.sparse:
+            return out, mask
         return out
 
 

@@ -259,6 +259,7 @@ class TSA_Net(nn.Module):
         self.afn_last = nn.Sigmoid()
 
     def forward(self, x, input_mask=None):
+
         enc1, enc1_pre = self.tconv_down1(x)
         enc2, enc2_pre = self.tconv_down2(enc1)
         enc3, enc3_pre = self.tconv_down3(enc2)

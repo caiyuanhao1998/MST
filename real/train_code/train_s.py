@@ -22,7 +22,8 @@ if not torch.cuda.is_available():
 
 # load training data
 CAVE = prepare_data_cave(opt.data_path_CAVE, 30)
-KAIST = prepare_data_KAIST(opt.data_path_KAIST, 30) 
+KAIST = prepare_data_KAIST(opt.data_path_KAIST, 30)
+# KAIST = None
 
 # saving path
 date_time = str(datetime.datetime.now())
@@ -75,14 +76,13 @@ if __name__ == "__main__":
         epoch_loss = 0
 
         start_time = time.time()
-        for i, (input, label) in enumerate(loader_train):
+        for i, (input, label, Mask, Phi, Phi_s) in enumerate(loader_train):
             input, label = Variable(input), Variable(label)
             input, label = input.cuda(), label.cuda()
             out = model(input)
 
             loss = criterion(out, label)
             epoch_loss += loss.item()
-
             optimizer.zero_grad()
             loss.backward()
 
@@ -91,13 +91,16 @@ if __name__ == "__main__":
             if i % (1000) == 0:
                 print('%4d %4d / %4d loss = %.10f time = %s' % (
                     epoch + 1, i, len(Dataset) // opt.batch_size, epoch_loss / ((i + 1) * opt.batch_size),
-                    datetime.datetime.now()))   
-        
+                    datetime.datetime.now()))
+
         elapsed_time = time.time() - start_time
 
         logger.info("===> Epoch {} Complete: Avg. Loss: {:.6f} time: {:.2f} s".
                     format(epoch+1 , epoch_loss / len(Dataset), elapsed_time))
         
         print('epcoh = %4d , loss = %.10f , time = %4.2f s' % (epoch + 1, epoch_loss / len(Dataset), elapsed_time))
-        
-        torch.save(model.state_dict(), os.path.join(opt.outf, 'model_%03d.pth' % (epoch + 1)))
+
+
+        torch.save(model, os.path.join(opt.outf, 'model_%03d.pth' % (epoch + 1)))
+
+

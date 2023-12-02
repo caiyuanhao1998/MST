@@ -63,5 +63,5 @@ def model_generator(method, pretrained_model_path=None):
         model.load_state_dict({k.replace('module.', ''): v for k, v in checkpoint.items()},
                               strict=True)
     if method == 'hdnet':
-        return model,fdl_loss
+        return model, fdl_loss
     return model

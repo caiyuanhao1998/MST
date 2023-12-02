@@ -186,4 +186,4 @@ class GAP_net(nn.Module):
         x = shift_back_3d(x)
         x = self.unet9(x)
         x = shift_3d(x)
-        return x[:, :, :, 0:256]
+        return x[:, :, :, :384]

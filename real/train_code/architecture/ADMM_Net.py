@@ -198,4 +198,4 @@ class ADMM_net(nn.Module):
         x1 = shift_back_3d(x1)
         theta = self.unet9(x1)
         theta = shift_3d(theta)
-        return theta[:, :, :, 0:256]
+        return theta[:, :, :, :384]

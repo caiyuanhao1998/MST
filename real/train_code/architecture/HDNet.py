@@ -269,6 +269,8 @@ class HDNet(nn.Module):
         kernel_size = 3
         act = nn.ReLU(True)
 
+        self.fution = nn.Conv2d(28, 28, 3, 1, 1, bias=False)
+
         # define head module
         m_head = [conv(in_ch, n_feats, kernel_size)]
 
@@ -294,7 +296,24 @@ class HDNet(nn.Module):
         self.body = nn.Sequential(*m_body)
         self.tail = nn.Sequential(*m_tail)
 
+    def initial_x(self, y):
+        """
+        :param y: [b,1,256,310]
+        :param Phi: [b,28,256,310]
+        :return: z: [b,28,256,310]
+        """
+        nC, step = 28, 2
+        bs, row, col = y.shape
+        x = torch.zeros(bs, nC, row, row).cuda().float()
+        for i in range(nC):
+            x[:, i, :, :] = y[:, :, step * i:step * i + col - (nC - 1) * step]
+        x = self.fution(x)
+        return x
+
     def forward(self, x, input_mask=None):
+
+        x = self.initial_x(x)
+
         x = self.head(x)
 
         res = self.body(x)

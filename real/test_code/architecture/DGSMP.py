@@ -267,7 +267,7 @@ class HSI_CS(nn.Module):
             y[:, :, 0 + 2 * t : sz[2] + 2 * t] = x[:, t, :, :] + y[:, :, 0 + 2 * t : sz[2] + 2 * t]
         return y
 
-    def forward(self, y, input_mask=None):
+    def forward(self, y, input_mask=None, input_mask_s=None):
         ## The measurements y is split into a 3D data cube of size H × W × L to initialize x.
         y = y / 28 * 2
         Xt = self.y2x(y)

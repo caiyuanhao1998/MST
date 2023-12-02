@@ -7,6 +7,7 @@ import torch
 import torch.nn as nn
 import math
 import random
+import logging
 
 def _as_floats(im1, im2):
     float_type = np.result_type(im1.dtype, im2.dtype, np.float32)
@@ -182,3 +183,21 @@ def init_mask(mask, Phi, Phi_s, mask_type):
     elif mask_type == None:
         input_mask = None
     return input_mask
+
+def gen_log(model_path):
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+    formatter = logging.Formatter("%(asctime)s - %(levelname)s: %(message)s")
+
+    log_file = model_path + '/log.txt'
+    fh = logging.FileHandler(log_file, mode='a')
+    fh.setLevel(logging.INFO)
+    fh.setFormatter(formatter)
+
+    ch = logging.StreamHandler()
+    ch.setLevel(logging.INFO)
+    ch.setFormatter(formatter)
+
+    logger.addHandler(fh)
+    logger.addHandler(ch)
+    return logger

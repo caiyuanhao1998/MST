@@ -30,7 +30,9 @@ if not os.path.exists(opt.outf):
 
 # model
 if opt.method == 'hdnet':
-    model, FDL_loss = model_generator(opt.method, opt.pretrained_model_path).cuda()
+    model, FDL_loss = model_generator(opt.method, opt.pretrained_model_path)
+    model = model.cuda()
+    FDL_loss = FDL_loss.cuda()
 else:
     model = model_generator(opt.method, opt.pretrained_model_path).cuda()
 
@@ -72,11 +74,9 @@ if __name__ == "__main__":
                 loss = loss + 2 * loss_sparsity
             else:
                 out = model(input, input_mask)
+                # import pdb; pdb.set_trace()
+                # print(out.shape, label.shape)
                 loss = criterion(out, label)
-            
-            if opt.method == 'hdnet':
-                fdl_loss = FDL_loss(out, label)
-                loss = loss + 0.7 * fdl_loss
 
             epoch_loss += loss.item()
 
@@ -89,6 +89,7 @@ if __name__ == "__main__":
                 print('%4d %4d / %4d loss = %.10f time = %s' % (
                     epoch + 1, i, len(Dataset) // opt.batch_size, epoch_loss / ((i + 1) * opt.batch_size),
                     datetime.datetime.now()))
+
 
         elapsed_time = time.time() - start_time
         print('epcoh = %4d , loss = %.10f , time = %4.2f s' % (epoch + 1, epoch_loss / len(Dataset), elapsed_time))

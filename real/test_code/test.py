@@ -11,17 +11,14 @@ os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 parser = argparse.ArgumentParser(description="PyTorch HSIFUSION")
-parser.add_argument('--data_path', default='./Data/Testing_data/', type=str,help='path of data')
-parser.add_argument('--mask_path', default='./Data/mask.mat', type=str,help='path of mask')
+parser.add_argument('--data_path', default='../../datasets/TSA_real_data/Measurements/', type=str,help='path of data')
+parser.add_argument('--mask_path', default='../../datasets/TSA_real_data/mask.mat', type=str,help='path of mask')
 parser.add_argument("--size", default=660, type=int, help='the size of trainset image')
-parser.add_argument("--trainset_num", default=2000, type=int, help='total number of trainset')
-parser.add_argument("--testset_num", default=5, type=int, help='total number of testset')
 parser.add_argument("--seed", default=1, type=int, help='Random_seed')
 parser.add_argument("--batch_size", default=1, type=int, help='batch_size')
-parser.add_argument("--isTrain", default=False, type=bool, help='train or test')
 parser.add_argument("--pretrained_model_path", default=None, type=str)
+parser.add_argument("--outf", default='./exp/real_test_result/', type=str)
 opt = parser.parse_args()
-print(opt)
 
 def prepare_data(path, file_num):
     HR_HSI = np.zeros((((660,714,file_num))))
@@ -50,9 +47,10 @@ def load_mask(path,size=660):
     return mask_3d_shift.unsqueeze(0), mask_3d_shift_s.unsqueeze(0)
 
 HR_HSI = prepare_data(opt.data_path, 5)
-mask_3d_shift, mask_3d_shift_s = load_mask('./Data/mask.mat')
+mask_3d_shift, mask_3d_shift_s = load_mask(opt.mask_path)
 
-pretrained_model_path = "/data/lj/exp/hsi/nips2022/dgsmp_real_exp/exp8/hdnet_p384_b1_cosine/2022_05_13_23_05_15/model_150.pth"
+pretrained_model_path = opt.pretrained_model_path
+save_path = opt.outf
 model = torch.load(pretrained_model_path)
 model = model.eval()
 model = dataparallel(model, 1)

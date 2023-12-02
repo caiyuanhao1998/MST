@@ -121,7 +121,7 @@ class Lambda_Net(nn.Module):
         self.conv_last5 = nn.Conv2d(32, out_ch, 1)
         self.act = nn.ReLU()
 
-    def forward(self, x, input_mask=None):
+    def forward(self, x, input_mask=None, input_mask_s=None):
         if input_mask == None:
             input_mask = torch.zeros((1,28,256,310)).cuda()
         x = x/28*2
@@ -176,5 +176,5 @@ class Lambda_Net(nn.Module):
         out = self.conv_last5(out3)+res0
         out = out[:, :, :h_inp, :w_inp]
 
-        return shift_back_3d(out)[:, :, :, :256]
+        return shift_back_3d(out)[:, :, :, :384]
 

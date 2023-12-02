@@ -439,6 +439,8 @@ python train.py --template dauhst_9stg --outf ./exp/dauhst_9stg/ --method dauhst
 python train_s.py --outf ./exp/bisrnet/ --method bisrnet
 ```
 
+- If you do not have a large memory GPU, add `--size 128` to use a small patch size.
+
 - The training log, trained model, and reconstrcuted HSI will be available in `MST/real/train_code/exp/`
 
 - Note: you can use `train_s.py` for other methods except BiSRNet if you cannot access the mask data or you have limited GPU resources. In this case, you need to replace the `--method` paramter in the above commands and make some modifications.
@@ -452,69 +454,67 @@ The pretrained model of BiSRNet can be download from ([Google Drive](https://dri
 cd MST/real/test_code/
 
 # MST_S
-python test.py --template mst_s --outf ./exp/mst_s/ --method mst_s --pretrained_model_path ./model_zoo/mst/mst_s.pth
+python test.py --outf ./exp/mst_s/ --pretrained_model_path ./model_zoo/mst/mst_s.pth
 
 # MST_M
-python test.py --template mst_m --outf ./exp/mst_m/ --method mst_m --pretrained_model_path ./model_zoo/mst/mst_m.pth
+python test.py --outf ./exp/mst_m/ --pretrained_model_path ./model_zoo/mst/mst_m.pth
 
 # MST_L
-python test.py --template mst_l --outf ./exp/mst_l/ --method mst_l --pretrained_model_path ./model_zoo/mst/mst_l.pth
+python test.py  --outf ./exp/mst_l/ --pretrained_model_path ./model_zoo/mst/mst_l.pth
 
 # CST_S
-python test.py --template cst_s --outf ./exp/cst_s/ --method cst_s --pretrained_model_path ./model_zoo/cst/cst_s.pth
+python test.py --outf ./exp/cst_s/ --pretrained_model_path ./model_zoo/cst/cst_s.pth
 
 # CST_M
-python test.py --template cst_m --outf ./exp/cst_m/ --method cst_m --pretrained_model_path ./model_zoo/cst/cst_m.pth
+python test.py --outf ./exp/cst_m/ --pretrained_model_path ./model_zoo/cst/cst_m.pth
 
 # CST_L
-python test.py --template cst_l --outf ./exp/cst_l/ --method cst_l --pretrained_model_path ./model_zoo/cst/cst_l.pth
+python test.py --outf ./exp/cst_l/ --pretrained_model_path ./model_zoo/cst/cst_l.pth
 
 # CST_L_Plus
-python test.py --template cst_l_plus --outf ./exp/cst_l_plus/ --method cst_l_plus --pretrained_model_path ./model_zoo/cst/cst_l_plus.pth
+python test.py --outf ./exp/cst_l_plus/ --pretrained_model_path ./model_zoo/cst/cst_l_plus.pth
 
 # GAP_Net
-python test.py --template gap_net --outf ./exp/gap_net/ --method gap_net --pretrained_model_path ./model_zoo/gap_net/gap_net.pth
+python test.py --outf ./exp/gap_net/ --pretrained_model_path ./model_zoo/gap_net/gap_net.pth
 
 # ADMM_Net
-python test.py --template admm_net --outf ./exp/admm_net/ --method admm_net --pretrained_model_path ./model_zoo/admm_net/admm_net.pth
+python test.py --outf ./exp/admm_net/ --pretrained_model_path ./model_zoo/admm_net/admm_net.pth
 
 # TSA_Net
-python test.py --template tsa_net --outf ./exp/tsa_net/ --method tsa_net --pretrained_model_path ./model_zoo/tsa_net/tsa_net.pth
+python test.py --outf ./exp/tsa_net/ --pretrained_model_path ./model_zoo/tsa_net/tsa_net.pth
 
 # HDNet
 python test.py --template hdnet --outf ./exp/hdnet/ --method hdnet --pretrained_model_path ./model_zoo/hdnet/hdnet.pth
 
 # DGSMP
-python test.py --template dgsmp --outf ./exp/dgsmp/ --method dgsmp --pretrained_model_path ./model_zoo/dgsmp/dgsmp.pth
+python test.py --outf ./exp/dgsmp/ --pretrained_model_path ./model_zoo/dgsmp/dgsmp.pth
 
 # BIRNAT
-python test.py --template birnat --outf ./exp/birnat/ --method birnat --pretrained_model_path ./model_zoo/birnat/birnat.pth
+python test.py --outf ./exp/birnat/ --pretrained_model_path ./model_zoo/birnat/birnat.pth
 
 # MST_Plus_Plus
-python test.py --template mst_plus_plus --outf ./exp/mst_plus_plus/ --method mst_plus_plus --pretrained_model_path ./model_zoo/mst_plus_plus/mst_plus_plus.pth
+python test.py --outf ./exp/mst_plus_plus/ --pretrained_model_path ./model_zoo/mst_plus_plus/mst_plus_plus.pth
 
 # λ-Net
-python test.py --template lambda_net --outf ./exp/lambda_net/ --method lambda_net --pretrained_model_path ./model_zoo/lambda_net/lambda_net.pth
+python test.py --outf ./exp/lambda_net/ --pretrained_model_path ./model_zoo/lambda_net/lambda_net.pth
 
 # DAUHST_2stg
-python test.py --template dauhst --outf ./exp/dauhst_2stg/ --method dauhst_2stg --pretrained_model_path ./model_zoo/dauhst/dauhst_2stg.pth
+python test.py --outf ./exp/dauhst_2stg/ --pretrained_model_path ./model_zoo/dauhst/dauhst_2stg.pth
 
 # DAUHST_3stg
-python test.py --template dauhst --outf ./exp/dauhst_3stg/ --method dauhst_3stg --pretrained_model_path ./model_zoo/dauhst/dauhst_3stg.pth
+python test.py --outf ./exp/dauhst_3stg/ --pretrained_model_path ./model_zoo/dauhst/dauhst_3stg.pth
 
 # DAUHST_5stg
-python test.py --template dauhst --outf ./exp/dauhst_5stg/ --method dauhst_5stg --pretrained_model_path ./model_zoo/dauhst/dauhst_5stg.pth
+python test.py --outf ./exp/dauhst_5stg/ --pretrained_model_path ./model_zoo/dauhst/dauhst_5stg.pth
 
 # DAUHST_9stg
-python test.py --template dauhst --outf ./exp/dauhst_9stg/ --method dauhst_9stg --pretrained_model_path ./model_zoo/dauhst/dauhst_9stg.pth
+python test.py --outf ./exp/dauhst_9stg/ --pretrained_model_path ./model_zoo/dauhst/dauhst_9stg.pth
 
 # BiSRNet
-python test_s.py --outf ./exp/bisrnet/ --method bisrnet --pretrained_model_path ./model_zoo/bisrnet/bisrnet.pth
+python test.py --outf ./exp/bisrnet  --pretrained_model_path ./model_zoo/bisrnet/bisrnet.pth
 ```
 
 - The reconstrcuted HSI will be output into `MST/real/test_code/exp/`  
-
-- Note: if you use `train_s.py` to train, please use `test_s.py` to test.
 
 ### 5.3　Visualization	
 
