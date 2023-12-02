@@ -6,6 +6,7 @@ import scipy.io as sio
 import numpy as np
 from torch.autograd import Variable
 from option import opt
+from architecture import *
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
@@ -18,6 +19,7 @@ parser.add_argument("--seed", default=1, type=int, help='Random_seed')
 parser.add_argument("--batch_size", default=1, type=int, help='batch_size')
 parser.add_argument("--pretrained_model_path", default=None, type=str)
 parser.add_argument("--outf", default='./exp/real_test_result/', type=str)
+parser.add_argument("--method", type=str, default='others')
 opt = parser.parse_args()
 
 def prepare_data(path, file_num):
@@ -51,7 +53,10 @@ mask_3d_shift, mask_3d_shift_s = load_mask(opt.mask_path)
 
 pretrained_model_path = opt.pretrained_model_path
 save_path = opt.outf
-model = torch.load(pretrained_model_path)
+if opt.method=='bisrnet':
+    model = model_generator(opt.method, opt.pretrained_model_path).cuda()
+else:
+    model = torch.load(pretrained_model_path)
 model = model.eval()
 model = dataparallel(model, 1)
 psnr_total = 0

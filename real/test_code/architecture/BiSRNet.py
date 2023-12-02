@@ -8,28 +8,31 @@ from torch.nn.init import _calculate_fan_in_and_fan_out
 import os
 from pdb import set_trace as stx
 
+
 # --------------------------------------------- Binarized Basic Units -----------------------------------------------------------------
 
 
 class LearnableBias(nn.Module):
     def __init__(self, out_chn):
         super(LearnableBias, self).__init__()
-        self.bias = nn.Parameter(torch.zeros(1,out_chn,1,1), requires_grad=True)
+        self.bias = nn.Parameter(torch.zeros(1, out_chn, 1, 1), requires_grad=True)
 
     def forward(self, x):
         # stx()
         out = x + self.bias.expand_as(x)
         return out
 
+
 class ReDistribution(nn.Module):
     def __init__(self, out_chn):
         super(ReDistribution, self).__init__()
-        self.b = nn.Parameter(torch.zeros(1,out_chn,1,1), requires_grad=True)
-        self.k = nn.Parameter(torch.ones(1,out_chn,1,1), requires_grad=True)
-    
+        self.b = nn.Parameter(torch.zeros(1, out_chn, 1, 1), requires_grad=True)
+        self.k = nn.Parameter(torch.ones(1, out_chn, 1, 1), requires_grad=True)
+
     def forward(self, x):
         out = x * self.k.expand_as(x) + self.b.expand_as(x)
         return out
+
 
 class RPReLU(nn.Module):
     def __init__(self, inplanes):
@@ -39,8 +42,9 @@ class RPReLU(nn.Module):
         self.pr_bias1 = LearnableBias(inplanes)
 
     def forward(self, x):
-        x = self.pr_bias1(self.pr_prelu(self.pr_bias0(x)))      
+        x = self.pr_bias1(self.pr_prelu(self.pr_bias0(x)))
         return x
+
 
 class Spectral_Binary_Activation(nn.Module):
     def __init__(self):
@@ -48,10 +52,9 @@ class Spectral_Binary_Activation(nn.Module):
         self.beta = nn.Parameter(torch.ones(1), requires_grad=True)
 
     def forward(self, x):
-
         binary_activation_no_grad = torch.sign(x)
-        tanh_activation = torch.tanh(x*self.beta)
-        
+        tanh_activation = torch.tanh(x * self.beta)
+
         out = binary_activation_no_grad.detach() - tanh_activation.detach() + tanh_activation
         return out
 
@@ -70,16 +73,18 @@ class HardBinaryConv(nn.Conv2d):
 
     def forward(self, x):
         real_weights = self.weight
-        scaling_factor = torch.mean(torch.mean(torch.mean(abs(real_weights),dim=3,keepdim=True),dim=2,keepdim=True),dim=1,keepdim=True)
+        scaling_factor = torch.mean(torch.mean(torch.mean(abs(real_weights), dim=3, keepdim=True), dim=2, keepdim=True),
+                                    dim=1, keepdim=True)
         scaling_factor = scaling_factor.detach()
         # stx()
         binary_weights_no_grad = scaling_factor * torch.sign(real_weights)
         # stx()
         cliped_weights = torch.clamp(real_weights, -1.0, 1.0)
         binary_weights = binary_weights_no_grad.detach() - cliped_weights.detach() + cliped_weights
-        y = F.conv2d(x, binary_weights,self.bias, stride=self.stride, padding=self.padding, groups=self.groups)
+        y = F.conv2d(x, binary_weights, self.bias, stride=self.stride, padding=self.padding, groups=self.groups)
 
         return y
+
 
 class BinaryConv2d(nn.Module):
 
@@ -89,20 +94,19 @@ class BinaryConv2d(nn.Module):
         self.move0 = ReDistribution(in_channels)
         self.binary_activation = Spectral_Binary_Activation()
         self.binary_conv = HardBinaryConv(in_chn=in_channels,
-        out_chn=in_channels,
-        kernel_size=kernel_size,
-        stride = stride,
-        padding=padding,
-        bias=bias,
-        groups=groups)
-        self.relu=RPReLU(in_channels)
-
+                                          out_chn=in_channels,
+                                          kernel_size=kernel_size,
+                                          stride=stride,
+                                          padding=padding,
+                                          bias=bias,
+                                          groups=groups)
+        self.relu = RPReLU(in_channels)
 
     def forward(self, x):
         out = self.move0(x)
         out = self.binary_activation(out)
         out = self.binary_conv(out)
-        out =self.relu(out)
+        out = self.relu(out)
         out = out + x
         return out
 
@@ -112,12 +116,13 @@ class BinaryConv2d_Down(nn.Module):
     input: b,c,h,w
     output: b,c/2,2h,2w
     '''
+
     def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0, bias=False, groups=1):
         super(BinaryConv2d_Down, self).__init__()
 
         self.biconv_1 = BinaryConv2d(in_channels, in_channels, kernel_size, stride, padding, bias, groups)
         self.biconv_2 = BinaryConv2d(in_channels, in_channels, kernel_size, stride, padding, bias, groups)
-        self.avg_pool = nn.AvgPool2d(kernel_size = 2, stride = 2, padding = 0)
+        self.avg_pool = nn.AvgPool2d(kernel_size=2, stride=2, padding=0)
 
     def forward(self, x):
         '''
@@ -134,12 +139,12 @@ class BinaryConv2d_Down(nn.Module):
         return out
 
 
-
 class BinaryConv2d_Up(nn.Module):
     '''
     input: b,c,h,w
     output: b,c/2,2h,2w
     '''
+
     def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0, bias=False, groups=1):
         super(BinaryConv2d_Up, self).__init__()
 
@@ -151,16 +156,15 @@ class BinaryConv2d_Up(nn.Module):
         x: b,c,h,w
         out: b,c/2,2h,2w
         '''
-        b,c,h,w = x.shape
+        b, c, h, w = x.shape
         out = F.interpolate(x, scale_factor=2, mode='bilinear')
-        
-        out_1 = out[:,:c//2,:,:]
-        out_2 = out[:,c//2:,:,:]
+
+        out_1 = out[:, :c // 2, :, :]
+        out_2 = out[:, c // 2:, :, :]
 
         out_1 = self.biconv_1(out_1)
         out_2 = self.biconv_2(out_2)
 
-        
         out = (out_1 + out_2) / 2
 
         return out
@@ -171,6 +175,7 @@ class BinaryConv2d_Fusion_Decrease(nn.Module):
     input: b,c,h,w
     output: b,c/2,h,w
     '''
+
     def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0, bias=False, groups=1):
         super(BinaryConv2d_Fusion_Decrease, self).__init__()
 
@@ -183,15 +188,15 @@ class BinaryConv2d_Fusion_Decrease(nn.Module):
         x: b,c,h,w
         out: b,c/2,h,w
         '''
-        b,c,h,w = x.shape
+        b, c, h, w = x.shape
         out = x
-        
-        out_1 = out[:,:c//2,:,:]
-        out_2 = out[:,c//2:,:,:]
+
+        out_1 = out[:, :c // 2, :, :]
+        out_2 = out[:, c // 2:, :, :]
 
         out_1 = self.biconv_1(out_1)
         out_2 = self.biconv_2(out_2)
-        
+
         out = (out_1 + out_2) / 2
 
         return out
@@ -202,6 +207,7 @@ class BinaryConv2d_Fusion_Increase(nn.Module):
     input: b,c,h,w
     output: b,2c,h,w
     '''
+
     def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0, bias=False, groups=1):
         super(BinaryConv2d_Fusion_Increase, self).__init__()
 
@@ -223,8 +229,8 @@ class BinaryConv2d_Fusion_Increase(nn.Module):
 
         return out
 
-# ---------------------------------------------------------- Binarized UNet------------------------------------------------------
 
+# ---------------------------------------------------------- Binarized UNet------------------------------------------------------
 
 
 class PreNorm(nn.Module):
@@ -243,16 +249,15 @@ class GELU(nn.Module):
         return F.gelu(x)
 
 
-def shift_back(inputs,step=2):          # input [bs,28,256,310]  output [bs, 28, 256, 256]
+def shift_back(inputs, step=2):  # input [bs,28,256,310]  output [bs, 28, 256, 256]
     [bs, nC, row, col] = inputs.shape
-    down_sample = 256//row
-    step = float(step)/float(down_sample*down_sample)
+    down_sample = 256 // row
+    step = float(step) / float(down_sample * down_sample)
     out_col = row
     for i in range(nC):
-        inputs[:,i,:,:out_col] = \
-            inputs[:,i,:,int(step*i):int(step*i)+out_col]
+        inputs[:, i, :, :out_col] = \
+            inputs[:, i, :, int(step * i):int(step * i) + out_col]
     return inputs[:, :, :, :out_col]
-
 
 
 class FeedForward(nn.Module):
@@ -275,7 +280,6 @@ class FeedForward(nn.Module):
         """
         out = self.net(x.permute(0, 3, 1, 2))
         return out.permute(0, 2, 3, 1)
-
 
 
 class BiSRNet_Block(nn.Module):
@@ -306,15 +310,14 @@ class BiSRNet_Block(nn.Module):
         return out
 
 
-
 class BiSRNet_body(nn.Module):
-    def __init__(self, in_dim=28, out_dim=28, dim=28, stage=2, num_blocks=[2,4,4]):
+    def __init__(self, in_dim=28, out_dim=28, dim=28, stage=2, num_blocks=[2, 4, 4]):
         super(BiSRNet_body, self).__init__()
         self.dim = dim
         self.stage = stage
 
         # Input projection
-        self.embedding = BinaryConv2d(in_dim, self.dim, 3, 1, 1, bias=False)                           # 1-bit -> 32-bit
+        self.embedding = BinaryConv2d(in_dim, self.dim, 3, 1, 1, bias=False)  # 1-bit -> 32-bit
 
         # Encoder
         self.encoder_layers = nn.ModuleList([])
@@ -343,7 +346,7 @@ class BiSRNet_body(nn.Module):
             dim_stage //= 2
 
         # Output projection
-        self.mapping = BinaryConv2d(self.dim, out_dim, 3, 1, 1, bias=False)                                # 1-bit -> 32-bit
+        self.mapping = BinaryConv2d(self.dim, out_dim, 3, 1, 1, bias=False)  # 1-bit -> 32-bit
 
     def forward(self, x):
         """
@@ -369,7 +372,7 @@ class BiSRNet_body(nn.Module):
         # Decoder
         for i, (FeaUpSample, Fution, BiSRNet_Block) in enumerate(self.decoder_layers):
             fea = FeaUpSample(fea)
-            fea = Fution(torch.cat([fea, fea_encoder[self.stage-1-i]], dim=1))
+            fea = Fution(torch.cat([fea, fea_encoder[self.stage - 1 - i]], dim=1))
             fea = BiSRNet_Block(fea)
 
         # Mapping
@@ -378,41 +381,38 @@ class BiSRNet_body(nn.Module):
         return out
 
 
-
 class BiSRNet(nn.Module):
     '''
     Only 3 layers are 32-bit conv
     '''
-    def __init__(self, in_channels=28, out_channels=28, n_feat=28, stage=3, num_blocks=[1,1,1]):
+
+    def __init__(self, in_channels=28, out_channels=28, n_feat=28, stage=3, num_blocks=[1, 1, 1]):
         super(BiSRNet, self).__init__()
         self.stage = stage
-        self.conv_in = nn.Conv2d(in_channels, n_feat, kernel_size=3, padding=(3 - 1) // 2,bias=False)       # 1-bit -> 32-bit
+        self.conv_in = nn.Conv2d(in_channels, n_feat, kernel_size=3, padding=(3 - 1) // 2,
+                                 bias=False)  # 1-bit -> 32-bit
         modules_body = [BiSRNet_body(dim=n_feat, stage=2, num_blocks=num_blocks) for _ in range(stage)]
-        self.fution = nn.Conv2d(28, 28, 1, padding=0, bias=True)                                            # 1-bit -> 32-bit
+        self.fution = nn.Conv2d(56, 28, 1, padding=0, bias=True)  # 1-bit -> 32-bit
         self.body = nn.Sequential(*modules_body)
-        self.conv_out = nn.Conv2d(n_feat, out_channels, kernel_size=3, padding=(3 - 1) // 2,bias=False)     # 1-bit -> 32-bit
+        self.conv_out = nn.Conv2d(n_feat, out_channels, kernel_size=3, padding=(3 - 1) // 2,
+                                  bias=False)  # 1-bit -> 32-bit
 
-    def initial_x(self, y):
-        """
-        :param y: [b,1,256,310]
-        :param Phi: [b,28,256,310]
-        :return: z: [b,28,256,310]
-        """
+    def y2x(self, y):
+        ##  Spilt operator
         nC, step = 28, 2
         bs, row, col = y.shape
         x = torch.zeros(bs, nC, row, row).cuda().float()
         for i in range(nC):
             x[:, i, :, :] = y[:, :, step * i:step * i + col - (nC - 1) * step]
-        x = self.fution(x)
         return x
 
-    def forward(self, x, input_mask=None, input_mask_s=None):
+    def forward(self, y, input_mask=None, input_mask_s=None):
         """
         x: [b,h,w]
         return out:[b,c,h,w]
         """
 
-        x = self.initial_x(x)
+        x = self.y2x(y)
 
         b, c, h_inp, w_inp = x.shape
         hb, wb = 8, 8

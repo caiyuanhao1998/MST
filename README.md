@@ -512,7 +512,7 @@ python test.py --outf ./exp/dauhst_5stg/ --pretrained_model_path ./model_zoo/dau
 python test.py --outf ./exp/dauhst_9stg/ --pretrained_model_path ./model_zoo/dauhst/dauhst_9stg.pth
 
 # BiSRNet
-python test.py --outf ./exp/bisrnet  --pretrained_model_path ./model_zoo/bisrnet/bisrnet.pth
+python test.py --outf ./exp/bisrnet  --pretrained_model_path ./model_zoo/bisrnet/bisrnet.pth --method bisrnet
 ```
 
 - The reconstrcuted HSI will be output into `MST/real/test_code/exp/`  
