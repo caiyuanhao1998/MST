@@ -61,7 +61,7 @@ This is a baseline and toolbox for spectral compressive imaging reconstruction. 
 
 
 ## 1. Comparison with State-of-the-art Methods
-This repo is a baseline and toolbox containing 12 learning-based algorithms and 3 model-based methods for spectral compressive imaging.
+12 learning-based algorithms and 3 model-based methods are supported.
 
 <details open>
 <summary><b>Supported algorithms:</b></summary>
