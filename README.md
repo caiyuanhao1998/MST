@@ -28,7 +28,12 @@ Yuanhao Cai*, Jing Lin*, Xiaowan Hu, Haoqian Wang, Xin Yuan, Yulun Zhang, Radu T
 ![ntire](./figure/ntire.png)
 
 
+#### Introduction
+This is a baseline and toolbox for spectral compressive imaging reconstruction. This repo supports **over 15** algorithms. Our method [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) won the NTIRE 2022 Challenge on spectral recovery from RGB images. If you find this repo useful, please give it a star ⭐ and consider citing our paper in your research. Thank you.
+
+
 #### News
+- **2024.04.09 :** We release the results of the three traditional model-based methods, i.e., [TwIST](https://ieeexplore.ieee.org/document/4358846), [GAP-TV](https://arxiv.org/pdf/1511.03890.pdf), and [DeSCI](https://arxiv.org/pdf/1807.07837.pdf) for your convenience to conduct research. Feel free to use them. 😄
 - **2024.03.21 :** Our methods [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) and [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) (NTIRE 2022 Spectral Reconstruction Challenge Winner) ranked top-2 in the [NTIRE 2024 Challenge on Low Light Enhancement](https://codalab.lisn.upsaclay.fr/competitions/17640). Code, pre-trained models, training logs, and enhancement results will be released in [the repo of Retinexformer](https://github.com/caiyuanhao1998/Retinexformer). Stay tuned! 🚀
 - **2024.02.15 :** [NTIRE 2024 Challenge on Low Light Enhancement](https://codalab.lisn.upsaclay.fr/competitions/17640) begins. Welcome to use our [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) or [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) (NTIRE 2022 Spectral Reconstruction Challenge Winner) to participate in this challenge! :trophy:
 - **2023.12.02 :** Codes for real experiments have been updated. Welcome to check and use them. 🥳
@@ -56,7 +61,7 @@ Yuanhao Cai*, Jing Lin*, Xiaowan Hu, Haoqian Wang, Xin Yuan, Yulun Zhang, Radu T
 
 
 ## 1. Comparison with State-of-the-art Methods
-This repo is a baseline and toolbox containing 12 learning-based algorithms for spectral compressive imaging.
+This repo is a baseline and toolbox containing 12 learning-based algorithms and 3 model-based methods for spectral compressive imaging.
 
 <details open>
 <summary><b>Supported algorithms:</b></summary>
@@ -73,6 +78,9 @@ This repo is a baseline and toolbox containing 12 learning-based algorithms for 
 * [x] [TSA-Net](https://link.springer.com/chapter/10.1007/978-3-030-58592-1_12) (ECCV 2020)
 * [x] [ADMM-Net](https://openaccess.thecvf.com/content_ICCV_2019/html/Ma_Deep_Tensor_ADMM-Net_for_Snapshot_Compressive_Imaging_ICCV_2019_paper.html) (ICCV 2019)
 * [x] [λ-Net](https://ieeexplore.ieee.org/document/9010044) (ICCV 2019)
+* [x] [TwIST](https://ieeexplore.ieee.org/document/4358846) (TIP 2007)
+* [x] [GAP-TV](https://arxiv.org/pdf/1511.03890.pdf) (ICIP 2015)
+* [x] [DeSCI](https://arxiv.org/pdf/1807.07837.pdf) (TPAMI 2019)
 
 
 </details>
