@@ -25,7 +25,7 @@ Yuanhao Cai*, Jing Lin*, Xiaowan Hu, Haoqian Wang, Xin Yuan, Yulun Zhang, Radu T
 
 
 #### Awards
-<img src="./figure/ntire.png"  height=230> <img src="./figure/NTIRE_2024.png"  height=230>
+<img src="./figure/ntire.png"  height=235> <img src="./figure/NTIRE_2024.png"  height=235>
 
 
 #### Introduction
