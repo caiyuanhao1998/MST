@@ -5,7 +5,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/degradation-aware-unfolding-half-shuffle/spectral-reconstruction-on-real-hsi)](https://paperswithcode.com/sota/spectral-reconstruction-on-real-hsi?p=degradation-aware-unfolding-half-shuffle)
 
 
-# A Toolbox for Binarized Spectral Compressive Imaging
+# A Toolbox for Spectral Compressive Imaging
 [![winner](https://img.shields.io/badge/MST++-Winner_of_NTIRE_2022_Spectral_Reconstruction_Challenge-179bd3)](https://github.com/caiyuanhao1998/MST-plus-plus/)
 [![zhihu](https://img.shields.io/badge/知乎解读-MST-179bd3)](https://zhuanlan.zhihu.com/p/501101943)
 [![zhihu](https://img.shields.io/badge/知乎解读-CST-179bd3)](https://zhuanlan.zhihu.com/p/544979161)
