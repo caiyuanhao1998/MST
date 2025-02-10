@@ -33,6 +33,7 @@ This is a baseline and toolbox for spectral compressive imaging reconstruction. 
 
 
 #### News
+- **2025.02.10 :** [NTIRE 2025 Low-light Image Enhancement Challenge](https://codalab.lisn.upsaclay.fr/competitions/21636) has started. Welcome to use our [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) and MST to participate in this challenge. 😄
 - **2024.04.09 :** We release the results of the three traditional model-based methods, i.e., [TwIST](https://ieeexplore.ieee.org/document/4358846), [GAP-TV](https://arxiv.org/pdf/1511.03890.pdf), and [DeSCI](https://arxiv.org/pdf/1807.07837.pdf) for your convenience to conduct research. Feel free to use them. 😄
 - **2024.03.21 :** Our methods [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) and [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) (NTIRE 2022 Spectral Reconstruction Challenge Winner) ranked top-2 in the [NTIRE 2024 Challenge on Low Light Enhancement](https://codalab.lisn.upsaclay.fr/competitions/17640). Code, pre-trained models, training logs, and enhancement results will be released in [the repo of Retinexformer](https://github.com/caiyuanhao1998/Retinexformer). Stay tuned! 🚀
 - **2024.02.15 :** [NTIRE 2024 Challenge on Low Light Enhancement](https://codalab.lisn.upsaclay.fr/competitions/17640) begins. Welcome to use our [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) or [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) (NTIRE 2022 Spectral Reconstruction Challenge Winner) to participate in this challenge! :trophy:
