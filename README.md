@@ -1,10 +1,12 @@
 
 
 # A Toolbox for Spectral Compressive Imaging
-[![winner](https://img.shields.io/badge/MST++-Winner_of_NTIRE_2022_Spectral_Reconstruction_Challenge-179bd3)](https://github.com/caiyuanhao1998/MST-plus-plus/)
-[![zhihu](https://img.shields.io/badge/知乎解读-MST-179bd3)](https://zhuanlan.zhihu.com/p/501101943)
-[![zhihu](https://img.shields.io/badge/知乎解读-CST-179bd3)](https://zhuanlan.zhihu.com/p/544979161)
-[![zhihu](https://img.shields.io/badge/知乎解读-DAUHST-179bd3)](https://zhuanlan.zhihu.com/p/576280023)
+[![arXiv](https://img.shields.io/badge/arXiv-MST-B31B1B)](https://arxiv.org/abs/2111.07910)
+[![NTIRE](https://img.shields.io/badge/NTIRE_2022-Winner-FF5797)](https://github.com/caiyuanhao1998/MST-plus-plus/)
+[![zhihu](https://img.shields.io/badge/知乎解读-MST-0084FF)](https://zhuanlan.zhihu.com/p/501101943)
+[![zhihu](https://img.shields.io/badge/知乎解读-CST-0084FF)](https://zhuanlan.zhihu.com/p/544979161)
+[![zhihu](https://img.shields.io/badge/知乎解读-DAUHST-0084FF)](https://zhuanlan.zhihu.com/p/576280023)
+[![Hugging Face](https://img.shields.io/badge/🤗_Hugging_Face-models-FFD21E)](https://huggingface.co/CaiYuanhao/MST)
 
 #### Authors
 Yuanhao Cai*, Jing Lin*, Xiaowan Hu, Haoqian Wang, Xin Yuan, Yulun Zhang, Radu Timofte, and Luc Van Gool
@@ -28,6 +30,7 @@ This is a baseline and toolbox for spectral compressive imaging reconstruction. 
 
 
 #### News
+- **2026.11.07 :** Release our models on HuggingFace 🤗
 - **2025.02.10 :** [NTIRE 2025 Low-light Image Enhancement Challenge](https://codalab.lisn.upsaclay.fr/competitions/21636) has started. Welcome to use our [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) and MST to participate in this challenge. 😄
 - **2024.04.09 :** We release the results of the three traditional model-based methods, i.e., [TwIST](https://ieeexplore.ieee.org/document/4358846), [GAP-TV](https://arxiv.org/pdf/1511.03890.pdf), and [DeSCI](https://arxiv.org/pdf/1807.07837.pdf) for your convenience to conduct research. Feel free to use them. 😄
 - **2024.03.21 :** Our methods [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) and [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) (NTIRE 2022 Spectral Reconstruction Challenge Winner) ranked top-2 in the [NTIRE 2024 Challenge on Low Light Enhancement](https://codalab.lisn.upsaclay.fr/competitions/17640). Code, pre-trained models, training logs, and enhancement results will be released in [the repo of Retinexformer](https://github.com/caiyuanhao1998/Retinexformer). Stay tuned! 🚀
