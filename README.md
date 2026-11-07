@@ -274,9 +274,16 @@ python train.py --template bisrnet --outf ./exp/bisrnet/ --method bisrnet
 - The training log, trained model, and reconstrcuted HSI will be available in `MST/simulation/train_code/exp/`
 
 
-### 4.2　Testing	
+### 4.2　Testing
 
-Download the pretrained model zoo from ([Google Drive](https://drive.google.com/drive/folders/1zgB7jHqTzY1bjCSzdX4lKQEGyK3bpWIx?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1CH4uq_NZPpo5ra2tFzAdfQ?pwd=mst1), code: `mst1`) and place them to `MST/simulation/test_code/model_zoo/`
+Download the pretrained model zoo from [Hugging Face](https://huggingface.co/CaiYuanhao/MST) by running the following commands from the MST repository root:
+
+```bash
+pip install -U huggingface_hub
+hf download CaiYuanhao/MST --include "*.pth" --local-dir simulation/test_code/model_zoo
+```
+
+Alternatively, download from [Google Drive](https://drive.google.com/drive/folders/1zgB7jHqTzY1bjCSzdX4lKQEGyK3bpWIx?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1CH4uq_NZPpo5ra2tFzAdfQ?pwd=mst1) (code: `mst1`) and place the weights in `MST/simulation/test_code/model_zoo/`.
 
 Run the following command to test the model on the simulation dataset.
 
