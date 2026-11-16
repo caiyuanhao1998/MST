@@ -14,7 +14,7 @@ import torch
 from PIL import Image
 
 from mst_demo.artifacts import export_result
-from mst_demo.engine import measurement, model_inputs, prepare_rgb
+from mst_demo.engine import measurement, model_inputs, prepare_rgb, shift
 from mst_demo.models import MODELS, ROOT, load_module
 from mst_demo.spectral import (
     DEFAULT_WAVELENGTH_TEXT,
@@ -69,10 +69,12 @@ class SensingTests(unittest.TestCase):
         self.assertEqual(phi.shape, (1, 28, 3, 310))
         hm, _ = model_inputs(y, mask, MODELS["tsa_net"])
         torch.testing.assert_close(hm, back * mask)
-        raw, (shifted, energy) = model_inputs(y, mask, MODELS["gap_net"])
+        raw, (shifted, energy) = model_inputs(y, mask, MODELS["gap_net"], shift(mask))
         self.assertTrue(torch.equal(raw, y))
         torch.testing.assert_close(energy, shifted.square().sum(1))
-        _, (_, safe) = model_inputs(y, torch.zeros_like(mask), MODELS["dauhst_2stg"])
+        _, (_, safe) = model_inputs(
+            y, torch.zeros_like(mask), MODELS["dauhst_2stg"], torch.zeros_like(shift(mask))
+        )
         self.assertTrue(torch.equal(safe, torch.ones_like(safe)))
 
     def test_sensing_matches_original_helpers_on_cuda(self):

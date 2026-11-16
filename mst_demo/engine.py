@@ -27,8 +27,8 @@ def measurement(cube, mask):
     return shift(cube * mask).sum(dim=1)
 
 
-def model_inputs(y, mask, spec):
-    phi = shift(mask)
+def model_inputs(y, mask, spec, shifted_mask=None):
+    """Match upstream inputs, including the calibrated mask for unfolding models."""
     if spec.setting == "Y":
         inputs = y
     else:
@@ -38,12 +38,14 @@ def model_inputs(y, mask, spec):
         if spec.setting == "HM":
             inputs = inputs * mask
     if spec.mask == "Phi":
-        input_mask = phi
+        input_mask = shift(mask)
     elif spec.mask == "Mask":
         input_mask = mask
     elif spec.mask == "Phi_PhiPhiT":
-        energy = phi.square().sum(dim=1)
-        input_mask = (phi, torch.where(energy == 0, torch.ones_like(energy), energy))
+        if shifted_mask is None:
+            raise ValueError("This model requires the official mask_3d_shift.mat sensing mask.")
+        energy = shifted_mask.square().sum(dim=1)
+        input_mask = (shifted_mask, torch.where(energy == 0, torch.ones_like(energy), energy))
     else:
         input_mask = None
     return inputs, input_mask
@@ -118,6 +120,29 @@ class Reconstructor:
             raise ValueError("Sensing mask values must lie within [0, 1].")
         return mask
 
+    def load_shifted_mask(self, mask):
+        path = self.mask_path.with_name("mask_3d_shift.mat")
+        if not path.is_file():
+            raise FileNotFoundError(
+                f"Missing {path}. Download mask_3d_shift.mat from the README's TSA_simu_data "
+                "dataset and place it beside mask.mat."
+            )
+        data = sio.loadmat(path)
+        if "mask_3d_shift" not in data:
+            raise ValueError("mask_3d_shift.mat must contain an array named mask_3d_shift.")
+        shifted = np.asarray(data["mask_3d_shift"], dtype=np.float32)
+        if (
+            shifted.shape != (256, 310, 28)
+            or not np.isfinite(shifted).all()
+            or shifted.min() < 0
+            or shifted.max() > 1
+        ):
+            raise ValueError("Expected a finite 256 × 310 × 28 shifted mask in [0, 1].")
+        for band in range(28):
+            if not np.allclose(shifted[:, 2 * band : 2 * band + 256, band], mask):
+                raise ValueError("mask_3d_shift.mat does not match the active region of mask.mat.")
+        return shifted
+
     def prepare(self, image):
         started = perf_counter()
         rgb, bounds, original_size = prepare_rgb(image)
@@ -164,7 +189,12 @@ class Reconstructor:
             y = torch.from_numpy(prepared["measurement"].copy())[None].to(self.device)
             mask = torch.from_numpy(prepared["mask"].copy())[None, None].to(self.device)
             mask = mask.expand(1, 28, -1, -1)
-            inputs, input_mask = model_inputs(y, mask, MODELS[key])
+            shifted_mask = None
+            if MODELS[key].mask == "Phi_PhiPhiT":
+                calibrated = self.load_shifted_mask(prepared["mask"])
+                shifted_mask = torch.from_numpy(calibrated.transpose(2, 0, 1).copy())[None]
+                shifted_mask = shifted_mask.to(self.device)
+            inputs, input_mask = model_inputs(y, mask, MODELS[key], shifted_mask)
             report(0.65, desc=f"Reconstructing 28 channels with {MODELS[key].label}")
             predicted = model(inputs, input_mask)
             if isinstance(predicted, (tuple, list)):

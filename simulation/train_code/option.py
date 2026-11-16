@@ -23,6 +23,7 @@ parser.add_argument("--input_mask", type=str, default='Phi',
                     help='the input mask of the network: Phi, Phi_PhiPhiT, Mask or None')  # Phi: shift_mask   Mask: mask
 
 # Training specifications
+parser.add_argument('--size', type=int, default=256, help='training patch size')
 parser.add_argument('--batch_size', type=int, default=5, help='the number of HSIs per batch')
 parser.add_argument("--max_epoch", type=int, default=300, help='total epoch')
 parser.add_argument("--scheduler", type=str, default='MultiStepLR', help='MultiStepLR or CosineAnnealingLR')
@@ -33,6 +34,7 @@ parser.add_argument("--learning_rate", type=float, default=0.0004)
 
 opt = parser.parse_args()
 template.set_template(opt)
+opt = parser.parse_args(namespace=opt)
 
 # dataset
 opt.data_path = f"{opt.data_root}/cave_1024_28/"

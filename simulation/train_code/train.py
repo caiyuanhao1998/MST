@@ -18,7 +18,7 @@ if not torch.cuda.is_available():
     raise Exception('NO GPU!')
 
 # init mask
-mask3d_batch_train, input_mask_train = init_mask(opt.mask_path, opt.input_mask, opt.batch_size)
+mask3d_batch_train, input_mask_train = init_mask(opt.mask_path, opt.input_mask, opt.batch_size, opt.size)
 mask3d_batch_test, input_mask_test = init_mask(opt.mask_path, opt.input_mask, 10)
 
 # dataset
@@ -37,7 +37,9 @@ if not os.path.exists(model_path):
 
 # model
 if opt.method=='hdnet':
-    model, FDL_loss = model_generator(opt.method, opt.pretrained_model_path).cuda()
+    model, FDL_loss = model_generator(opt.method, opt.pretrained_model_path)
+    model = model.cuda()
+    FDL_loss = FDL_loss.cuda()
 else:
     model = model_generator(opt.method, opt.pretrained_model_path).cuda()
 
@@ -54,7 +56,7 @@ def train(epoch, logger):
     begin = time.time()
     batch_num = int(np.floor(opt.epoch_sam_num / opt.batch_size))
     for i in range(batch_num):
-        gt_batch = shuffle_crop(train_set, opt.batch_size)
+        gt_batch = shuffle_crop(train_set, opt.batch_size, crop_size=opt.size)
         gt = Variable(gt_batch).cuda().float()
         input_meas = init_meas(gt, mask3d_batch_train, opt.input_setting)
         optimizer.zero_grad()

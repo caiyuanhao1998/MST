@@ -1,20 +1,21 @@
 %% plot color pics
 clear; clc;
-load(['simulation_results\results\','truth','.mat']);
+data = load(fullfile('simulation_results', 'results', 'mst_s.mat'));
+truth = data.truth;
 
-load(['simulation_results\results\','hdnet','.mat']);
+load(fullfile('simulation_results', 'results', 'hdnet.mat'));
 pred_block_hdnet = pred;
 
-load(['simulation_results\results\','mst_s','.mat']);
+load(fullfile('simulation_results', 'results', 'mst_s.mat'));
 pred_block_mst_s = pred;
 
-load(['simulation_results\results\','mst_m','.mat']);
+load(fullfile('simulation_results', 'results', 'mst_m.mat'));
 pred_block_mst_m = pred;
 
-load(['simulation_results\results\','mst_l','.mat']);
+load(fullfile('simulation_results', 'results', 'mst_l.mat'));
 pred_block_mst_l = pred;
 
-load(['simulation_results\results\','mst_plus_plus','.mat']);
+load(fullfile('simulation_results', 'results', 'mst_plus_plus.mat'));
 pred_block_mst_plus_plus = pred;
 
 lam28 = [453.5 457.5 462.0 466.0 471.5 476.5 481.5 487.0 492.5 498.0 504.0 510.0...

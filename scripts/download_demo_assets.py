@@ -13,6 +13,7 @@ import numpy as np
 import scipy.io as sio
 from huggingface_hub import snapshot_download
 
+from mst_demo.engine import Reconstructor
 from mst_demo.models import MODELS, ROOT, default_weights_dir
 
 MODEL_REVISION = "7575c2b1c6a4299849ebae759a9f41f9497c915a"
@@ -62,6 +63,8 @@ def main():
         or mask.max() > 1
     ):
         raise ValueError("Expected a finite, nonempty 256 × 256 sensing mask in [0, 1].")
+    shifted_mask_path = mask_path.with_name("mask_3d_shift.mat")
+    Reconstructor("cpu", mask_path=mask_path).load_shifted_mask(mask)
     example_manifest = json.loads((ROOT / "demo/examples/simulation/manifest.json").read_text())
     examples = []
     for item in example_manifest["images"]:
@@ -70,7 +73,11 @@ def main():
         if hashlib.sha256(target.read_bytes()).hexdigest() != item["sha256"]:
             raise ValueError(f"Official SCI example hash mismatch: {target.name}")
         examples.append(target)
-    paths = [weights_dir / spec.checkpoint for spec in MODELS.values()] + [mask_path] + examples
+    paths = (
+        [weights_dir / spec.checkpoint for spec in MODELS.values()]
+        + [mask_path, shifted_mask_path]
+        + examples
+    )
     manifest = {
         "models": {"repo": "CaiYuanhao/MST", "revision": MODEL_REVISION},
         "mask_url": MASK_URL,
@@ -83,7 +90,7 @@ def main():
         },
     }
     (ROOT / "docs/asset_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    print("Ready: all 20 model checkpoints, the sensing mask, and 10 official SCI RGB examples.")
+    print("Ready: all 20 model checkpoints, both sensing masks, and 10 official SCI RGB examples.")
 
 
 if __name__ == "__main__":

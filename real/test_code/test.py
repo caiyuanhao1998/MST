@@ -1,17 +1,18 @@
 import torch
 import os
 import argparse
+from pathlib import Path
 from utils import dataparallel
 import scipy.io as sio
 import numpy as np
 from torch.autograd import Variable
-from option import opt
 from architecture import *
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 parser = argparse.ArgumentParser(description="PyTorch HSIFUSION")
+parser.add_argument('--template', default='mst')
+parser.add_argument('--gpu_id', default='0')
 parser.add_argument('--data_path', default='../../datasets/TSA_real_data/Measurements/', type=str,help='path of data')
 parser.add_argument('--mask_path', default='../../datasets/TSA_real_data/mask.mat', type=str,help='path of mask')
 parser.add_argument("--size", default=660, type=int, help='the size of trainset image')
@@ -21,6 +22,7 @@ parser.add_argument("--pretrained_model_path", default=None, type=str)
 parser.add_argument("--outf", default='./exp/real_test_result/', type=str)
 parser.add_argument("--method", type=str, default='others')
 opt = parser.parse_args()
+os.environ["CUDA_VISIBLE_DEVICES"] = opt.gpu_id
 
 def prepare_data(path, file_num):
     HR_HSI = np.zeros((((660,714,file_num))))
@@ -53,14 +55,19 @@ mask_3d_shift, mask_3d_shift_s = load_mask(opt.mask_path)
 
 pretrained_model_path = opt.pretrained_model_path
 save_path = opt.outf
-if opt.method=='bisrnet':
-    model = model_generator(opt.method, opt.pretrained_model_path).cuda()
-else:
-    model = torch.load(pretrained_model_path)
+if opt.method == 'others':
+    opt.method = Path(pretrained_model_path).stem
+model = model_generator(opt.method, opt.pretrained_model_path)
+if isinstance(model, tuple):
+    model = model[0]
+model = model.cuda()
 model = model.eval()
 model = dataparallel(model, 1)
 psnr_total = 0
 k = 0
+predictions = []
+save_path = Path(save_path)
+save_path.mkdir(parents=True, exist_ok=True)
 for j in range(5):
     with torch.no_grad():
         meas = HR_HSI[:,:,j]
@@ -76,8 +83,9 @@ for j in range(5):
         result = out
         result = result.clamp(min=0., max=1.)
     k = k + 1
-    if not os.path.exists(save_path):  # Create the model directory if it doesn't exist
-        os.makedirs(save_path)
     res = result.cpu().permute(2,3,1,0).squeeze(3).numpy()
-    save_file = save_path + f'{j}.mat'
+    predictions.append(res)
+    save_file = save_path / f'{j}.mat'
     sio.savemat(save_file, {'res':res})
+
+sio.savemat(save_path / 'Test_result.mat', {'pred': np.stack(predictions)})

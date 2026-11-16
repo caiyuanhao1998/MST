@@ -70,6 +70,11 @@ class PreparedSetupTests(unittest.TestCase):
             mask = root / "datasets/TSA_simu_data/mask.mat"
             mask.parent.mkdir(parents=True)
             sio.savemat(mask, {"mask": np.ones((256, 256), dtype=np.float32)})
+            sio.savemat(
+                mask.with_name("mask_3d_shift.mat"),
+                {"mask_3d_shift": np.ones((256, 310, 28), dtype=np.float32)},
+                do_compression=True,
+            )
             shutil.copytree(ROOT / "demo/examples", root / "demo/examples")
             (root / "docs").mkdir()
             with (
@@ -86,7 +91,7 @@ class PreparedSetupTests(unittest.TestCase):
             self.assertFalse((root / "pretrained_weights").exists())
             manifest = json.loads((root / "docs/asset_manifest.json").read_text())
             self.assertIn("simulation/test_code/model_zoo/mst/mst_s.pth", manifest["sha256"])
-            self.assertEqual(len(manifest["sha256"]), 31)
+            self.assertEqual(len(manifest["sha256"]), 32)
 
 
 if __name__ == "__main__":

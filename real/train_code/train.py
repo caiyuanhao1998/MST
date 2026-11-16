@@ -51,7 +51,7 @@ if __name__ == "__main__":
     torch.cuda.manual_seed(opt.seed)
 
     ## pipline of training
-    for epoch in range(1, opt.max_epoch):
+    for epoch in range(1, opt.max_epoch + 1):
         model.train()
         Dataset = dataset(opt, CAVE, KAIST)
         loader_train = tud.DataLoader(Dataset, num_workers=8, batch_size=opt.batch_size, shuffle=True)
@@ -87,10 +87,10 @@ if __name__ == "__main__":
 
             if i % (1000) == 0:
                 print('%4d %4d / %4d loss = %.10f time = %s' % (
-                    epoch + 1, i, len(Dataset) // opt.batch_size, epoch_loss / ((i + 1) * opt.batch_size),
+                    epoch, i, len(Dataset) // opt.batch_size, epoch_loss / ((i + 1) * opt.batch_size),
                     datetime.datetime.now()))
 
 
         elapsed_time = time.time() - start_time
-        print('epcoh = %4d , loss = %.10f , time = %4.2f s' % (epoch + 1, epoch_loss / len(Dataset), elapsed_time))
-        torch.save(model, os.path.join(opt.outf, 'model_%03d.pth' % (epoch + 1)))
+        print('epcoh = %4d , loss = %.10f , time = %4.2f s' % (epoch, epoch_loss / len(Dataset), elapsed_time))
+        torch.save(model.state_dict(), os.path.join(opt.outf, 'model_%03d.pth' % epoch))

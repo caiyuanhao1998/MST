@@ -143,33 +143,31 @@ def time2file_name(time):
 #     return HR_HSI
 
 def prepare_data_cave(path, file_num):
-    HR_HSI = np.zeros((((512,512,28,file_num))))
-    file_list = os.listdir(path)
+    HR_HSI = np.zeros((512,512,28,file_num), order="F")
+    file_list = sorted(name for name in os.listdir(path) if name.lower().endswith(".mat"))
     # for idx in range(1):
     for idx in range(file_num):
         print(f'loading CAVE {idx}')
         ####  read HrHSI
         HR_code = file_list[idx]
-        path1 = os.path.join(path) + HR_code
+        path1 = os.path.join(path, HR_code)
         data = sio.loadmat(path1)
         HR_HSI[:,:,:,idx] = data['data_slice'] / 65535.0
-        HR_HSI[HR_HSI < 0] = 0
-        HR_HSI[HR_HSI > 1] = 1
+    np.clip(HR_HSI, 0, 1, out=HR_HSI)
     return HR_HSI
 
 def prepare_data_KAIST(path, file_num):
-    HR_HSI = np.zeros((((2704,3376,28,file_num))))
-    file_list = os.listdir(path)
+    HR_HSI = np.zeros((2704,3376,28,file_num), order="F")
+    file_list = sorted(name for name in os.listdir(path) if name.lower().endswith(".mat"))
     # for idx in range(1):
     for idx in range(file_num):
         print(f'loading KAIST {idx}')
         ####  read HrHSI
         HR_code = file_list[idx]
-        path1 = os.path.join(path) + HR_code
+        path1 = os.path.join(path, HR_code)
         data = sio.loadmat(path1)
         HR_HSI[:,:,:,idx] = data['HSI']
-        HR_HSI[HR_HSI < 0] = 0
-        HR_HSI[HR_HSI > 1] = 1
+    np.clip(HR_HSI, 0, 1, out=HR_HSI)
     return HR_HSI
 
 def init_mask(mask, Phi, Phi_s, mask_type):

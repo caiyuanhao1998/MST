@@ -31,7 +31,7 @@ parser.add_argument("--input_mask", type=str, default='Phi',
 
 # Training specifications
 parser.add_argument("--size", default=384, type=int, help='cropped patch size')
-parser.add_argument("--epoch_sam_num", default=5000, type=int, help='total number of trainset')
+parser.add_argument("--epoch_sam_num", default=None, type=int, help='total number of trainset')
 parser.add_argument("--seed", default=1, type=int, help='Random_seed')
 parser.add_argument('--batch_size', type=int, default=1, help='the number of HSIs per batch')
 parser.add_argument("--isTrain", default=True, type=bool, help='train or test')
@@ -43,8 +43,9 @@ parser.add_argument("--learning_rate", type=float, default=0.0004)
 
 opt = parser.parse_args()
 template.set_template(opt)
+opt = parser.parse_args(namespace=opt)
 
-opt.trainset_num = 20000 // ((opt.size // 96) ** 2)
+opt.trainset_num = opt.epoch_sam_num if opt.epoch_sam_num is not None else 20000 // ((opt.size // 96) ** 2)
 
 for arg in vars(opt):
     if vars(opt)[arg] == 'True':

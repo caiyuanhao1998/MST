@@ -38,7 +38,7 @@ class XBOXPLUS(AsymmetricTransform):
     def X(self, x):
         device = x.device
         ext = torch.sqrt((self.MX**2).to(device) - (self.x_norms**2).to(device))
-        zero = torch.tensor(0.0, device=x.device).repeat(x.shape[:-1], 1).unsqueeze(-1)
+        zero = torch.zeros_like(ext)
         return torch.cat((x, ext, zero), -1)
 
 def lsh_clustering(x, n_rounds, r=1):
