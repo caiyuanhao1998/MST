@@ -95,6 +95,14 @@ MODELS.update(
 )
 
 
+def default_weights_dir():
+    candidates = (ROOT / "simulation/test_code/model_zoo", ROOT / "pretrained_weights")
+    for directory in candidates:
+        if any((directory / spec.checkpoint).is_file() for spec in MODELS.values()):
+            return directory
+    return candidates[0]
+
+
 @cache
 def load_module(path):
     path = Path(path)

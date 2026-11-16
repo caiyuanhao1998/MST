@@ -7,6 +7,7 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 pretrained_weights/
+/simulation/test_code/model_zoo/**/*.pth
 datasets/TSA_simu_data/
 
 # Generated local validation and asset reports

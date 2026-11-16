@@ -1,6 +1,5 @@
-opencv-python==4.4.0.46
-einops
-torchvision==0.7.0
-torch==1.6.0
-scipy==1.0.0
+# Python 3.11; shared training, testing, and Gradio demo environment.
+-r requirements-demo.txt
+torchvision>=0.21,<1
+opencv-python>=4.8,<5
 fvcore

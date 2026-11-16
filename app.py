@@ -683,7 +683,11 @@ def build_demo(engine):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--device", default="auto", help="auto, cpu, cuda, or cuda:N")
-    parser.add_argument("--weights-dir", type=Path, default=ROOT / "pretrained_weights")
+    parser.add_argument(
+        "--weights-dir",
+        type=Path,
+        help="Model zoo directory; auto-detects simulation/test_code/model_zoo or pretrained_weights",
+    )
     parser.add_argument("--mask", type=Path, default=ROOT / "datasets/TSA_simu_data/mask.mat")
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=7876)

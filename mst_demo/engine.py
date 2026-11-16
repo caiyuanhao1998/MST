@@ -11,7 +11,7 @@ import scipy.io as sio
 import torch
 from PIL import Image, ImageOps
 
-from .models import MODELS, ROOT, build_model
+from .models import MODELS, ROOT, build_model, default_weights_dir
 from .spectral import rgb_to_hsi
 
 
@@ -78,7 +78,7 @@ class Reconstructor:
     def __init__(
         self,
         device="auto",
-        weights_dir=ROOT / "pretrained_weights",
+        weights_dir=None,
         mask_path=ROOT / "datasets/TSA_simu_data/mask.mat",
     ):
         if device == "auto":
@@ -93,7 +93,7 @@ class Reconstructor:
             if self.device.index >= torch.cuda.device_count():
                 raise ValueError(f"CUDA device {self.device.index} does not exist.")
             torch.cuda.set_device(self.device)
-        self.weights_dir = Path(weights_dir).expanduser().resolve()
+        self.weights_dir = Path(weights_dir or default_weights_dir()).expanduser().resolve()
         self.mask_path = Path(mask_path).expanduser().resolve()
         self.model = None
         self.loaded_key = None

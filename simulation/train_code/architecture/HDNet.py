@@ -329,7 +329,7 @@ class FDL(nn.Module):
 
         y = torch.stack(patch_list, 1)
 
-        return torch.rfft(y, 2, onesided=False, normalized=True)
+        return torch.view_as_real(torch.fft.fft2(y, norm="ortho"))
 
     def loss_formulation(self, recon_freq, real_freq, matrix=None):
         if matrix is not None:

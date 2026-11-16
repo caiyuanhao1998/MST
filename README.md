@@ -141,7 +141,7 @@ Note: access code for `Baidu Disk` is `mst1`
 
 ## 2. Create Environment:
 
-- Python 3 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux))
+- Python 3.11 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux))
 
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 
@@ -150,6 +150,8 @@ Note: access code for `Baidu Disk` is `mst1`
 ```shell
   pip install -r requirements.txt
 ```
+
+This installs the training, testing, and Gradio demo dependencies together.
 
 
 &nbsp;
@@ -278,28 +280,27 @@ python train.py --template bisrnet --outf ./exp/bisrnet/ --method bisrnet
 
 ### 4.2　Testing
 
-#### Gradio Demo
-
-![Gradio demo](figure/gradio_demo.png)
-
-Run from the repository root with Python 3.11:
-
-```bash
-pip install -r requirements-demo.txt
-python scripts/download_demo_assets.py
-python app.py
-```
-
-Open <http://127.0.0.1:7876>.
-
 Download the pretrained model zoo from [Hugging Face](https://huggingface.co/CaiYuanhao/MST) by running the following commands from the MST repository root:
 
 ```bash
-pip install -U huggingface_hub
 hf download CaiYuanhao/MST --include "*.pth" --local-dir simulation/test_code/model_zoo
 ```
 
 Alternatively, download from [Google Drive](https://drive.google.com/drive/folders/1zgB7jHqTzY1bjCSzdX4lKQEGyK3bpWIx?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1CH4uq_NZPpo5ra2tFzAdfQ?pwd=mst1) (code: `mst1`) and place the weights in `MST/simulation/test_code/model_zoo/`.
+
+#### Gradio Demo
+
+![Gradio demo](figure/gradio_demo.png)
+
+After the environment, dataset, and model preparation above, run from the repository root:
+
+```bash
+python app.py
+```
+
+Open <http://127.0.0.1:7876>. The demo reuses `simulation/test_code/model_zoo/` and `datasets/TSA_simu_data/mask.mat`; the 10 RGB examples are included. No additional downloads are needed.
+
+#### Dataset Testing
 
 Run the following command to test the model on the simulation dataset.
 

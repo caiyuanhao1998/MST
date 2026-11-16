@@ -13,7 +13,7 @@ import numpy as np
 import scipy.io as sio
 from huggingface_hub import snapshot_download
 
-from mst_demo.models import MODELS, ROOT
+from mst_demo.models import MODELS, ROOT, default_weights_dir
 
 MODEL_REVISION = "7575c2b1c6a4299849ebae759a9f41f9497c915a"
 MASK_URL = "https://raw.githubusercontent.com/TaoHuang95/DGSMP/master/Simulation/Data/mask.mat"
@@ -33,23 +33,35 @@ def download(url, target):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--weights-dir", type=Path, default=ROOT / "pretrained_weights")
+    parser.add_argument("--weights-dir", type=Path)
     args = parser.parse_args()
-    snapshot_download(
-        "CaiYuanhao/MST",
-        revision=MODEL_REVISION,
-        allow_patterns=["*.pth"],
-        local_dir=args.weights_dir,
-        max_workers=4,
-    )
+    weights_dir = (args.weights_dir or default_weights_dir()).expanduser().resolve()
+    missing = [
+        spec.checkpoint for spec in MODELS.values() if not (weights_dir / spec.checkpoint).is_file()
+    ]
+    if missing:
+        snapshot_download(
+            "CaiYuanhao/MST",
+            revision=MODEL_REVISION,
+            allow_patterns=missing,
+            local_dir=weights_dir,
+            max_workers=4,
+        )
     mask_path = ROOT / "datasets/TSA_simu_data/mask.mat"
+    existing_mask = mask_path.is_file()
     download(MASK_URL, mask_path)
     data = mask_path.read_bytes()
-    if hashlib.sha256(data).hexdigest() != MASK_SHA256:
+    if not existing_mask and hashlib.sha256(data).hexdigest() != MASK_SHA256:
         raise ValueError("The default sensing mask does not match the verified public mask.")
     mask = sio.loadmat(io.BytesIO(data))["mask"]
-    if mask.shape != (256, 256) or not np.isfinite(mask).all():
-        raise ValueError("Expected the public 256 × 256 TSA mask.")
+    if (
+        mask.shape != (256, 256)
+        or not np.isfinite(mask).all()
+        or not np.any(mask)
+        or mask.min() < 0
+        or mask.max() > 1
+    ):
+        raise ValueError("Expected a finite, nonempty 256 × 256 sensing mask in [0, 1].")
     example_manifest = json.loads((ROOT / "demo/examples/simulation/manifest.json").read_text())
     examples = []
     for item in example_manifest["images"]:
@@ -58,9 +70,7 @@ def main():
         if hashlib.sha256(target.read_bytes()).hexdigest() != item["sha256"]:
             raise ValueError(f"Official SCI example hash mismatch: {target.name}")
         examples.append(target)
-    paths = (
-        [args.weights_dir / spec.checkpoint for spec in MODELS.values()] + [mask_path] + examples
-    )
+    paths = [weights_dir / spec.checkpoint for spec in MODELS.values()] + [mask_path] + examples
     manifest = {
         "models": {"repo": "CaiYuanhao/MST", "revision": MODEL_REVISION},
         "mask_url": MASK_URL,

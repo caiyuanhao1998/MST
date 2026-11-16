@@ -1,4 +1,4 @@
-# Python 3.11 is the tested version; install a suitable PyTorch build first.
+# Demo dependencies, also included by requirements.txt (Python 3.11).
 torch>=2.6,<3
 gradio==5.50.0
 einops>=0.8,<1
