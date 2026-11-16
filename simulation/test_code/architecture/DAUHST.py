@@ -338,7 +338,7 @@ class DAUHST(nn.Module):
         nC, step = 28, 2
         y = y / nC * 2
         bs,row,col = y.shape
-        y_shift = torch.zeros(bs, nC, row, col).cuda().float()
+        y_shift = y.new_zeros((bs, nC, row, col))
         for i in range(nC):
             y_shift[:, i, :, step * i:step * i + col - (nC - 1) * step] = y[:, :, step * i:step * i + col - (nC - 1) * step]
         z = self.fution(torch.cat([y_shift, Phi], dim=1))

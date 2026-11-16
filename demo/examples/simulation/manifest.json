@@ -1,0 +1,137 @@
+{
+  "repository": "https://github.com/caiyuanhao1998/MST",
+  "readme_section": "SCI RGB images / ten simulation scenes",
+  "folder_url": "https://drive.google.com/drive/folders/1EkJsOxYKgyehZdOgKUeY75dU19GHZgE-",
+  "images": [
+    {
+      "file": "demo/examples/simulation/scene_01.png",
+      "original_name": "01.png",
+      "drive_id": "1y9P4MeVoDq0_PcH4ZHBNR5BmXDKWp-_g",
+      "url": "https://drive.google.com/file/d/1y9P4MeVoDq0_PcH4ZHBNR5BmXDKWp-_g/view",
+      "sha256": "602626e45c92d5132b4dbc792f28db267626bce483ac22a339294dfea4794b9b",
+      "bytes": 27110,
+      "width_height": [
+        128,
+        128
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "demo/examples/simulation/scene_02.png",
+      "original_name": "02.png",
+      "drive_id": "1FGhw-zuLxf5gJ5jLzrG4X2mpZ-uVxZKl",
+      "url": "https://drive.google.com/file/d/1FGhw-zuLxf5gJ5jLzrG4X2mpZ-uVxZKl/view",
+      "sha256": "34b09b3e60458369b6b40959a47e36c4861e11ce172519eb7de9fb2b9a515104",
+      "bytes": 89463,
+      "width_height": [
+        256,
+        256
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "demo/examples/simulation/scene_03.png",
+      "original_name": "03.png",
+      "drive_id": "1mDeTnfdohOt1EHdRA33KjU1DJlE7Zcia",
+      "url": "https://drive.google.com/file/d/1mDeTnfdohOt1EHdRA33KjU1DJlE7Zcia/view",
+      "sha256": "a38d81d4c86f1c7ce385403fcee01b2ebb0f1822f3cd07f77e1956c82cb60456",
+      "bytes": 34015,
+      "width_height": [
+        174,
+        174
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "demo/examples/simulation/scene_04.png",
+      "original_name": "04.png",
+      "drive_id": "1ulYIOSLttm69IPKnmHC1Dag5KF4kRgRc",
+      "url": "https://drive.google.com/file/d/1ulYIOSLttm69IPKnmHC1Dag5KF4kRgRc/view",
+      "sha256": "3f1e553f56abb2b09ab2573a3a0db3b7247dbdb43181633f7f8df90c393a2879",
+      "bytes": 88573,
+      "width_height": [
+        297,
+        297
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "demo/examples/simulation/scene_05.png",
+      "original_name": "05.png",
+      "drive_id": "1Gc-B9zVjkY_MsOmMjM1tUvfeTZfnOqIL",
+      "url": "https://drive.google.com/file/d/1Gc-B9zVjkY_MsOmMjM1tUvfeTZfnOqIL/view",
+      "sha256": "5f2782f30e05247a7bb09c26d96ec968707c1d6edb912b819d5272df2e1ece26",
+      "bytes": 28311,
+      "width_height": [
+        146,
+        146
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "demo/examples/simulation/scene_06.png",
+      "original_name": "06.png",
+      "drive_id": "1XMfEnrYCpg8dF5O1Dt2_6S1lohYgZ5nV",
+      "url": "https://drive.google.com/file/d/1XMfEnrYCpg8dF5O1Dt2_6S1lohYgZ5nV/view",
+      "sha256": "906fc54274cbe2e6c9e1ae729146e5bda96fc8db4e9114f99563534d4d1f7b3c",
+      "bytes": 41391,
+      "width_height": [
+        173,
+        173
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "demo/examples/simulation/scene_07.png",
+      "original_name": "07.png",
+      "drive_id": "1pZQUkXjur0HPKqhw-7s-fqx7dq2SxYHL",
+      "url": "https://drive.google.com/file/d/1pZQUkXjur0HPKqhw-7s-fqx7dq2SxYHL/view",
+      "sha256": "c55f7b55f6ada4e88bb07544b7edb2df72d8887e9dda323538db65c766ecb091",
+      "bytes": 17388,
+      "width_height": [
+        105,
+        105
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "demo/examples/simulation/scene_08.png",
+      "original_name": "08.png",
+      "drive_id": "1-EP33VcpRzbZtrjt1zzoJ-miuzd_pvZT",
+      "url": "https://drive.google.com/file/d/1-EP33VcpRzbZtrjt1zzoJ-miuzd_pvZT/view",
+      "sha256": "4cb6aeb4c0c2a4d7639924c5490660f331f40e2c270ba7078cc6e511533bdf58",
+      "bytes": 146193,
+      "width_height": [
+        346,
+        346
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "demo/examples/simulation/scene_09.png",
+      "original_name": "09.png",
+      "drive_id": "1F_fQucMBPnPVrtyGS5cWi8Jey7GS6GyV",
+      "url": "https://drive.google.com/file/d/1F_fQucMBPnPVrtyGS5cWi8Jey7GS6GyV/view",
+      "sha256": "35f7e38f9b0aa53c2eb9f458128c0ec06ffc44bb54dd02078140d3226fb12310",
+      "bytes": 123472,
+      "width_height": [
+        334,
+        334
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "demo/examples/simulation/scene_10.png",
+      "original_name": "10.png",
+      "drive_id": "1jmB0-760C_jQGVfatk1p55R-_IrI17tx",
+      "url": "https://drive.google.com/file/d/1jmB0-760C_jQGVfatk1p55R-_IrI17tx/view",
+      "sha256": "f3eef913f5c8108ad7f54034f2ee0ccefbb7330b215277f52b4f009cbfb818df",
+      "bytes": 94194,
+      "width_height": [
+        256,
+        256
+      ],
+      "mode": "RGB"
+    }
+  ]
+}

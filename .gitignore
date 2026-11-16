@@ -1,0 +1,16 @@
+.venv/
+.local/
+.cache/
+__pycache__/
+*.py[cod]
+*.log
+.pytest_cache/
+.ruff_cache/
+pretrained_weights/
+datasets/TSA_simu_data/
+
+# Generated local validation and asset reports
+/docs/asset_manifest.json
+/docs/browser_validation.json
+/docs/model_validation.json
+/docs/validation_summary.json

@@ -231,8 +231,8 @@ class forward_rnn(nn.Module):
         out = xt1
         x11 = self.conv_x1(torch.unsqueeze(nor_meas, 1))
         for i in range(cs_rate - 1):
-            d1 = torch.zeros(bs, row, col).cuda()
-            d2 = torch.zeros(bs, row, col).cuda()
+            d1 = meas.new_zeros((bs, row, col))
+            d2 = meas.new_zeros((bs, row, col))
             for ii in range(i + 1):
                 d1 = d1 + torch.mul(mask3d_batch[:, ii, :, :], out[:, ii, :, :])
             for ii in range(i + 2, cs_rate):
@@ -295,12 +295,12 @@ class backrnn(nn.Module):
 
         xt = torch.unsqueeze(xt8[:, cs_rate - 1, :, :], 1)
 
-        out = torch.zeros(bs, cs_rate, row, col).cuda()
+        out = xt8.new_zeros((bs, cs_rate, row, col))
         out[:, cs_rate - 1, :, :] = xt[:, 0, :, :]
         x11 = self.conv_x1(torch.unsqueeze(nor_meas, 1))
         for i in range(cs_rate - 1):
-            d1 = torch.zeros(bs, row, col).cuda()
-            d2 = torch.zeros(bs, row, col).cuda()
+            d1 = meas.new_zeros((bs, row, col))
+            d2 = meas.new_zeros((bs, row, col))
             for ii in range(i + 1):
                 d1 = d1 + torch.mul(mask3d_batch[:, cs_rate - 1 - ii, :, :], out[:, cs_rate - 1 - ii, :, :].clone())
             for ii in range(i + 2, cs_rate):
@@ -320,7 +320,7 @@ class backrnn(nn.Module):
 
 def shift_gt_back(inputs, step=2):  # input [bs,256,310]  output [bs, 28, 256, 256]
     [bs, nC, row, col] = inputs.shape
-    output = torch.zeros(bs, nC, row, col - (nC - 1) * step).cuda().float()
+    output = inputs.new_zeros((bs, nC, row, col - (nC - 1) * step))
     for i in range(nC):
         output[:, i, :, :] = inputs[:, i, :, step * i:step * i + col - (nC - 1) * step]
     return output
@@ -328,7 +328,7 @@ def shift_gt_back(inputs, step=2):  # input [bs,256,310]  output [bs, 28, 256, 2
 def shift(inputs, step=2):
     [bs, nC, row, col] = inputs.shape
     if inputs.is_cuda:
-        output = torch.zeros(bs, nC, row, col + (nC - 1) * step).cuda().float()
+        output = inputs.new_zeros((bs, nC, row, col + (nC - 1) * step))
     else:
         output = torch.zeros(bs, nC, row, col + (nC - 1) * step).float()
     for i in range(nC):
@@ -340,14 +340,14 @@ class BIRNAT(nn.Module):
     def __init__(self):
         super(BIRNAT, self).__init__()
         self.cs_rate = 28
-        self.first_frame_net = cnn1(self.cs_rate).cuda()
-        self.rnn1 = forward_rnn().cuda()
-        self.rnn2 = backrnn().cuda()
+        self.first_frame_net = cnn1(self.cs_rate)
+        self.rnn1 = forward_rnn()
+        self.rnn2 = backrnn()
 
     def gen_meas_torch(self, meas, shift_mask):
         batch_size, H = meas.shape[0:2]
         mask_s = torch.sum(shift_mask, 1)
-        nor_meas = torch.div(meas, mask_s)
+        nor_meas = torch.div(meas, torch.where(mask_s == 0, torch.ones_like(mask_s), mask_s))
         temp = torch.mul(torch.unsqueeze(nor_meas, dim=1).expand([batch_size, 28, H, shift_mask.shape[3]]), shift_mask)
         return nor_meas, temp
 
@@ -356,7 +356,7 @@ class BIRNAT(nn.Module):
             shift_mask = torch.zeros(1, 28, 256, 310).cuda()
         H, W = meas.shape[-2:]
         nor_meas, PhiTy = self.gen_meas_torch(meas, shift_mask)
-        h0 = torch.zeros(meas.shape[0], 20, H, W).cuda()
+        h0 = meas.new_zeros((meas.shape[0], 20, H, W))
         xt1 = self.first_frame_net(meas, nor_meas, PhiTy)
         model_out1, h1 = self.rnn1(xt1, meas, nor_meas, PhiTy, shift_mask, h0, self.cs_rate)
         model_out2 = self.rnn2(model_out1, meas, nor_meas, PhiTy, shift_mask, h1, self.cs_rate)

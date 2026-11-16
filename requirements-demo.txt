@@ -1,0 +1,10 @@
+# Python 3.11 is the tested version; install a suitable PyTorch build first.
+torch>=2.6,<3
+gradio==5.50.0
+einops>=0.8,<1
+numpy>=1.26,<3
+scipy>=1.13,<2
+Pillow>=10,<12
+matplotlib>=3.7,<4
+huggingface_hub>=0.34,<2
+tqdm>=4.66

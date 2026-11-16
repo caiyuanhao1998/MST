@@ -1,6 +1,7 @@
 
 
 # A Toolbox for Spectral Compressive Imaging
+
 [![arXiv](https://img.shields.io/badge/arXiv-MST-B31B1B)](https://arxiv.org/abs/2111.07910)
 [![NTIRE](https://img.shields.io/badge/NTIRE_2022-Winner-FF5797)](https://github.com/caiyuanhao1998/MST-plus-plus/)
 [![zhihu](https://img.shields.io/badge/知乎解读-MST-0084FF)](https://zhuanlan.zhihu.com/p/501101943)
@@ -30,6 +31,7 @@ This is a baseline and toolbox for spectral compressive imaging reconstruction. 
 
 
 #### News
+- **2026.11.16 :** Release a [Gradio demo](#gradio-demo) for interactive spectral reconstruction.
 - **2026.11.07 :** Release our models on HuggingFace 🤗
 - **2025.02.10 :** [NTIRE 2025 Low-light Image Enhancement Challenge](https://codalab.lisn.upsaclay.fr/competitions/21636) has started. Welcome to use our [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) and MST to participate in this challenge. 😄
 - **2024.04.09 :** We release the results of the three traditional model-based methods, i.e., [TwIST](https://ieeexplore.ieee.org/document/4358846), [GAP-TV](https://arxiv.org/pdf/1511.03890.pdf), and [DeSCI](https://arxiv.org/pdf/1807.07837.pdf) for your convenience to conduct research. Feel free to use them. 😄
@@ -275,6 +277,20 @@ python train.py --template bisrnet --outf ./exp/bisrnet/ --method bisrnet
 
 
 ### 4.2　Testing
+
+#### Gradio Demo
+
+![Gradio demo](figure/gradio_demo.png)
+
+Run from the repository root with Python 3.11:
+
+```bash
+pip install -r requirements-demo.txt
+python scripts/download_demo_assets.py
+python app.py
+```
+
+Open <http://127.0.0.1:7876>.
 
 Download the pretrained model zoo from [Hugging Face](https://huggingface.co/CaiYuanhao/MST) by running the following commands from the MST repository root:
 

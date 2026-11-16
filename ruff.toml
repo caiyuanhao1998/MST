@@ -1,0 +1,7 @@
+target-version = "py311"
+line-length = 100
+[lint]
+select = ["E4", "E7", "E9", "F", "I"]
+[lint.per-file-ignores]
+"app.py" = ["E402"]
+"scripts/*.py" = ["E402"]
