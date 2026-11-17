@@ -2,14 +2,15 @@
 
 # A Toolbox for Spectral Compressive Imaging
 
+[![Hugging Face](figure/badges/huggingface-models.svg)](https://huggingface.co/CaiYuanhao/MST)
+[![Demo RGB-to-HSI](figure/badges/demo-rgb-to-hsi.svg)](https://huggingface.co/spaces/CaiYuanhao/MST-plus-plus)
+[![Demo SCI Reconstruction](figure/badges/demo-sci-reconstruction.svg)](https://huggingface.co/spaces/CaiYuanhao/MST)
+
 [![arXiv](https://img.shields.io/badge/arXiv-MST-B31B1B)](https://arxiv.org/abs/2111.07910)
 [![NTIRE](https://img.shields.io/badge/NTIRE_2022-Winner-FF5797)](https://github.com/caiyuanhao1998/MST-plus-plus/)
 [![zhihu](https://img.shields.io/badge/知乎解读-MST-0084FF)](https://zhuanlan.zhihu.com/p/501101943)
 [![zhihu](https://img.shields.io/badge/知乎解读-CST-0084FF)](https://zhuanlan.zhihu.com/p/544979161)
 [![zhihu](https://img.shields.io/badge/知乎解读-DAUHST-0084FF)](https://zhuanlan.zhihu.com/p/576280023)
-[![Hugging Face](figure/badges/huggingface-models.svg)](https://huggingface.co/CaiYuanhao/MST)
-[![Demo RGB-to-HSI](figure/badges/demo-rgb-to-hsi.svg)](https://huggingface.co/spaces/CaiYuanhao/MST-plus-plus)
-[![Demo SCI Reconstruction](figure/badges/demo-sci-reconstruction.svg)](https://huggingface.co/spaces/CaiYuanhao/MST)
 
 #### Authors
 Yuanhao Cai*, Jing Lin*, Xiaowan Hu, Haoqian Wang, Xin Yuan, Yulun Zhang, Radu Timofte, and Luc Van Gool
