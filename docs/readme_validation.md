@@ -30,6 +30,10 @@ Training smoke runs added `--max_epoch 1 --epoch_sam_num 1 --batch_size 1`. BIRN
 9. MATLAB entry points used Windows-only paths, a filename with casing inconsistent with the README, an undocumented `truth.mat`, and a real-result variable layout unavailable from the test script. Paths and inputs now match generated MAT files; quality metrics are stored separately from the predicted cube.
 10. The Params/FLOPs snippet now imports its model classes explicitly.
 
+## Comparison with README metrics
+
+Passing the execution checks above does not establish exact reproduction of the README benchmark table. [The full comparison](readme_metrics_comparison.md) reports both native Python and MATLAB-formula results on the same predictions. Lambda-Net SSIM and TSA-Net PSNR retain unexplained differences from the README values.
+
 ## MATLAB verification
 
 All four MATLAB command blocks in the README are byte-for-byte unchanged. NumPy/SciPy checked the original metrics on 200 reconstructed simulation cubes, the original 28-channel wavelength grid, MAT variable layouts, 280 simulation channel images, 140 real channel images, and six spectral curves. The Python rendering uses the repository's color-matching table and interpolation; MATLAB figures were not asserted pixel-identical.
