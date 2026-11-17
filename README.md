@@ -8,6 +8,8 @@
 [![zhihu](https://img.shields.io/badge/知乎解读-CST-0084FF)](https://zhuanlan.zhihu.com/p/544979161)
 [![zhihu](https://img.shields.io/badge/知乎解读-DAUHST-0084FF)](https://zhuanlan.zhihu.com/p/576280023)
 [![Hugging Face](https://img.shields.io/badge/🤗_Hugging_Face-models-FFD21E)](https://huggingface.co/CaiYuanhao/MST)
+[![Demo RGB-to-HSI](https://img.shields.io/badge/🤗_Demo-RGB--to--HSI-FFD21E)](https://huggingface.co/spaces/CaiYuanhao/MST-plus-plus)
+[![Demo SCI Reconstruction](https://img.shields.io/badge/🤗_Demo-SCI_Reconstruction-FFD21E)](https://huggingface.co/spaces/CaiYuanhao/MST)
 
 #### Authors
 Yuanhao Cai*, Jing Lin*, Xiaowan Hu, Haoqian Wang, Xin Yuan, Yulun Zhang, Radu Timofte, and Luc Van Gool
@@ -31,6 +33,7 @@ This is a baseline and toolbox for spectral compressive imaging reconstruction. 
 
 
 #### News
+- **2026.11.16 :** Our [RGB-to-HSI](https://huggingface.co/spaces/CaiYuanhao/MST-plus-plus) and [SCI Reconstruction](https://huggingface.co/spaces/CaiYuanhao/MST) online demos are now live on Hugging Face. 🤗
 - **2026.11.16 :** Release a [Gradio demo](#gradio-demo) for interactive spectral reconstruction.
 - **2026.11.07 :** Release our models on HuggingFace 🤗
 - **2025.02.10 :** [NTIRE 2025 Low-light Image Enhancement Challenge](https://codalab.lisn.upsaclay.fr/competitions/21636) has started. Welcome to use our [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) and MST to participate in this challenge. 😄
